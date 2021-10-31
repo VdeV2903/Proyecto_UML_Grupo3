@@ -8,5 +8,6 @@ namespace Capa_Logica
 {
     class CargarDatosUsuario
     {
+
     }
 }
