@@ -41,6 +41,7 @@ namespace Capa_Diseño
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
@@ -170,12 +171,23 @@ namespace Capa_Diseño
             this.pbMinimizar.TabStop = false;
             this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(283, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Probar Form";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.label1);
@@ -211,5 +223,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

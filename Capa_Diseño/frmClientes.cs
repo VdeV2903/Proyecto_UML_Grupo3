@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Capa_Diseño
 {
@@ -16,5 +17,13 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            dtgLista.RowHeadersVisible = false;
+            cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFiltro.SelectedIndex = 0;
+        }
+        
     }
 }
