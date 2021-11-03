@@ -21,8 +21,11 @@ namespace Capa_Diseño
         private void frmClientes_Load(object sender, EventArgs e)
         {
             dtgLista.RowHeadersVisible = false;
+            dtgEditar.RowHeadersVisible = false;
             cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbFiltro.SelectedIndex = 0;
+            cmbEditar.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEditar.SelectedIndex = 0;
         }
         
     }
