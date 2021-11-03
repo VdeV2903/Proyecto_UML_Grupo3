@@ -74,7 +74,7 @@ namespace Capa_Diseño
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmClientes fr = new frmClientes();
+            frmEmpleados fr = new frmEmpleados();
             fr.Show();
         }
     }

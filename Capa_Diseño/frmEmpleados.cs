@@ -16,5 +16,15 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
+
+        private void frmEmpleados_Load(object sender, EventArgs e)
+        {
+            this.dtgLista.RowHeadersVisible = false;
+            this.dtgEditar.RowHeadersVisible = false;
+            cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFiltro.SelectedIndex = 0;
+            cmbEditar.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEditar.SelectedIndex = 0;
+        }
     }
 }
