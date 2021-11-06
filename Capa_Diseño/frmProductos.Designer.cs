@@ -59,13 +59,13 @@ namespace Capa_Diseño
             this.dtgEditar = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ckEmail = new System.Windows.Forms.CheckBox();
-            this.ckTelefono = new System.Windows.Forms.CheckBox();
-            this.ckApellidos = new System.Windows.Forms.CheckBox();
+            this.ckCompra = new System.Windows.Forms.CheckBox();
+            this.ckDistribuidor = new System.Windows.Forms.CheckBox();
+            this.ckMarca = new System.Windows.Forms.CheckBox();
             this.ckNombre = new System.Windows.Forms.CheckBox();
-            this.txtApellidosEdit = new System.Windows.Forms.TextBox();
-            this.txtEmailEdit = new System.Windows.Forms.TextBox();
-            this.txtTelefonoEdit = new System.Windows.Forms.TextBox();
+            this.txtMarcaEdit = new System.Windows.Forms.TextBox();
+            this.txtCompraEdit = new System.Windows.Forms.TextBox();
+            this.txtDistriEdit = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNombreEdit = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,12 +75,12 @@ namespace Capa_Diseño
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtVentaEdit = new System.Windows.Forms.TextBox();
+            this.ckVenta = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cmbCatEdit = new System.Windows.Forms.ComboBox();
+            this.ckCategoria = new System.Windows.Forms.CheckBox();
+            this.ckTodo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,7 +119,7 @@ namespace Capa_Diseño
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(961, 418);
+            this.tabPage1.Size = new System.Drawing.Size(961, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
@@ -192,7 +192,7 @@ namespace Capa_Diseño
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(961, 443);
+            this.tabPage2.Size = new System.Drawing.Size(961, 459);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Producto";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -378,26 +378,26 @@ namespace Capa_Diseño
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(411, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 18);
+            this.label9.Size = new System.Drawing.Size(176, 18);
             this.label9.TabIndex = 53;
-            this.label9.Text = "Administrar Empleado";
+            this.label9.Text = "Administrar Productos";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.ckTodo);
+            this.groupBox1.Controls.Add(this.ckCategoria);
+            this.groupBox1.Controls.Add(this.cmbCatEdit);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.ckVenta);
+            this.groupBox1.Controls.Add(this.txtVentaEdit);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.ckEmail);
-            this.groupBox1.Controls.Add(this.ckTelefono);
-            this.groupBox1.Controls.Add(this.ckApellidos);
+            this.groupBox1.Controls.Add(this.ckCompra);
+            this.groupBox1.Controls.Add(this.ckDistribuidor);
+            this.groupBox1.Controls.Add(this.ckMarca);
             this.groupBox1.Controls.Add(this.ckNombre);
-            this.groupBox1.Controls.Add(this.txtApellidosEdit);
-            this.groupBox1.Controls.Add(this.txtEmailEdit);
-            this.groupBox1.Controls.Add(this.txtTelefonoEdit);
+            this.groupBox1.Controls.Add(this.txtMarcaEdit);
+            this.groupBox1.Controls.Add(this.txtCompraEdit);
+            this.groupBox1.Controls.Add(this.txtDistriEdit);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtNombreEdit);
             this.groupBox1.Controls.Add(this.label10);
@@ -410,35 +410,38 @@ namespace Capa_Diseño
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Producto";
             // 
-            // ckEmail
+            // ckCompra
             // 
-            this.ckEmail.AutoSize = true;
-            this.ckEmail.Location = new System.Drawing.Point(253, 237);
-            this.ckEmail.Name = "ckEmail";
-            this.ckEmail.Size = new System.Drawing.Size(71, 22);
-            this.ckEmail.TabIndex = 54;
-            this.ckEmail.Text = "Editar";
-            this.ckEmail.UseVisualStyleBackColor = true;
+            this.ckCompra.AutoSize = true;
+            this.ckCompra.Location = new System.Drawing.Point(253, 237);
+            this.ckCompra.Name = "ckCompra";
+            this.ckCompra.Size = new System.Drawing.Size(71, 22);
+            this.ckCompra.TabIndex = 54;
+            this.ckCompra.Text = "Editar";
+            this.ckCompra.UseVisualStyleBackColor = true;
+            this.ckCompra.Click += new System.EventHandler(this.ckCompra_Click);
             // 
-            // ckTelefono
+            // ckDistribuidor
             // 
-            this.ckTelefono.AutoSize = true;
-            this.ckTelefono.Location = new System.Drawing.Point(253, 189);
-            this.ckTelefono.Name = "ckTelefono";
-            this.ckTelefono.Size = new System.Drawing.Size(71, 22);
-            this.ckTelefono.TabIndex = 53;
-            this.ckTelefono.Text = "Editar";
-            this.ckTelefono.UseVisualStyleBackColor = true;
+            this.ckDistribuidor.AutoSize = true;
+            this.ckDistribuidor.Location = new System.Drawing.Point(253, 189);
+            this.ckDistribuidor.Name = "ckDistribuidor";
+            this.ckDistribuidor.Size = new System.Drawing.Size(71, 22);
+            this.ckDistribuidor.TabIndex = 53;
+            this.ckDistribuidor.Text = "Editar";
+            this.ckDistribuidor.UseVisualStyleBackColor = true;
+            this.ckDistribuidor.Click += new System.EventHandler(this.ckDistribuidor_Click);
             // 
-            // ckApellidos
+            // ckMarca
             // 
-            this.ckApellidos.AutoSize = true;
-            this.ckApellidos.Location = new System.Drawing.Point(253, 143);
-            this.ckApellidos.Name = "ckApellidos";
-            this.ckApellidos.Size = new System.Drawing.Size(71, 22);
-            this.ckApellidos.TabIndex = 52;
-            this.ckApellidos.Text = "Editar";
-            this.ckApellidos.UseVisualStyleBackColor = true;
+            this.ckMarca.AutoSize = true;
+            this.ckMarca.Location = new System.Drawing.Point(253, 143);
+            this.ckMarca.Name = "ckMarca";
+            this.ckMarca.Size = new System.Drawing.Size(71, 22);
+            this.ckMarca.TabIndex = 52;
+            this.ckMarca.Text = "Editar";
+            this.ckMarca.UseVisualStyleBackColor = true;
+            this.ckMarca.Click += new System.EventHandler(this.ckMarca_Click);
             // 
             // ckNombre
             // 
@@ -449,27 +452,28 @@ namespace Capa_Diseño
             this.ckNombre.TabIndex = 51;
             this.ckNombre.Text = "Editar";
             this.ckNombre.UseVisualStyleBackColor = true;
+            this.ckNombre.Click += new System.EventHandler(this.ckNombre_Click);
             // 
-            // txtApellidosEdit
+            // txtMarcaEdit
             // 
-            this.txtApellidosEdit.Location = new System.Drawing.Point(17, 141);
-            this.txtApellidosEdit.Name = "txtApellidosEdit";
-            this.txtApellidosEdit.Size = new System.Drawing.Size(234, 24);
-            this.txtApellidosEdit.TabIndex = 50;
+            this.txtMarcaEdit.Location = new System.Drawing.Point(17, 141);
+            this.txtMarcaEdit.Name = "txtMarcaEdit";
+            this.txtMarcaEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtMarcaEdit.TabIndex = 50;
             // 
-            // txtEmailEdit
+            // txtCompraEdit
             // 
-            this.txtEmailEdit.Location = new System.Drawing.Point(17, 235);
-            this.txtEmailEdit.Name = "txtEmailEdit";
-            this.txtEmailEdit.Size = new System.Drawing.Size(234, 24);
-            this.txtEmailEdit.TabIndex = 41;
+            this.txtCompraEdit.Location = new System.Drawing.Point(17, 235);
+            this.txtCompraEdit.Name = "txtCompraEdit";
+            this.txtCompraEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtCompraEdit.TabIndex = 41;
             // 
-            // txtTelefonoEdit
+            // txtDistriEdit
             // 
-            this.txtTelefonoEdit.Location = new System.Drawing.Point(17, 187);
-            this.txtTelefonoEdit.Name = "txtTelefonoEdit";
-            this.txtTelefonoEdit.Size = new System.Drawing.Size(234, 24);
-            this.txtTelefonoEdit.TabIndex = 40;
+            this.txtDistriEdit.Location = new System.Drawing.Point(17, 187);
+            this.txtDistriEdit.Name = "txtDistriEdit";
+            this.txtDistriEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtDistriEdit.TabIndex = 40;
             // 
             // label13
             // 
@@ -561,22 +565,23 @@ namespace Capa_Diseño
             this.label11.TabIndex = 55;
             this.label11.Text = "Precio Venta";
             // 
-            // textBox1
+            // txtVentaEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 283);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 24);
-            this.textBox1.TabIndex = 56;
+            this.txtVentaEdit.Location = new System.Drawing.Point(17, 283);
+            this.txtVentaEdit.Name = "txtVentaEdit";
+            this.txtVentaEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtVentaEdit.TabIndex = 56;
             // 
-            // checkBox1
+            // ckVenta
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(253, 283);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 22);
-            this.checkBox1.TabIndex = 57;
-            this.checkBox1.Text = "Editar";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckVenta.AutoSize = true;
+            this.ckVenta.Location = new System.Drawing.Point(253, 283);
+            this.ckVenta.Name = "ckVenta";
+            this.ckVenta.Size = new System.Drawing.Size(71, 22);
+            this.ckVenta.TabIndex = 57;
+            this.ckVenta.Text = "Editar";
+            this.ckVenta.UseVisualStyleBackColor = true;
+            this.ckVenta.Click += new System.EventHandler(this.ckVenta_Click);
             // 
             // label15
             // 
@@ -587,34 +592,36 @@ namespace Capa_Diseño
             this.label15.TabIndex = 58;
             this.label15.Text = "Categoria";
             // 
-            // comboBox1
+            // cmbCatEdit
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 26);
-            this.comboBox1.TabIndex = 59;
+            this.cmbCatEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCatEdit.FormattingEnabled = true;
+            this.cmbCatEdit.Location = new System.Drawing.Point(17, 90);
+            this.cmbCatEdit.Name = "cmbCatEdit";
+            this.cmbCatEdit.Size = new System.Drawing.Size(234, 26);
+            this.cmbCatEdit.TabIndex = 59;
             // 
-            // checkBox2
+            // ckCategoria
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(253, 92);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 22);
-            this.checkBox2.TabIndex = 60;
-            this.checkBox2.Text = "Editar";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckCategoria.AutoSize = true;
+            this.ckCategoria.Location = new System.Drawing.Point(253, 92);
+            this.ckCategoria.Name = "ckCategoria";
+            this.ckCategoria.Size = new System.Drawing.Size(71, 22);
+            this.ckCategoria.TabIndex = 60;
+            this.ckCategoria.Text = "Editar";
+            this.ckCategoria.UseVisualStyleBackColor = true;
+            this.ckCategoria.Click += new System.EventHandler(this.ckCategoria_Click);
             // 
-            // checkBox3
+            // ckTodo
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(234, 12);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(115, 22);
-            this.checkBox3.TabIndex = 61;
-            this.checkBox3.Text = "Editar Todo";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckTodo.AutoSize = true;
+            this.ckTodo.Location = new System.Drawing.Point(234, 12);
+            this.ckTodo.Name = "ckTodo";
+            this.ckTodo.Size = new System.Drawing.Size(115, 22);
+            this.ckTodo.TabIndex = 61;
+            this.ckTodo.Text = "Editar Todo";
+            this.ckTodo.UseVisualStyleBackColor = true;
+            this.ckTodo.Click += new System.EventHandler(this.ckTodo_Click);
             // 
             // frmProductos
             // 
@@ -624,6 +631,7 @@ namespace Capa_Diseño
             this.Controls.Add(this.tabControl1);
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -675,13 +683,13 @@ namespace Capa_Diseño
         private System.Windows.Forms.DataGridView dtgEditar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox ckEmail;
-        private System.Windows.Forms.CheckBox ckTelefono;
-        private System.Windows.Forms.CheckBox ckApellidos;
+        private System.Windows.Forms.CheckBox ckCompra;
+        private System.Windows.Forms.CheckBox ckDistribuidor;
+        private System.Windows.Forms.CheckBox ckMarca;
         private System.Windows.Forms.CheckBox ckNombre;
-        private System.Windows.Forms.TextBox txtApellidosEdit;
-        private System.Windows.Forms.TextBox txtEmailEdit;
-        private System.Windows.Forms.TextBox txtTelefonoEdit;
+        private System.Windows.Forms.TextBox txtMarcaEdit;
+        private System.Windows.Forms.TextBox txtCompraEdit;
+        private System.Windows.Forms.TextBox txtDistriEdit;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNombreEdit;
         private System.Windows.Forms.Label label10;
@@ -690,12 +698,12 @@ namespace Capa_Diseño
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox ckTodo;
+        private System.Windows.Forms.CheckBox ckCategoria;
+        private System.Windows.Forms.ComboBox cmbCatEdit;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox ckVenta;
+        private System.Windows.Forms.TextBox txtVentaEdit;
         private System.Windows.Forms.Label label11;
     }
 }
