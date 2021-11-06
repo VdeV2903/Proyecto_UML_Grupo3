@@ -136,32 +136,26 @@ namespace Capa_Diseño
             checktodo();
             desbloqueartxt();
         }
-
         private void ckNombre_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
         }
-
         private void ckCategoria_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
         }
-
         private void ckMarca_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
         }
-
         private void ckDistribuidor_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
         }
-
         private void ckCompra_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
         }
-
         private void ckVenta_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
