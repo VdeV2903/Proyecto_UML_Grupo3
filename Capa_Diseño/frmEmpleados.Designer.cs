@@ -40,11 +40,13 @@ namespace Capa_Diseño
             this.dtgLista = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,19 +59,22 @@ namespace Capa_Diseño
             this.dtgEditar = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ckTodo = new System.Windows.Forms.CheckBox();
+            this.ckEmail = new System.Windows.Forms.CheckBox();
+            this.ckTelefono = new System.Windows.Forms.CheckBox();
+            this.ckApellidos = new System.Windows.Forms.CheckBox();
+            this.ckNombre = new System.Windows.Forms.CheckBox();
+            this.txtApellidosEdit = new System.Windows.Forms.TextBox();
+            this.txtEmailEdit = new System.Windows.Forms.TextBox();
+            this.txtTelefonoEdit = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtNombreEdit = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -137,6 +142,7 @@ namespace Capa_Diseño
             // 
             // cmbFiltro
             // 
+            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
             "Nombre",
@@ -186,13 +192,13 @@ namespace Capa_Diseño
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.txtApellidos);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.btnLogin);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtEmail);
+            this.tabPage2.Controls.Add(this.txtTelefono);
+            this.tabPage2.Controls.Add(this.txtNombre);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -204,6 +210,22 @@ namespace Capa_Diseño
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Empleado";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(363, 169);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(234, 24);
+            this.txtApellidos.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(360, 148);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(156, 18);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Apellidos Empleado";
             // 
             // btnLogin
             // 
@@ -228,26 +250,26 @@ namespace Capa_Diseño
             this.label4.TabIndex = 36;
             this.label4.Text = "Nuevo Empleado";
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(363, 274);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 24);
-            this.textBox3.TabIndex = 32;
+            this.txtEmail.Location = new System.Drawing.Point(363, 274);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(234, 24);
+            this.txtEmail.TabIndex = 32;
             // 
-            // textBox2
+            // txtTelefono
             // 
-            this.textBox2.Location = new System.Drawing.Point(363, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 24);
-            this.textBox2.TabIndex = 31;
+            this.txtTelefono.Location = new System.Drawing.Point(363, 219);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(234, 24);
+            this.txtTelefono.TabIndex = 31;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(363, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 24);
-            this.textBox1.TabIndex = 30;
+            this.txtNombre.Location = new System.Drawing.Point(363, 119);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(234, 24);
+            this.txtNombre.TabIndex = 30;
             // 
             // label5
             // 
@@ -317,6 +339,7 @@ namespace Capa_Diseño
             // 
             // cmbEditar
             // 
+            this.cmbEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEditar.FormattingEnabled = true;
             this.cmbEditar.Items.AddRange(new object[] {
             "Nombre",
@@ -365,11 +388,16 @@ namespace Capa_Diseño
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.ckTodo);
+            this.groupBox1.Controls.Add(this.ckEmail);
+            this.groupBox1.Controls.Add(this.ckTelefono);
+            this.groupBox1.Controls.Add(this.ckApellidos);
+            this.groupBox1.Controls.Add(this.ckNombre);
+            this.groupBox1.Controls.Add(this.txtApellidosEdit);
+            this.groupBox1.Controls.Add(this.txtEmailEdit);
+            this.groupBox1.Controls.Add(this.txtTelefonoEdit);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtNombreEdit);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
@@ -380,31 +408,102 @@ namespace Capa_Diseño
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
-            // textBox4
+            // ckTodo
             // 
-            this.textBox4.Location = new System.Drawing.Point(38, 207);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(234, 24);
-            this.textBox4.TabIndex = 41;
+            this.ckTodo.AutoSize = true;
+            this.ckTodo.Location = new System.Drawing.Point(232, 23);
+            this.ckTodo.Name = "ckTodo";
+            this.ckTodo.Size = new System.Drawing.Size(115, 22);
+            this.ckTodo.TabIndex = 62;
+            this.ckTodo.Text = "Editar Todo";
+            this.ckTodo.UseVisualStyleBackColor = true;
+            this.ckTodo.Click += new System.EventHandler(this.ckTodo_Click);
             // 
-            // textBox5
+            // ckEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(38, 113);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(234, 24);
-            this.textBox5.TabIndex = 40;
+            this.ckEmail.AutoSize = true;
+            this.ckEmail.Location = new System.Drawing.Point(251, 211);
+            this.ckEmail.Name = "ckEmail";
+            this.ckEmail.Size = new System.Drawing.Size(71, 22);
+            this.ckEmail.TabIndex = 54;
+            this.ckEmail.Text = "Editar";
+            this.ckEmail.UseVisualStyleBackColor = true;
+            this.ckEmail.Click += new System.EventHandler(this.ckEmail_Click);
             // 
-            // textBox6
+            // ckTelefono
             // 
-            this.textBox6.Location = new System.Drawing.Point(38, 65);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(234, 24);
-            this.textBox6.TabIndex = 39;
+            this.ckTelefono.AutoSize = true;
+            this.ckTelefono.Location = new System.Drawing.Point(251, 163);
+            this.ckTelefono.Name = "ckTelefono";
+            this.ckTelefono.Size = new System.Drawing.Size(71, 22);
+            this.ckTelefono.TabIndex = 53;
+            this.ckTelefono.Text = "Editar";
+            this.ckTelefono.UseVisualStyleBackColor = true;
+            this.ckTelefono.Click += new System.EventHandler(this.ckTelefono_Click);
+            // 
+            // ckApellidos
+            // 
+            this.ckApellidos.AutoSize = true;
+            this.ckApellidos.Location = new System.Drawing.Point(251, 115);
+            this.ckApellidos.Name = "ckApellidos";
+            this.ckApellidos.Size = new System.Drawing.Size(71, 22);
+            this.ckApellidos.TabIndex = 52;
+            this.ckApellidos.Text = "Editar";
+            this.ckApellidos.UseVisualStyleBackColor = true;
+            this.ckApellidos.Click += new System.EventHandler(this.ckApellidos_Click);
+            // 
+            // ckNombre
+            // 
+            this.ckNombre.AutoSize = true;
+            this.ckNombre.Location = new System.Drawing.Point(251, 68);
+            this.ckNombre.Name = "ckNombre";
+            this.ckNombre.Size = new System.Drawing.Size(71, 22);
+            this.ckNombre.TabIndex = 51;
+            this.ckNombre.Text = "Editar";
+            this.ckNombre.UseVisualStyleBackColor = true;
+            this.ckNombre.Click += new System.EventHandler(this.ckNombre_Click);
+            // 
+            // txtApellidosEdit
+            // 
+            this.txtApellidosEdit.Location = new System.Drawing.Point(15, 113);
+            this.txtApellidosEdit.Name = "txtApellidosEdit";
+            this.txtApellidosEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtApellidosEdit.TabIndex = 50;
+            // 
+            // txtEmailEdit
+            // 
+            this.txtEmailEdit.Location = new System.Drawing.Point(15, 209);
+            this.txtEmailEdit.Name = "txtEmailEdit";
+            this.txtEmailEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtEmailEdit.TabIndex = 41;
+            // 
+            // txtTelefonoEdit
+            // 
+            this.txtTelefonoEdit.Location = new System.Drawing.Point(15, 161);
+            this.txtTelefonoEdit.Name = "txtTelefonoEdit";
+            this.txtTelefonoEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtTelefonoEdit.TabIndex = 40;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(156, 18);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "Apellidos Empleado";
+            // 
+            // txtNombreEdit
+            // 
+            this.txtNombreEdit.Location = new System.Drawing.Point(15, 67);
+            this.txtNombreEdit.Name = "txtNombreEdit";
+            this.txtNombreEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtNombreEdit.TabIndex = 39;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 186);
+            this.label8.Location = new System.Drawing.Point(12, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 18);
             this.label8.TabIndex = 38;
@@ -413,7 +512,7 @@ namespace Capa_Diseño
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 92);
+            this.label9.Location = new System.Drawing.Point(12, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 18);
             this.label9.TabIndex = 37;
@@ -422,11 +521,11 @@ namespace Capa_Diseño
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 44);
+            this.label10.Location = new System.Drawing.Point(12, 46);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 18);
+            this.label10.Size = new System.Drawing.Size(148, 18);
             this.label10.TabIndex = 36;
-            this.label10.Text = "Nombre Cliente:";
+            this.label10.Text = "Nombre Empleado";
             // 
             // btnEliminar
             // 
@@ -465,38 +564,6 @@ namespace Capa_Diseño
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 42;
             this.pictureBox4.TabStop = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(363, 169);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(234, 24);
-            this.textBox8.TabIndex = 39;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(360, 148);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(156, 18);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "Apellidos Empleado";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(38, 159);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(234, 24);
-            this.textBox9.TabIndex = 50;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 140);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(156, 18);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Apellidos Empleado";
             // 
             // frmEmpleados
             // 
@@ -541,9 +608,9 @@ namespace Capa_Diseño
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -556,18 +623,23 @@ namespace Capa_Diseño
         private System.Windows.Forms.DataGridView dtgEditar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtEmailEdit;
+        private System.Windows.Forms.TextBox txtTelefonoEdit;
+        private System.Windows.Forms.TextBox txtNombreEdit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtApellidosEdit;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox ckEmail;
+        private System.Windows.Forms.CheckBox ckTelefono;
+        private System.Windows.Forms.CheckBox ckApellidos;
+        private System.Windows.Forms.CheckBox ckNombre;
+        private System.Windows.Forms.CheckBox ckTodo;
     }
 }
