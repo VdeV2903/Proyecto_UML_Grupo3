@@ -38,6 +38,12 @@ namespace Capa_Diseño
             this.dtgLista = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDistribuidorProd = new System.Windows.Forms.TextBox();
@@ -47,18 +53,19 @@ namespace Capa_Diseño
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dtgEditar = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckTodo = new System.Windows.Forms.CheckBox();
+            this.ckCategoria = new System.Windows.Forms.CheckBox();
+            this.cmbCatEdit = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ckVenta = new System.Windows.Forms.CheckBox();
+            this.txtVentaEdit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.ckCompra = new System.Windows.Forms.CheckBox();
             this.ckDistribuidor = new System.Windows.Forms.CheckBox();
             this.ckMarca = new System.Windows.Forms.CheckBox();
@@ -74,13 +81,6 @@ namespace Capa_Diseño
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtVentaEdit = new System.Windows.Forms.TextBox();
-            this.ckVenta = new System.Windows.Forms.CheckBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmbCatEdit = new System.Windows.Forms.ComboBox();
-            this.ckCategoria = new System.Windows.Forms.CheckBox();
-            this.ckTodo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,7 +105,7 @@ namespace Capa_Diseño
             this.tabControl1.Location = new System.Drawing.Point(1, -3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(969, 492);
+            this.tabControl1.Size = new System.Drawing.Size(1069, 624);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -119,7 +119,7 @@ namespace Capa_Diseño
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(961, 459);
+            this.tabPage1.Size = new System.Drawing.Size(1061, 591);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
@@ -138,7 +138,7 @@ namespace Capa_Diseño
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(611, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(672, 69);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,7 +147,7 @@ namespace Capa_Diseño
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(636, 60);
+            this.txtBuscar.Location = new System.Drawing.Point(697, 69);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(307, 24);
             this.txtBuscar.TabIndex = 28;
@@ -156,10 +156,10 @@ namespace Capa_Diseño
             // 
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgLista.Location = new System.Drawing.Point(15, 88);
+            this.dtgLista.Location = new System.Drawing.Point(75, 99);
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
-            this.dtgLista.Size = new System.Drawing.Size(929, 307);
+            this.dtgLista.Size = new System.Drawing.Size(929, 406);
             this.dtgLista.TabIndex = 26;
             // 
             // pictureBox2
@@ -192,10 +192,60 @@ namespace Capa_Diseño
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(961, 459);
+            this.tabPage2.Size = new System.Drawing.Size(1061, 591);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Producto";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(104, 213);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(249, 26);
+            this.cmbCategoria.TabIndex = 43;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(101, 192);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 18);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Categoria:";
+            // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.Location = new System.Drawing.Point(676, 213);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(234, 24);
+            this.txtPrecioVenta.TabIndex = 41;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(673, 192);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 18);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Precio Venta:";
+            // 
+            // txtPrecioCompra
+            // 
+            this.txtPrecioCompra.Location = new System.Drawing.Point(404, 213);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(234, 24);
+            this.txtPrecioCompra.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(401, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 18);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Precio Compra:";
             // 
             // btnLogin
             // 
@@ -204,7 +254,7 @@ namespace Capa_Diseño
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(330, 276);
+            this.btnLogin.Location = new System.Drawing.Point(380, 309);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(309, 45);
             this.btnLogin.TabIndex = 37;
@@ -214,7 +264,7 @@ namespace Capa_Diseño
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(429, 29);
+            this.label4.Location = new System.Drawing.Point(452, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 18);
             this.label4.TabIndex = 36;
@@ -222,21 +272,21 @@ namespace Capa_Diseño
             // 
             // txtDistribuidorProd
             // 
-            this.txtDistribuidorProd.Location = new System.Drawing.Point(636, 98);
+            this.txtDistribuidorProd.Location = new System.Drawing.Point(676, 132);
             this.txtDistribuidorProd.Name = "txtDistribuidorProd";
             this.txtDistribuidorProd.Size = new System.Drawing.Size(234, 24);
             this.txtDistribuidorProd.TabIndex = 32;
             // 
             // txtMarcaProd
             // 
-            this.txtMarcaProd.Location = new System.Drawing.Point(364, 99);
+            this.txtMarcaProd.Location = new System.Drawing.Point(404, 133);
             this.txtMarcaProd.Name = "txtMarcaProd";
             this.txtMarcaProd.Size = new System.Drawing.Size(234, 24);
             this.txtMarcaProd.TabIndex = 31;
             // 
             // txtNombreProd
             // 
-            this.txtNombreProd.Location = new System.Drawing.Point(64, 99);
+            this.txtNombreProd.Location = new System.Drawing.Point(104, 133);
             this.txtNombreProd.Name = "txtNombreProd";
             this.txtNombreProd.Size = new System.Drawing.Size(249, 24);
             this.txtNombreProd.TabIndex = 30;
@@ -244,7 +294,7 @@ namespace Capa_Diseño
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(633, 77);
+            this.label5.Location = new System.Drawing.Point(673, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 18);
             this.label5.TabIndex = 28;
@@ -253,7 +303,7 @@ namespace Capa_Diseño
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 78);
+            this.label3.Location = new System.Drawing.Point(401, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 27;
@@ -262,7 +312,7 @@ namespace Capa_Diseño
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 78);
+            this.label2.Location = new System.Drawing.Point(101, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 18);
             this.label2.TabIndex = 26;
@@ -271,62 +321,12 @@ namespace Capa_Diseño
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(267, -62);
+            this.pictureBox3.Location = new System.Drawing.Point(299, -54);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(444, 211);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
-            // 
-            // txtPrecioCompra
-            // 
-            this.txtPrecioCompra.Location = new System.Drawing.Point(364, 179);
-            this.txtPrecioCompra.Name = "txtPrecioCompra";
-            this.txtPrecioCompra.Size = new System.Drawing.Size(234, 24);
-            this.txtPrecioCompra.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(361, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 18);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Precio Compra:";
-            // 
-            // txtPrecioVenta
-            // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(636, 179);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(234, 24);
-            this.txtPrecioVenta.TabIndex = 41;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(633, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 18);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Precio Venta:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(61, 158);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 18);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "Categoria:";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(64, 179);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(249, 26);
-            this.cmbCategoria.TabIndex = 43;
             // 
             // tabPage3
             // 
@@ -341,7 +341,7 @@ namespace Capa_Diseño
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(961, 459);
+            this.tabPage3.Size = new System.Drawing.Size(1061, 591);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modificar Productos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -349,7 +349,7 @@ namespace Capa_Diseño
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(620, 58);
+            this.pictureBox5.Location = new System.Drawing.Point(698, 58);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 20);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -358,7 +358,7 @@ namespace Capa_Diseño
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(645, 58);
+            this.textBox7.Location = new System.Drawing.Point(723, 58);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(307, 24);
             this.textBox7.TabIndex = 55;
@@ -367,16 +367,16 @@ namespace Capa_Diseño
             // 
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEditar.Location = new System.Drawing.Point(397, 88);
+            this.dtgEditar.Location = new System.Drawing.Point(425, 88);
             this.dtgEditar.Name = "dtgEditar";
             this.dtgEditar.ReadOnly = true;
-            this.dtgEditar.Size = new System.Drawing.Size(555, 309);
+            this.dtgEditar.Size = new System.Drawing.Size(605, 309);
             this.dtgEditar.TabIndex = 54;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(411, 21);
+            this.label9.Location = new System.Drawing.Point(459, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 18);
             this.label9.TabIndex = 53;
@@ -405,15 +405,82 @@ namespace Capa_Diseño
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Location = new System.Drawing.Point(22, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 318);
+            this.groupBox1.Size = new System.Drawing.Size(381, 318);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Producto";
             // 
+            // ckTodo
+            // 
+            this.ckTodo.AutoSize = true;
+            this.ckTodo.Location = new System.Drawing.Point(260, 12);
+            this.ckTodo.Name = "ckTodo";
+            this.ckTodo.Size = new System.Drawing.Size(115, 22);
+            this.ckTodo.TabIndex = 61;
+            this.ckTodo.Text = "Editar Todo";
+            this.ckTodo.UseVisualStyleBackColor = true;
+            this.ckTodo.Click += new System.EventHandler(this.ckTodo_Click);
+            // 
+            // ckCategoria
+            // 
+            this.ckCategoria.AutoSize = true;
+            this.ckCategoria.Location = new System.Drawing.Point(278, 92);
+            this.ckCategoria.Name = "ckCategoria";
+            this.ckCategoria.Size = new System.Drawing.Size(71, 22);
+            this.ckCategoria.TabIndex = 60;
+            this.ckCategoria.Text = "Editar";
+            this.ckCategoria.UseVisualStyleBackColor = true;
+            this.ckCategoria.Click += new System.EventHandler(this.ckCategoria_Click);
+            // 
+            // cmbCatEdit
+            // 
+            this.cmbCatEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCatEdit.FormattingEnabled = true;
+            this.cmbCatEdit.Location = new System.Drawing.Point(17, 90);
+            this.cmbCatEdit.Name = "cmbCatEdit";
+            this.cmbCatEdit.Size = new System.Drawing.Size(234, 26);
+            this.cmbCatEdit.TabIndex = 59;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 71);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 18);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "Categoria";
+            // 
+            // ckVenta
+            // 
+            this.ckVenta.AutoSize = true;
+            this.ckVenta.Location = new System.Drawing.Point(278, 283);
+            this.ckVenta.Name = "ckVenta";
+            this.ckVenta.Size = new System.Drawing.Size(71, 22);
+            this.ckVenta.TabIndex = 57;
+            this.ckVenta.Text = "Editar";
+            this.ckVenta.UseVisualStyleBackColor = true;
+            this.ckVenta.Click += new System.EventHandler(this.ckVenta_Click);
+            // 
+            // txtVentaEdit
+            // 
+            this.txtVentaEdit.Location = new System.Drawing.Point(17, 283);
+            this.txtVentaEdit.Name = "txtVentaEdit";
+            this.txtVentaEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtVentaEdit.TabIndex = 56;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 262);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 18);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Precio Venta";
+            // 
             // ckCompra
             // 
             this.ckCompra.AutoSize = true;
-            this.ckCompra.Location = new System.Drawing.Point(253, 237);
+            this.ckCompra.Location = new System.Drawing.Point(278, 237);
             this.ckCompra.Name = "ckCompra";
             this.ckCompra.Size = new System.Drawing.Size(71, 22);
             this.ckCompra.TabIndex = 54;
@@ -424,7 +491,7 @@ namespace Capa_Diseño
             // ckDistribuidor
             // 
             this.ckDistribuidor.AutoSize = true;
-            this.ckDistribuidor.Location = new System.Drawing.Point(253, 189);
+            this.ckDistribuidor.Location = new System.Drawing.Point(278, 189);
             this.ckDistribuidor.Name = "ckDistribuidor";
             this.ckDistribuidor.Size = new System.Drawing.Size(71, 22);
             this.ckDistribuidor.TabIndex = 53;
@@ -435,7 +502,7 @@ namespace Capa_Diseño
             // ckMarca
             // 
             this.ckMarca.AutoSize = true;
-            this.ckMarca.Location = new System.Drawing.Point(253, 143);
+            this.ckMarca.Location = new System.Drawing.Point(278, 143);
             this.ckMarca.Name = "ckMarca";
             this.ckMarca.Size = new System.Drawing.Size(71, 22);
             this.ckMarca.TabIndex = 52;
@@ -446,7 +513,7 @@ namespace Capa_Diseño
             // ckNombre
             // 
             this.ckNombre.AutoSize = true;
-            this.ckNombre.Location = new System.Drawing.Point(253, 45);
+            this.ckNombre.Location = new System.Drawing.Point(278, 45);
             this.ckNombre.Name = "ckNombre";
             this.ckNombre.Size = new System.Drawing.Size(71, 22);
             this.ckNombre.TabIndex = 51;
@@ -525,7 +592,7 @@ namespace Capa_Diseño
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(486, 403);
+            this.btnEliminar.Location = new System.Drawing.Point(538, 438);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(185, 48);
             this.btnEliminar.TabIndex = 50;
@@ -539,7 +606,7 @@ namespace Capa_Diseño
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizar.Location = new System.Drawing.Point(295, 403);
+            this.btnActualizar.Location = new System.Drawing.Point(347, 438);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(185, 48);
             this.btnActualizar.TabIndex = 49;
@@ -549,88 +616,23 @@ namespace Capa_Diseño
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(268, -70);
+            this.pictureBox4.Location = new System.Drawing.Point(316, -65);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(444, 211);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 52;
             this.pictureBox4.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 262);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 18);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Precio Venta";
-            // 
-            // txtVentaEdit
-            // 
-            this.txtVentaEdit.Location = new System.Drawing.Point(17, 283);
-            this.txtVentaEdit.Name = "txtVentaEdit";
-            this.txtVentaEdit.Size = new System.Drawing.Size(234, 24);
-            this.txtVentaEdit.TabIndex = 56;
-            // 
-            // ckVenta
-            // 
-            this.ckVenta.AutoSize = true;
-            this.ckVenta.Location = new System.Drawing.Point(253, 283);
-            this.ckVenta.Name = "ckVenta";
-            this.ckVenta.Size = new System.Drawing.Size(71, 22);
-            this.ckVenta.TabIndex = 57;
-            this.ckVenta.Text = "Editar";
-            this.ckVenta.UseVisualStyleBackColor = true;
-            this.ckVenta.Click += new System.EventHandler(this.ckVenta_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 71);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 18);
-            this.label15.TabIndex = 58;
-            this.label15.Text = "Categoria";
-            // 
-            // cmbCatEdit
-            // 
-            this.cmbCatEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCatEdit.FormattingEnabled = true;
-            this.cmbCatEdit.Location = new System.Drawing.Point(17, 90);
-            this.cmbCatEdit.Name = "cmbCatEdit";
-            this.cmbCatEdit.Size = new System.Drawing.Size(234, 26);
-            this.cmbCatEdit.TabIndex = 59;
-            // 
-            // ckCategoria
-            // 
-            this.ckCategoria.AutoSize = true;
-            this.ckCategoria.Location = new System.Drawing.Point(253, 92);
-            this.ckCategoria.Name = "ckCategoria";
-            this.ckCategoria.Size = new System.Drawing.Size(71, 22);
-            this.ckCategoria.TabIndex = 60;
-            this.ckCategoria.Text = "Editar";
-            this.ckCategoria.UseVisualStyleBackColor = true;
-            this.ckCategoria.Click += new System.EventHandler(this.ckCategoria_Click);
-            // 
-            // ckTodo
-            // 
-            this.ckTodo.AutoSize = true;
-            this.ckTodo.Location = new System.Drawing.Point(234, 12);
-            this.ckTodo.Name = "ckTodo";
-            this.ckTodo.Size = new System.Drawing.Size(115, 22);
-            this.ckTodo.TabIndex = 61;
-            this.ckTodo.Text = "Editar Todo";
-            this.ckTodo.UseVisualStyleBackColor = true;
-            this.ckTodo.Click += new System.EventHandler(this.ckTodo_Click);
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 489);
+            this.ClientSize = new System.Drawing.Size(1069, 620);
             this.Controls.Add(this.tabControl1);
+            this.MaximumSize = new System.Drawing.Size(1085, 659);
+            this.MinimumSize = new System.Drawing.Size(1085, 659);
             this.Name = "frmProductos";
-            this.Text = "frmProductos";
+            this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmProductos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

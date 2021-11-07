@@ -91,12 +91,6 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductosVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductosVentas.Designer.cs">
-      <DependentUpon>frmProductosVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPromociones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +102,6 @@
     </Compile>
     <Compile Include="frmReportes.Designer.cs">
       <DependentUpon>frmReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVentas.cs">
       <SubType>Form</SubType>
@@ -144,17 +132,11 @@
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductosVentas.resx">
-      <DependentUpon>frmProductosVentas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPromociones.resx">
       <DependentUpon>frmPromociones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>

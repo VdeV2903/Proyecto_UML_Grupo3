@@ -77,6 +77,7 @@ namespace Capa_Diseño
             //frmClientes fr = new frmClientes();
             //frmEmpleados fr = new frmEmpleados();
             frmProductos fr = new frmProductos();
+            //frmVentas fr = new frmVentas();
             fr.Show();
         }
     }
