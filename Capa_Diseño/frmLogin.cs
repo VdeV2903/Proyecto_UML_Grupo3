@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Capa_Logica;
+
 
 namespace Capa_Diseño
 {
@@ -25,11 +25,13 @@ namespace Capa_Diseño
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            /*
             Login log = new Login();
             log.Usuario = Convert.ToString(txtUsuario.Text);
             log.Password = Convert.ToString(txtPassword.Text);
 
             MessageBox.Show(log.Logear());
+            */
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)

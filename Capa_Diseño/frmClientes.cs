@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Capa_Logica;
+using CapaDatos.Model;
+
 
 namespace Capa_Diseño
 {
@@ -18,19 +19,16 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
-        
+        Tec_Shop_UMLG3Entities3 db = new Tec_Shop_UMLG3Entities3();
         private void frmClientes_Load(object sender, EventArgs e)
         {
             
             dtgLista.RowHeadersVisible = false;
             dtgEditar.RowHeadersVisible = false;
             
-            cmbEstado.SelectedIndex = 0;
-            cmbBuscarpor.SelectedIndex = 0;
-            cmbEditar.SelectedIndex = 0;
 
             renovaredit();
-            llenarLista();
+            
         }
 
         public void renovarinsercion()
@@ -116,26 +114,40 @@ namespace Capa_Diseño
 
         public void llenarLista()
         {
-            Clientes cl = new Clientes();
-            cl.Word = txtBuscar.Text;
-            cl.Estado = cmbEstado.SelectedItem.ToString();
+            string word = "", estado = "";
+            int busquedapor = 0;
+            CapaDatos.Clientes cl = new CapaDatos.Clientes();
+            word = txtBuscar.Text;
+            estado = cmbEstado.SelectedItem.ToString();
             if(cmbBuscarpor.SelectedItem.ToString() == "Nombre")
             {
-                cl.Busquedapor = 1;
+                busquedapor = 1;
             }
             else if(cmbBuscarpor.SelectedItem.ToString() == "Teléfono")
             {
-                cl.Busquedapor = 2;
+                busquedapor = 2;
             }
             else if(cmbBuscarpor.SelectedItem.ToString() == "Correo")
             {
-                cl.Busquedapor = 3;
+                busquedapor = 3;
             }
 
-            dtgLista.DataSource = cl.ObtenerClientes();
+            dtgLista.DataSource = cl.ListaClientes(word, estado, busquedapor);
+
+
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            llenarLista();
+        }
+
+        private void cmbBuscarpor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenarLista();
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarLista();
         }

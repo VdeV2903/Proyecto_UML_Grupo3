@@ -32,6 +32,8 @@ namespace Capa_Diseño
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbBuscarpor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -70,8 +72,6 @@ namespace Capa_Diseño
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.cmbBuscarpor = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,6 +118,29 @@ namespace Capa_Diseño
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(746, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 18);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Buscar por:";
+            // 
+            // cmbBuscarpor
+            // 
+            this.cmbBuscarpor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarpor.FormattingEnabled = true;
+            this.cmbBuscarpor.Items.AddRange(new object[] {
+            "Nombre",
+            "Teléfono",
+            "Correo"});
+            this.cmbBuscarpor.Location = new System.Drawing.Point(749, 78);
+            this.cmbBuscarpor.Name = "cmbBuscarpor";
+            this.cmbBuscarpor.Size = new System.Drawing.Size(120, 26);
+            this.cmbBuscarpor.TabIndex = 33;
+            this.cmbBuscarpor.SelectedIndexChanged += new System.EventHandler(this.cmbBuscarpor_SelectedIndexChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -151,6 +174,7 @@ namespace Capa_Diseño
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(120, 26);
             this.cmbEstado.TabIndex = 30;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -172,11 +196,13 @@ namespace Capa_Diseño
             // 
             // dtgLista
             // 
+            this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLista.Location = new System.Drawing.Point(69, 110);
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
+            this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgLista.Size = new System.Drawing.Size(929, 410);
             this.dtgLista.TabIndex = 26;
             // 
@@ -514,28 +540,6 @@ namespace Capa_Diseño
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 42;
             this.pictureBox4.TabStop = false;
-            // 
-            // cmbBuscarpor
-            // 
-            this.cmbBuscarpor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBuscarpor.FormattingEnabled = true;
-            this.cmbBuscarpor.Items.AddRange(new object[] {
-            "Nombre",
-            "Teléfono",
-            "Correo"});
-            this.cmbBuscarpor.Location = new System.Drawing.Point(749, 78);
-            this.cmbBuscarpor.Name = "cmbBuscarpor";
-            this.cmbBuscarpor.Size = new System.Drawing.Size(120, 26);
-            this.cmbBuscarpor.TabIndex = 33;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(746, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 18);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "Buscar por:";
             // 
             // frmClientes
             // 
