@@ -161,9 +161,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Capa_Logica\Capa_Logica.csproj">
       <Project>{1eae787b-2b68-48a0-b1bb-21ff4791de00}</Project>
       <Name>Capa_Logica</Name>

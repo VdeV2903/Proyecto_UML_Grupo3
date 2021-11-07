@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Capa_Logica;
 
 namespace Capa_Diseño
 {
@@ -17,17 +18,21 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
-
+        
         private void frmClientes_Load(object sender, EventArgs e)
         {
+            
             dtgLista.RowHeadersVisible = false;
             dtgEditar.RowHeadersVisible = false;
             
-            cmbFiltro.SelectedIndex = 0;
+            cmbEstado.SelectedIndex = 0;
+            cmbBuscarpor.SelectedIndex = 0;
             cmbEditar.SelectedIndex = 0;
 
             renovaredit();
+            llenarLista();
         }
+
         public void renovarinsercion()
         {
             txtNombre.Clear();
@@ -107,6 +112,32 @@ namespace Capa_Diseño
         private void ckEmail_Click(object sender, EventArgs e)
         {
             desbloqueartxt();
+        }
+
+        public void llenarLista()
+        {
+            Clientes cl = new Clientes();
+            cl.Word = txtBuscar.Text;
+            cl.Estado = cmbEstado.SelectedItem.ToString();
+            if(cmbBuscarpor.SelectedItem.ToString() == "Nombre")
+            {
+                cl.Busquedapor = 1;
+            }
+            else if(cmbBuscarpor.SelectedItem.ToString() == "Teléfono")
+            {
+                cl.Busquedapor = 2;
+            }
+            else if(cmbBuscarpor.SelectedItem.ToString() == "Correo")
+            {
+                cl.Busquedapor = 3;
+            }
+
+            dtgLista.DataSource = cl.ObtenerClientes();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            llenarLista();
         }
     }
 }

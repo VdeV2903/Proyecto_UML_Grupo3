@@ -34,7 +34,7 @@ namespace Capa_Diseño
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgLista = new System.Windows.Forms.DataGridView();
@@ -70,6 +70,8 @@ namespace Capa_Diseño
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.cmbBuscarpor = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,9 +102,11 @@ namespace Capa_Diseño
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.cmbBuscarpor);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.cmbFiltro);
+            this.tabPage1.Controls.Add(this.cmbEstado);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.dtgLista);
@@ -119,9 +123,9 @@ namespace Capa_Diseño
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(875, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 18);
+            this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Filtros:";
+            this.label1.Text = "Estado:";
             // 
             // label6
             // 
@@ -135,23 +139,23 @@ namespace Capa_Diseño
             this.label6.TabIndex = 27;
             this.label6.Text = "Listado de Clientes";
             // 
-            // cmbFiltro
+            // cmbEstado
             // 
-            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "Nombre",
-            "Teléfono",
-            "Correo"});
-            this.cmbFiltro.Location = new System.Drawing.Point(878, 78);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(120, 26);
-            this.cmbFiltro.TabIndex = 30;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "TODOS",
+            "ACTIVO",
+            "INACTIVO"});
+            this.cmbEstado.Location = new System.Drawing.Point(878, 78);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(120, 26);
+            this.cmbEstado.TabIndex = 30;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(540, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(411, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,10 +164,11 @@ namespace Capa_Diseño
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(565, 78);
+            this.txtBuscar.Location = new System.Drawing.Point(436, 78);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(307, 24);
             this.txtBuscar.TabIndex = 28;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dtgLista
             // 
@@ -510,6 +515,28 @@ namespace Capa_Diseño
             this.pictureBox4.TabIndex = 42;
             this.pictureBox4.TabStop = false;
             // 
+            // cmbBuscarpor
+            // 
+            this.cmbBuscarpor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarpor.FormattingEnabled = true;
+            this.cmbBuscarpor.Items.AddRange(new object[] {
+            "Nombre",
+            "Teléfono",
+            "Correo"});
+            this.cmbBuscarpor.Location = new System.Drawing.Point(749, 78);
+            this.cmbBuscarpor.Name = "cmbBuscarpor";
+            this.cmbBuscarpor.Size = new System.Drawing.Size(120, 26);
+            this.cmbBuscarpor.TabIndex = 33;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(746, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 18);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Buscar por:";
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,7 +581,7 @@ namespace Capa_Diseño
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TabPage tabPage3;
@@ -583,5 +610,7 @@ namespace Capa_Diseño
         private System.Windows.Forms.CheckBox ckEmail;
         private System.Windows.Forms.CheckBox ckNombre;
         private System.Windows.Forms.CheckBox ckTodo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbBuscarpor;
     }
 }
