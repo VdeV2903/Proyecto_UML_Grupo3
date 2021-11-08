@@ -7,25 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.Model
+namespace CapaDatos.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuarios
+    public partial class Cotizaciones
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
+        public Cotizaciones()
         {
-            this.Empleados = new HashSet<Empleados>();
+            this.Productos_Cotizaciones = new HashSet<Productos_Cotizaciones>();
         }
     
-        public int ID_Usuario { get; set; }
-        public string Usuario { get; set; }
-        public byte[] Contrasenia { get; set; }
-        public string Estatus { get; set; }
+        public int ID_Cotizacion { get; set; }
+        public string Codigo_Cotizacion { get; set; }
+        public System.DateTime Fecha_Cotización { get; set; }
+        public decimal Sub_Total { get; set; }
+        public decimal Impuestos { get; set; }
+        public decimal Total { get; set; }
+        public int ID_Empleado { get; set; }
+        public int ID_Cliente { get; set; }
     
+        public virtual Clientes Clientes { get; set; }
+        public virtual Empleados Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleados> Empleados { get; set; }
+        public virtual ICollection<Productos_Cotizaciones> Productos_Cotizaciones { get; set; }
     }
 }

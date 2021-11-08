@@ -55,7 +55,7 @@ namespace Capa_Diseño
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(380, 236);
+            this.btnLogin.Location = new System.Drawing.Point(374, 236);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(309, 45);
             this.btnLogin.TabIndex = 0;
@@ -89,7 +89,7 @@ namespace Capa_Diseño
             // 
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(424, 110);
+            this.txtUsuario.Location = new System.Drawing.Point(404, 110);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(249, 23);
             this.txtUsuario.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace Capa_Diseño
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(424, 166);
+            this.txtPassword.Location = new System.Drawing.Point(404, 166);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 23);
             this.txtPassword.TabIndex = 7;
@@ -115,7 +115,7 @@ namespace Capa_Diseño
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(425, 34);
+            this.label1.Location = new System.Drawing.Point(444, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 25);
             this.label1.TabIndex = 8;
@@ -136,16 +136,16 @@ namespace Capa_Diseño
             // lineShape2
             // 
             this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 424;
-            this.lineShape2.X2 = 673;
+            this.lineShape2.X1 = 402;
+            this.lineShape2.X2 = 651;
             this.lineShape2.Y1 = 137;
             this.lineShape2.Y2 = 137;
             // 
             // lineShape1
             // 
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 427;
-            this.lineShape1.X2 = 673;
+            this.lineShape1.X1 = 403;
+            this.lineShape1.X2 = 649;
             this.lineShape1.Y1 = 195;
             this.lineShape1.Y2 = 195;
             // 
@@ -173,7 +173,7 @@ namespace Capa_Diseño
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(283, 58);
+            this.button1.Location = new System.Drawing.Point(287, 110);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 38);
             this.button1.TabIndex = 12;
@@ -187,7 +187,6 @@ namespace Capa_Diseño
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(780, 330);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.label1);
@@ -195,6 +194,7 @@ namespace Capa_Diseño
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";

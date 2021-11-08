@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using CapaDatos.Model;
+using CapaDatos.Models;
 
 
 namespace Capa_Diseño
@@ -19,15 +19,21 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
-        Tec_Shop_UMLG3Entities3 db = new Tec_Shop_UMLG3Entities3();
+        int carga = 0;
+        Tec_Shop_UMLG3Entities db = new Tec_Shop_UMLG3Entities();
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            
+            carga = 0;
             dtgLista.RowHeadersVisible = false;
             dtgEditar.RowHeadersVisible = false;
-            
 
-            renovaredit();
+            dtgLista.DataSource = cl.ListaClientes("", "TODOS");
+            dtgEditar.DataSource = cl.ListaClientes("", "TODOS");
+            lblOK.Visible = false;
+            cmbEstado.SelectedIndex = 0;
+            cmbEditar.SelectedIndex = 0;
+            carga = 1;
+            
             
         }
 
@@ -112,44 +118,77 @@ namespace Capa_Diseño
             desbloqueartxt();
         }
 
+        CapaDatos.Clientes cl = new CapaDatos.Clientes();
         public void llenarLista()
         {
             string word = "", estado = "";
-            int busquedapor = 0;
-            CapaDatos.Clientes cl = new CapaDatos.Clientes();
+                     
             word = txtBuscar.Text;
             estado = cmbEstado.SelectedItem.ToString();
-            if(cmbBuscarpor.SelectedItem.ToString() == "Nombre")
-            {
-                busquedapor = 1;
-            }
-            else if(cmbBuscarpor.SelectedItem.ToString() == "Teléfono")
-            {
-                busquedapor = 2;
-            }
-            else if(cmbBuscarpor.SelectedItem.ToString() == "Correo")
-            {
-                busquedapor = 3;
-            }
-
-            dtgLista.DataSource = cl.ListaClientes(word, estado, busquedapor);
+            
+            dtgLista.DataSource = cl.ListaClientes(word, estado);
 
 
         }
+        string nombre = "";
+        string telefono = "";
+        string correo = "";
+        public void anadircliente()
+        {
+            nombre = txtNombre.Text;
+            telefono = txtTelefono.Text;
+            correo = txtEmail.Text;
 
+            cl.insertarCliente(this.nombre,this.telefono,this.correo);
+        }
+        public void limpiaranadir()
+        {
+            txtNombre.Clear();
+            txtTelefono.Clear();
+            txtEmail.Clear();
+        }
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             llenarLista();
         }
 
-        private void cmbBuscarpor_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbBuscarpor_SelectedValueChanged(object sender, EventArgs e)
         {
-            llenarLista();
+            if (carga == 1)
+            {
+                llenarLista();
+            }
         }
 
-        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbEstado_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (carga == 1)
+            {
+                llenarLista();
+            }
+        }
+
+        private void btnGuardarCliente_Click(object sender, EventArgs e)
+        {
+            anadircliente();
+            limpiaranadir();
             llenarLista();
+            lblOK.Visible = true;
+        }
+
+        private void txtNombre_Click(object sender, EventArgs e)
+        {
+            lblOK.Visible = false;
+        }
+
+        private void txtTelefono_Click(object sender, EventArgs e)
+        {
+            lblOK.Visible = false;
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            lblOK.Visible = false;
         }
     }
 }

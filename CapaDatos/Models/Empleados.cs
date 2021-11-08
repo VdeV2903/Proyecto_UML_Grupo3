@@ -7,37 +7,39 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.Model
+namespace CapaDatos.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Ventas
+    public partial class Empleados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ventas()
+        public Empleados()
         {
+            this.Cotizaciones = new HashSet<Cotizaciones>();
             this.DocumentosFiscales = new HashSet<DocumentosFiscales>();
-            this.Productos_Ventas = new HashSet<Productos_Ventas>();
+            this.Reportes = new HashSet<Reportes>();
+            this.Ventas = new HashSet<Ventas>();
         }
     
-        public int ID_Venta { get; set; }
-        public string Codigo_Venta { get; set; }
-        public System.DateTime Fecha_Venta { get; set; }
-        public decimal Sub_Total { get; set; }
-        public decimal Impuestos { get; set; }
-        public decimal Total { get; set; }
-        public decimal Adeudo { get; set; }
-        public Nullable<System.DateTime> Fecha_Pago_Adeudo { get; set; }
-        public decimal Pagado_Actual { get; set; }
         public int ID_Empleado { get; set; }
-        public int ID_Cliente { get; set; }
+        public string Carnet_Empleado { get; set; }
+        public string Nombre_Empleado { get; set; }
+        public string Apellidos_Empleado { get; set; }
+        public string Telefono_Empleado { get; set; }
+        public string Correo_Empleado { get; set; }
+        public string Roll { get; set; }
+        public int ID_Usuario { get; set; }
     
-        public virtual Clientes Clientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cotizaciones> Cotizaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DocumentosFiscales> DocumentosFiscales { get; set; }
-        public virtual Empleados Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Productos_Ventas> Productos_Ventas { get; set; }
+        public virtual ICollection<Reportes> Reportes { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }

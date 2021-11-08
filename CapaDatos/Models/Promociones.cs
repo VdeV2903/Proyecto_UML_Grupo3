@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.Model
+namespace CapaDatos.Models
 {
     using System;
     using System.Collections.Generic;

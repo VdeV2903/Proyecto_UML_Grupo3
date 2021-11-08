@@ -54,93 +54,86 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes.cs" />
-    <Compile Include="Model\Categorias.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Categorias.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Clientes.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Clientes.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Cotizaciones.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Cotizaciones.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DocumentosFiscales.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\DocumentosFiscales.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Empleados.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Empleados.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelDB.Context.cs">
+    <Compile Include="Models\ModelBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.Context.tt</DependentUpon>
+      <DependentUpon>ModelBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelDB.cs">
+    <Compile Include="Models\ModelBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelDB.Designer.cs">
+    <Compile Include="Models\ModelBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>ModelBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Productos.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Productos.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Productos_Cotizaciones.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Productos_Cotizaciones.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Productos_Ventas.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Productos_Ventas.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Promociones.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Promociones.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Reportes.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Reportes.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\Ventas.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Usuarios.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Ventas.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\VerClientes_Result.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+    <Compile Include="Models\VerClientes_Result.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model\ModelDB.edmx">
+    <EntityDeploy Include="Models\ModelBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\ModelDB.edmx.diagram">
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+    <None Include="Models\ModelBD.edmx.diagram">
+      <DependentUpon>ModelBD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\ModelDB.Context.tt">
+    <Content Include="Models\ModelBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>ModelBD.edmx</DependentUpon>
+      <LastGenOutput>ModelBD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\ModelDB.tt">
+    <Content Include="Models\ModelBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
-      <LastGenOutput>ModelDB.cs</LastGenOutput>
+      <DependentUpon>ModelBD.edmx</DependentUpon>
+      <LastGenOutput>ModelBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

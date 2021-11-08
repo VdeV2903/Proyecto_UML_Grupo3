@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\V de Venganza\source\repos\Proyecto_UML_Grupo3\CapaDatos\Model\ModelDB.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\V de Venganza\source\repos\Proyecto_UML_Grupo3\CapaDatos\Models\ModelBD.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

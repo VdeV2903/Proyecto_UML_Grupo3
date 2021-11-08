@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.Model
+namespace CapaDatos.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Productos_Ventas
+    public partial class Productos_Cotizaciones
     {
-        public int ID_ProductosVenta { get; set; }
-        public int ID_Venta { get; set; }
+        public int ID_ProductoCotizacion { get; set; }
+        public int ID_Cotizacion { get; set; }
         public int ID_Producto { get; set; }
         public int Cantidad_Producto { get; set; }
         public decimal Total_Producto { get; set; }
     
+        public virtual Cotizaciones Cotizaciones { get; set; }
         public virtual Productos Productos { get; set; }
-        public virtual Ventas Ventas { get; set; }
     }
 }
