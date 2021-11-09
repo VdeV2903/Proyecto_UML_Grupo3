@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using CapaDatos.Models;
+using Capa_Datos;
+
 
 
 namespace Capa_Diseño
@@ -20,21 +21,25 @@ namespace Capa_Diseño
             InitializeComponent();
         }
         int carga = 0;
-        Tec_Shop_UMLG3Entities db = new Tec_Shop_UMLG3Entities();
+       
         private void frmClientes_Load(object sender, EventArgs e)
         {
             carga = 0;
             dtgLista.RowHeadersVisible = false;
             dtgEditar.RowHeadersVisible = false;
 
+
+            renovaredit();
             dtgLista.DataSource = cl.ListaClientes("", "TODOS");
             dtgEditar.DataSource = cl.ListaClientes("", "TODOS");
             lblOK.Visible = false;
             cmbEstado.SelectedIndex = 0;
             cmbEditar.SelectedIndex = 0;
+            cmbEstadoEdit.SelectedIndex = 0;
+            
             carga = 1;
-            
-            
+
+
         }
 
         public void renovarinsercion()
@@ -63,10 +68,12 @@ namespace Capa_Diseño
                 ckNombre.Checked = true;
                 ckTelefono.Checked = true;
                 ckEmail.Checked = true;
+                ckEstado.Checked = true;
             }else{
                 ckNombre.Checked = false;
                 ckTelefono.Checked = false;
                 ckEmail.Checked = false;
+                ckEstado.Checked = false;
             }
         }
         public void desbloqueartxt()
@@ -98,6 +105,15 @@ namespace Capa_Diseño
                 txtEmailEdit.Enabled = false;
                 ckTodo.Checked = false;
             }
+            if (ckEstado.Checked == true)
+            {
+                cmbEstadoEdit.Enabled = true;
+            }
+            else
+            {
+                cmbEstadoEdit.Enabled = false;
+                ckTodo.Checked = false;
+            }
 
         }
         private void ckTodo_Click(object sender, EventArgs e)
@@ -118,7 +134,7 @@ namespace Capa_Diseño
             desbloqueartxt();
         }
 
-        CapaDatos.Clientes cl = new CapaDatos.Clientes();
+        Capa_Datos.Clientes cl = new Clientes();
         public void llenarLista()
         {
             string word = "", estado = "";
@@ -167,7 +183,13 @@ namespace Capa_Diseño
                 llenarLista();
             }
         }
-
+        private void cmbEstadoEdit_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (carga == 1)
+            {
+                llenarLista();
+            }
+        }
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             anadircliente();
@@ -190,5 +212,17 @@ namespace Capa_Diseño
         {
             lblOK.Visible = false;
         }
+        int row = 0;
+        private void dtgEditar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            row = dtgEditar.CurrentRow.Index;
+
+            txtNombreEdit.Text = dtgEditar.Rows[row].Cells[0].Value.ToString();
+            txtTelefonoEdit.Text = dtgEditar.Rows[row].Cells[1].Value.ToString();
+            txtEmailEdit.Text = dtgEditar.Rows[row].Cells[2].Value.ToString();
+            cmbEstadoEdit.SelectedItem = dtgEditar.Rows[row].Cells[3].Value.ToString();
+        }
+
+        
     }
 }

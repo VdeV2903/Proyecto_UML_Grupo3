@@ -893,10 +893,10 @@
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="VerClientes_Result">
-          <Property Type="String" Name="Nombre_Cliente" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Telefono_Cliente" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="Correo_Cliente" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Estatus" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="25" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1068,10 +1068,10 @@
           <FunctionImportMapping FunctionImportName="VerClientes" FunctionName="Tec_Shop_UMLG3Model.Store.VerClientes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Tec_Shop_UMLG3Model.VerClientes_Result">
-                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
-                <ScalarProperty Name="Telefono_Cliente" ColumnName="Telefono_Cliente" />
-                <ScalarProperty Name="Correo_Cliente" ColumnName="Correo_Cliente" />
-                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

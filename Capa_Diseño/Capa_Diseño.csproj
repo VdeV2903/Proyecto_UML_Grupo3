@@ -173,8 +173,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\Capa_Datos.csproj">
-      <Project>{29b9b8a6-0e7e-4854-8021-e946d17102a0}</Project>
+    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
+      <Project>{e5819fcd-e1f1-461c-9385-c138674af15c}</Project>
       <Name>Capa_Datos</Name>
     </ProjectReference>
   </ItemGroup>
