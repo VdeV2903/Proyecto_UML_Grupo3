@@ -20,8 +20,13 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
+        //VARIABLES
         int carga = 0;
-       
+        string nombre = "";
+        string telefono = "";
+        string correo = "";
+        string nombreEdit, teleEdit, correoEdit, estadoEdit;
+
         private void frmClientes_Load(object sender, EventArgs e)
         {
             carga = 0;
@@ -33,6 +38,7 @@ namespace Capa_Diseño
             dtgLista.DataSource = cl.ListaClientes("", "TODOS");
             dtgEditar.DataSource = cl.ListaClientes("", "TODOS");
             lblOK.Visible = false;
+            cmbEstadoEdit.Enabled = false;
             cmbEstado.SelectedIndex = 0;
             cmbEditar.SelectedIndex = 0;
             cmbEstadoEdit.SelectedIndex = 0;
@@ -133,6 +139,10 @@ namespace Capa_Diseño
         {
             desbloqueartxt();
         }
+        private void ckEstado_Click(object sender, EventArgs e)
+        {
+            desbloqueartxt();
+        }
 
         Capa_Datos.Clientes cl = new Clientes();
         public void llenarLista()
@@ -146,16 +156,13 @@ namespace Capa_Diseño
 
 
         }
-        string nombre = "";
-        string telefono = "";
-        string correo = "";
+        int cmp = 0;
         public void anadircliente()
         {
-            nombre = txtNombre.Text;
-            telefono = txtTelefono.Text;
-            correo = txtEmail.Text;
+            
+            cl.insertarCliente(this.nombre, this.telefono, this.correo);
 
-            cl.insertarCliente(this.nombre,this.telefono,this.correo);
+
         }
         public void limpiaranadir()
         {
@@ -192,10 +199,32 @@ namespace Capa_Diseño
         }
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
-            anadircliente();
-            limpiaranadir();
-            llenarLista();
-            lblOK.Visible = true;
+            nombre = txtNombre.Text;
+            telefono = txtTelefono.Text;
+            correo = txtEmail.Text;
+
+            cmp = cl.verificarCliente(nombre,correo);
+
+            MessageBox.Show(cmp.ToString());
+            if (cmp == 0)
+            {
+                anadircliente();
+                
+                lblOK.Text = "Cliente Añadido con Exito";
+                lblOK.ForeColor = Color.Green;
+                lblOK.Visible = true;
+
+                limpiaranadir();
+                llenarLista();
+            }
+            else if(cmp > 0)
+            {
+                lblOK.Text = "Al Parecer Existe este Cliente";
+                lblOK.ForeColor = Color.Red;
+                lblOK.Visible = true;
+            }
+            
+            
         }
 
         private void txtNombre_Click(object sender, EventArgs e)
@@ -213,16 +242,62 @@ namespace Capa_Diseño
             lblOK.Visible = false;
         }
         int row = 0;
+        int IDCliente = 0;
+        string nombrecliente = "";
+        string correop = "";
         private void dtgEditar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             row = dtgEditar.CurrentRow.Index;
+            nombrecliente = dtgEditar.Rows[row].Cells[0].Value.ToString();
 
             txtNombreEdit.Text = dtgEditar.Rows[row].Cells[0].Value.ToString();
             txtTelefonoEdit.Text = dtgEditar.Rows[row].Cells[1].Value.ToString();
-            txtEmailEdit.Text = dtgEditar.Rows[row].Cells[2].Value.ToString();
+            correop = dtgEditar.Rows[row].Cells[2].Value.ToString();
+            txtEmailEdit.Text = correop;
             cmbEstadoEdit.SelectedItem = dtgEditar.Rows[row].Cells[3].Value.ToString();
+
+            IDCliente = Convert.ToInt32(cl.traerID(nombrecliente,correop));
+            MessageBox.Show(IDCliente.ToString() + correop);
+        }
+        public void llenareditar()
+        {
+            string word = "", estado = "";
+
+            word = txtBuscarEdit.Text;
+            estado = cmbEditar.SelectedItem.ToString();
+
+            dtgEditar.DataSource = cl.ListaClientes(word, estado);
+
+            
         }
 
         
+
+        private void txtBuscarEdit_TextChanged(object sender, EventArgs e)
+        {
+            llenareditar();
+        }
+
+        private void cmbEditar_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (carga == 1)
+            {
+                llenareditar();
+            }
+        }
+        
+        
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            nombreEdit = txtNombreEdit.Text;
+            teleEdit = txtTelefonoEdit.Text;
+            correoEdit = txtEmailEdit.Text;
+            estadoEdit = cmbEstadoEdit.SelectedItem.ToString();
+
+            cl.ActualizarCliente(IDCliente, nombreEdit, teleEdit, correoEdit,estadoEdit);
+
+            llenareditar();
+        }
     }
 }

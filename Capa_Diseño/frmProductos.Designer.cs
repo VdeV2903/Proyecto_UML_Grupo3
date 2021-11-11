@@ -347,7 +347,7 @@ namespace Capa_Diseño
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(459, 26);
+            this.label9.Location = new System.Drawing.Point(460, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 18);
             this.label9.TabIndex = 53;

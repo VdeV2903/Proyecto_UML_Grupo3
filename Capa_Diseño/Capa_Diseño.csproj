@@ -95,6 +95,24 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrincipalAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalAdmin.Designer.cs">
+      <DependentUpon>frmPrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipalGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalGerente.Designer.cs">
+      <DependentUpon>frmPrincipalGerente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipalVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalVendedor.Designer.cs">
+      <DependentUpon>frmPrincipalVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>

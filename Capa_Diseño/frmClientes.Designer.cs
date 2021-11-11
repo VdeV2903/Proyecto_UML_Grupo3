@@ -52,10 +52,13 @@ namespace Capa_Diseño
             this.label11 = new System.Windows.Forms.Label();
             this.cmbEditar = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBuscarEdit = new System.Windows.Forms.TextBox();
             this.dtgEditar = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckEstado = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbEstadoEdit = new System.Windows.Forms.ComboBox();
             this.ckTodo = new System.Windows.Forms.CheckBox();
             this.ckTelefono = new System.Windows.Forms.CheckBox();
             this.ckEmail = new System.Windows.Forms.CheckBox();
@@ -68,9 +71,6 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.cmbEstadoEdit = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ckEstado = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -166,10 +166,13 @@ namespace Capa_Diseño
             // 
             // dtgLista
             // 
+            this.dtgLista.AllowUserToAddRows = false;
+            this.dtgLista.AllowUserToResizeRows = false;
             this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLista.Location = new System.Drawing.Point(69, 110);
+            this.dtgLista.MultiSelect = false;
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
             this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -201,9 +204,9 @@ namespace Capa_Diseño
             this.lblOK.ForeColor = System.Drawing.Color.ForestGreen;
             this.lblOK.Location = new System.Drawing.Point(432, 290);
             this.lblOK.Name = "lblOK";
-            this.lblOK.Size = new System.Drawing.Size(201, 18);
+            this.lblOK.Size = new System.Drawing.Size(26, 18);
             this.lblOK.TabIndex = 38;
-            this.lblOK.Text = "Cliente Añadido con Exito";
+            this.lblOK.Text = "---";
             // 
             // btnGuardarCliente
             // 
@@ -285,7 +288,7 @@ namespace Capa_Diseño
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.cmbEditar);
             this.tabPage3.Controls.Add(this.pictureBox5);
-            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.txtBuscarEdit);
             this.tabPage3.Controls.Add(this.dtgEditar);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.groupBox1);
@@ -320,6 +323,7 @@ namespace Capa_Diseño
             this.cmbEditar.Name = "cmbEditar";
             this.cmbEditar.Size = new System.Drawing.Size(120, 26);
             this.cmbEditar.TabIndex = 47;
+            this.cmbEditar.SelectedValueChanged += new System.EventHandler(this.cmbEditar_SelectedValueChanged);
             // 
             // pictureBox5
             // 
@@ -331,19 +335,23 @@ namespace Capa_Diseño
             this.pictureBox5.TabIndex = 46;
             this.pictureBox5.TabStop = false;
             // 
-            // textBox7
+            // txtBuscarEdit
             // 
-            this.textBox7.Location = new System.Drawing.Point(600, 74);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(307, 24);
-            this.textBox7.TabIndex = 45;
+            this.txtBuscarEdit.Location = new System.Drawing.Point(600, 74);
+            this.txtBuscarEdit.Name = "txtBuscarEdit";
+            this.txtBuscarEdit.Size = new System.Drawing.Size(307, 24);
+            this.txtBuscarEdit.TabIndex = 45;
+            this.txtBuscarEdit.TextChanged += new System.EventHandler(this.txtBuscarEdit_TextChanged);
             // 
             // dtgEditar
             // 
+            this.dtgEditar.AllowUserToAddRows = false;
+            this.dtgEditar.AllowUserToResizeRows = false;
             this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEditar.Location = new System.Drawing.Point(436, 104);
+            this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";
             this.dtgEditar.ReadOnly = true;
             this.dtgEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -381,6 +389,39 @@ namespace Capa_Diseño
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
+            // 
+            // ckEstado
+            // 
+            this.ckEstado.AutoSize = true;
+            this.ckEstado.Location = new System.Drawing.Point(288, 223);
+            this.ckEstado.Name = "ckEstado";
+            this.ckEstado.Size = new System.Drawing.Size(71, 22);
+            this.ckEstado.TabIndex = 65;
+            this.ckEstado.Text = "Editar";
+            this.ckEstado.UseVisualStyleBackColor = true;
+            this.ckEstado.Click += new System.EventHandler(this.ckEstado_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 18);
+            this.label12.TabIndex = 64;
+            this.label12.Text = "Estado:";
+            // 
+            // cmbEstadoEdit
+            // 
+            this.cmbEstadoEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoEdit.FormattingEnabled = true;
+            this.cmbEstadoEdit.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cmbEstadoEdit.Location = new System.Drawing.Point(19, 223);
+            this.cmbEstadoEdit.Name = "cmbEstadoEdit";
+            this.cmbEstadoEdit.Size = new System.Drawing.Size(234, 26);
+            this.cmbEstadoEdit.TabIndex = 63;
+            this.cmbEstadoEdit.SelectedValueChanged += new System.EventHandler(this.cmbEstadoEdit_SelectedValueChanged);
             // 
             // ckTodo
             // 
@@ -499,40 +540,9 @@ namespace Capa_Diseño
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(185, 48);
             this.btnActualizar.TabIndex = 39;
-            this.btnActualizar.Text = "GUARDAR";
+            this.btnActualizar.Text = "GUARDAR CAMBIOS";
             this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // cmbEstadoEdit
-            // 
-            this.cmbEstadoEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoEdit.FormattingEnabled = true;
-            this.cmbEstadoEdit.Items.AddRange(new object[] {
-            "ACTIVO",
-            "INACTIVO"});
-            this.cmbEstadoEdit.Location = new System.Drawing.Point(19, 223);
-            this.cmbEstadoEdit.Name = "cmbEstadoEdit";
-            this.cmbEstadoEdit.Size = new System.Drawing.Size(234, 26);
-            this.cmbEstadoEdit.TabIndex = 63;
-            this.cmbEstadoEdit.SelectedValueChanged += new System.EventHandler(this.cmbEstadoEdit_SelectedValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 202);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 18);
-            this.label12.TabIndex = 64;
-            this.label12.Text = "Estado:";
-            // 
-            // ckEstado
-            // 
-            this.ckEstado.AutoSize = true;
-            this.ckEstado.Location = new System.Drawing.Point(288, 223);
-            this.ckEstado.Name = "ckEstado";
-            this.ckEstado.Size = new System.Drawing.Size(71, 22);
-            this.ckEstado.TabIndex = 65;
-            this.ckEstado.Text = "Editar";
-            this.ckEstado.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // frmClientes
             // 
@@ -590,7 +600,7 @@ namespace Capa_Diseño
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbEditar;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBuscarEdit;
         private System.Windows.Forms.TextBox txtEmailEdit;
         private System.Windows.Forms.TextBox txtTelefonoEdit;
         private System.Windows.Forms.TextBox txtNombreEdit;
