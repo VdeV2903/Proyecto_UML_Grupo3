@@ -296,7 +296,7 @@ namespace Capa_Diseño
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1062, 596);
+            this.tabPage1.Size = new System.Drawing.Size(1063, 596);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
@@ -343,10 +343,10 @@ namespace Capa_Diseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 620);
+            this.ClientSize = new System.Drawing.Size(1066, 626);
             this.Controls.Add(this.tabControl1);
-            this.MaximumSize = new System.Drawing.Size(1085, 659);
-            this.MinimumSize = new System.Drawing.Size(1085, 659);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1066, 626);
             this.Name = "frmVentas";
             this.Text = "Ventas";
             this.tabControl1.ResumeLayout(false);

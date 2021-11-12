@@ -548,10 +548,11 @@ namespace Capa_Diseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 620);
+            this.ClientSize = new System.Drawing.Size(1066, 626);
             this.Controls.Add(this.tabControl1);
-            this.MaximumSize = new System.Drawing.Size(1085, 659);
-            this.MinimumSize = new System.Drawing.Size(1085, 659);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1066, 626);
+            this.MinimumSize = new System.Drawing.Size(1066, 626);
             this.Name = "frmClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.frmClientes_Load);
