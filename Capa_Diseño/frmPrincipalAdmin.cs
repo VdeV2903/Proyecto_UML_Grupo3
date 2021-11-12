@@ -60,15 +60,31 @@ namespace Capa_Diseño
         {
             AbrirFormulario<frmClientes>();
         }
-
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmVentas>();
         }
-
         private void btnProductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmProductos>();
         }
+        private void btnCotizaciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmCotizaciones>();
+        }
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmEmpleados>();
+        }
+
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmDocumentosFiscales>();
+        }
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmReportes>();
+        }
+        
     }
 }

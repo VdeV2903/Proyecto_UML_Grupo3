@@ -90,10 +90,10 @@ namespace Capa_Diseño
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(74, 25);
-            this.tabControl1.Location = new System.Drawing.Point(2, -2);
+            this.tabControl1.Location = new System.Drawing.Point(-4, -3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(969, 451);
+            this.tabControl1.Size = new System.Drawing.Size(1072, 630);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -108,14 +108,14 @@ namespace Capa_Diseño
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(961, 418);
+            this.tabPage1.Size = new System.Drawing.Size(1064, 597);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(821, 37);
+            this.label1.Location = new System.Drawing.Point(862, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 32;
@@ -127,7 +127,7 @@ namespace Capa_Diseño
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(415, 18);
+            this.label6.Location = new System.Drawing.Point(432, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 20);
             this.label6.TabIndex = 27;
@@ -141,7 +141,7 @@ namespace Capa_Diseño
             "Nombre",
             "Teléfono",
             "Correo"});
-            this.cmbFiltro.Location = new System.Drawing.Point(824, 58);
+            this.cmbFiltro.Location = new System.Drawing.Point(865, 88);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(120, 26);
             this.cmbFiltro.TabIndex = 30;
@@ -149,7 +149,7 @@ namespace Capa_Diseño
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(486, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(527, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,7 +158,7 @@ namespace Capa_Diseño
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(511, 58);
+            this.txtBuscar.Location = new System.Drawing.Point(552, 88);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(307, 24);
             this.txtBuscar.TabIndex = 28;
@@ -167,7 +167,7 @@ namespace Capa_Diseño
             // 
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgLista.Location = new System.Drawing.Point(15, 88);
+            this.dtgLista.Location = new System.Drawing.Point(56, 120);
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
             this.dtgLista.Size = new System.Drawing.Size(929, 307);
@@ -188,14 +188,14 @@ namespace Capa_Diseño
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(961, 418);
+            this.tabPage2.Size = new System.Drawing.Size(1062, 597);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Empleado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(363, 169);
+            this.txtApellidos.Location = new System.Drawing.Point(381, 218);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(234, 24);
             this.txtApellidos.TabIndex = 39;
@@ -203,7 +203,7 @@ namespace Capa_Diseño
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(360, 148);
+            this.label12.Location = new System.Drawing.Point(378, 197);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(156, 18);
             this.label12.TabIndex = 38;
@@ -216,7 +216,7 @@ namespace Capa_Diseño
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(338, 324);
+            this.btnLogin.Location = new System.Drawing.Point(356, 373);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(309, 45);
             this.btnLogin.TabIndex = 37;
@@ -226,7 +226,7 @@ namespace Capa_Diseño
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(428, 46);
+            this.label4.Location = new System.Drawing.Point(446, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 18);
             this.label4.TabIndex = 36;
@@ -234,21 +234,21 @@ namespace Capa_Diseño
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(363, 274);
+            this.txtEmail.Location = new System.Drawing.Point(381, 323);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 24);
             this.txtEmail.TabIndex = 32;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(363, 219);
+            this.txtTelefono.Location = new System.Drawing.Point(381, 268);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(234, 24);
             this.txtTelefono.TabIndex = 31;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(363, 119);
+            this.txtNombre.Location = new System.Drawing.Point(381, 168);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(234, 24);
             this.txtNombre.TabIndex = 30;
@@ -256,7 +256,7 @@ namespace Capa_Diseño
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(360, 253);
+            this.label5.Location = new System.Drawing.Point(378, 302);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 18);
             this.label5.TabIndex = 28;
@@ -265,7 +265,7 @@ namespace Capa_Diseño
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(360, 198);
+            this.label3.Location = new System.Drawing.Point(378, 247);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 18);
             this.label3.TabIndex = 27;
@@ -274,7 +274,7 @@ namespace Capa_Diseño
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 98);
+            this.label2.Location = new System.Drawing.Point(378, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 18);
             this.label2.TabIndex = 26;
@@ -294,7 +294,7 @@ namespace Capa_Diseño
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(961, 418);
+            this.tabPage3.Size = new System.Drawing.Size(1062, 597);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modificar Empleado";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@ namespace Capa_Diseño
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(819, 39);
+            this.label11.Location = new System.Drawing.Point(876, 102);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 18);
             this.label11.TabIndex = 48;
@@ -316,7 +316,7 @@ namespace Capa_Diseño
             "Nombre",
             "Teléfono",
             "Correo"});
-            this.cmbEditar.Location = new System.Drawing.Point(822, 60);
+            this.cmbEditar.Location = new System.Drawing.Point(879, 123);
             this.cmbEditar.Name = "cmbEditar";
             this.cmbEditar.Size = new System.Drawing.Size(120, 26);
             this.cmbEditar.TabIndex = 47;
@@ -324,7 +324,7 @@ namespace Capa_Diseño
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(484, 60);
+            this.pictureBox5.Location = new System.Drawing.Point(541, 123);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 20);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +333,7 @@ namespace Capa_Diseño
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(509, 60);
+            this.textBox7.Location = new System.Drawing.Point(566, 123);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(307, 24);
             this.textBox7.TabIndex = 45;
@@ -342,16 +342,16 @@ namespace Capa_Diseño
             // 
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEditar.Location = new System.Drawing.Point(387, 90);
+            this.dtgEditar.Location = new System.Drawing.Point(418, 153);
             this.dtgEditar.Name = "dtgEditar";
             this.dtgEditar.ReadOnly = true;
-            this.dtgEditar.Size = new System.Drawing.Size(555, 251);
+            this.dtgEditar.Size = new System.Drawing.Size(581, 251);
             this.dtgEditar.TabIndex = 44;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(401, 23);
+            this.label7.Location = new System.Drawing.Point(415, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 18);
             this.label7.TabIndex = 43;
@@ -372,7 +372,7 @@ namespace Capa_Diseño
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(12, 81);
+            this.groupBox1.Location = new System.Drawing.Point(43, 144);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(353, 260);
             this.groupBox1.TabIndex = 41;
@@ -393,7 +393,7 @@ namespace Capa_Diseño
             // ckEmail
             // 
             this.ckEmail.AutoSize = true;
-            this.ckEmail.Location = new System.Drawing.Point(251, 211);
+            this.ckEmail.Location = new System.Drawing.Point(276, 211);
             this.ckEmail.Name = "ckEmail";
             this.ckEmail.Size = new System.Drawing.Size(71, 22);
             this.ckEmail.TabIndex = 54;
@@ -404,7 +404,7 @@ namespace Capa_Diseño
             // ckTelefono
             // 
             this.ckTelefono.AutoSize = true;
-            this.ckTelefono.Location = new System.Drawing.Point(251, 163);
+            this.ckTelefono.Location = new System.Drawing.Point(276, 163);
             this.ckTelefono.Name = "ckTelefono";
             this.ckTelefono.Size = new System.Drawing.Size(71, 22);
             this.ckTelefono.TabIndex = 53;
@@ -415,7 +415,7 @@ namespace Capa_Diseño
             // ckApellidos
             // 
             this.ckApellidos.AutoSize = true;
-            this.ckApellidos.Location = new System.Drawing.Point(251, 115);
+            this.ckApellidos.Location = new System.Drawing.Point(276, 115);
             this.ckApellidos.Name = "ckApellidos";
             this.ckApellidos.Size = new System.Drawing.Size(71, 22);
             this.ckApellidos.TabIndex = 52;
@@ -426,7 +426,7 @@ namespace Capa_Diseño
             // ckNombre
             // 
             this.ckNombre.AutoSize = true;
-            this.ckNombre.Location = new System.Drawing.Point(251, 68);
+            this.ckNombre.Location = new System.Drawing.Point(276, 68);
             this.ckNombre.Name = "ckNombre";
             this.ckNombre.Size = new System.Drawing.Size(71, 22);
             this.ckNombre.TabIndex = 51;
@@ -438,21 +438,21 @@ namespace Capa_Diseño
             // 
             this.txtApellidosEdit.Location = new System.Drawing.Point(15, 113);
             this.txtApellidosEdit.Name = "txtApellidosEdit";
-            this.txtApellidosEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtApellidosEdit.Size = new System.Drawing.Size(255, 24);
             this.txtApellidosEdit.TabIndex = 50;
             // 
             // txtEmailEdit
             // 
             this.txtEmailEdit.Location = new System.Drawing.Point(15, 209);
             this.txtEmailEdit.Name = "txtEmailEdit";
-            this.txtEmailEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtEmailEdit.Size = new System.Drawing.Size(255, 24);
             this.txtEmailEdit.TabIndex = 41;
             // 
             // txtTelefonoEdit
             // 
             this.txtTelefonoEdit.Location = new System.Drawing.Point(15, 161);
             this.txtTelefonoEdit.Name = "txtTelefonoEdit";
-            this.txtTelefonoEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtTelefonoEdit.Size = new System.Drawing.Size(255, 24);
             this.txtTelefonoEdit.TabIndex = 40;
             // 
             // label13
@@ -468,7 +468,7 @@ namespace Capa_Diseño
             // 
             this.txtNombreEdit.Location = new System.Drawing.Point(15, 67);
             this.txtNombreEdit.Name = "txtNombreEdit";
-            this.txtNombreEdit.Size = new System.Drawing.Size(234, 24);
+            this.txtNombreEdit.Size = new System.Drawing.Size(255, 24);
             this.txtNombreEdit.TabIndex = 39;
             // 
             // label8
@@ -505,7 +505,7 @@ namespace Capa_Diseño
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(480, 356);
+            this.btnEliminar.Location = new System.Drawing.Point(510, 453);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(185, 48);
             this.btnEliminar.TabIndex = 40;
@@ -519,7 +519,7 @@ namespace Capa_Diseño
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizar.Location = new System.Drawing.Point(289, 356);
+            this.btnActualizar.Location = new System.Drawing.Point(319, 453);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(185, 48);
             this.btnActualizar.TabIndex = 39;
@@ -530,8 +530,11 @@ namespace Capa_Diseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 445);
+            this.ClientSize = new System.Drawing.Size(1066, 626);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1066, 626);
+            this.MinimumSize = new System.Drawing.Size(1066, 626);
             this.Name = "frmEmpleados";
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
