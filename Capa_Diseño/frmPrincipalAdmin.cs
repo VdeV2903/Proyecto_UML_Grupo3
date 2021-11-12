@@ -71,20 +71,18 @@ namespace Capa_Diseño
         private void btnCotizaciones_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmCotizaciones>();
+        }     
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmReportes>();
+        }
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmDocumentosFiscales>();
         }
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmEmpleados>();
         }
-
-        private void btnDocumentos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmDocumentosFiscales>();
-        }
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmReportes>();
-        }
-        
     }
 }

@@ -31,14 +31,15 @@ namespace Capa_Diseño
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalAdmin));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnDocumentos = new System.Windows.Forms.Button();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnPromociones = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnDocumentos = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnCotizaciones = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
@@ -56,11 +57,12 @@ namespace Capa_Diseño
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.panel2);
-            this.panelMenu.Controls.Add(this.button9);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnDocumentos);
             this.panelMenu.Controls.Add(this.btnEmpleados);
+            this.panelMenu.Controls.Add(this.btnPromociones);
+            this.panelMenu.Controls.Add(this.panel2);
+            this.panelMenu.Controls.Add(this.button9);
             this.panelMenu.Controls.Add(this.btnCotizaciones);
             this.panelMenu.Controls.Add(this.btnProductos);
             this.panelMenu.Controls.Add(this.btnVentas);
@@ -72,6 +74,88 @@ namespace Capa_Diseño
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(176, 626);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 416);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(176, 45);
+            this.btnReportes.TabIndex = 13;
+            this.btnReportes.Text = "    REPORTES";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            // 
+            // btnDocumentos
+            // 
+            this.btnDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
+            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDocumentos.FlatAppearance.BorderSize = 0;
+            this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocumentos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDocumentos.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentos.Image")));
+            this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocumentos.Location = new System.Drawing.Point(0, 371);
+            this.btnDocumentos.Name = "btnDocumentos";
+            this.btnDocumentos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDocumentos.Size = new System.Drawing.Size(176, 45);
+            this.btnDocumentos.TabIndex = 12;
+            this.btnDocumentos.Text = "    DOCUMENTOS";
+            this.btnDocumentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocumentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocumentos.UseVisualStyleBackColor = false;
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
+            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 326);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEmpleados.Size = new System.Drawing.Size(176, 45);
+            this.btnEmpleados.TabIndex = 11;
+            this.btnEmpleados.Text = "    EMPLEADOS";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmpleados.UseVisualStyleBackColor = false;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // btnPromociones
+            // 
+            this.btnPromociones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
+            this.btnPromociones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPromociones.FlatAppearance.BorderSize = 0;
+            this.btnPromociones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPromociones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromociones.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPromociones.Image = ((System.Drawing.Image)(resources.GetObject("btnPromociones.Image")));
+            this.btnPromociones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPromociones.Location = new System.Drawing.Point(0, 281);
+            this.btnPromociones.Name = "btnPromociones";
+            this.btnPromociones.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPromociones.Size = new System.Drawing.Size(176, 45);
+            this.btnPromociones.TabIndex = 10;
+            this.btnPromociones.Text = "    PROMOCIONES";
+            this.btnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPromociones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPromociones.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -135,69 +219,6 @@ namespace Capa_Diseño
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = false;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 371);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(176, 45);
-            this.btnReportes.TabIndex = 8;
-            this.btnReportes.Text = "    REPORTES";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = false;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnDocumentos
-            // 
-            this.btnDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
-            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDocumentos.FlatAppearance.BorderSize = 0;
-            this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocumentos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDocumentos.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentos.Image")));
-            this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentos.Location = new System.Drawing.Point(0, 326);
-            this.btnDocumentos.Name = "btnDocumentos";
-            this.btnDocumentos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDocumentos.Size = new System.Drawing.Size(176, 45);
-            this.btnDocumentos.TabIndex = 7;
-            this.btnDocumentos.Text = "    DOCUMENTOS";
-            this.btnDocumentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocumentos.UseVisualStyleBackColor = false;
-            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 281);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(176, 45);
-            this.btnEmpleados.TabIndex = 6;
-            this.btnEmpleados.Text = "    EMPLEADOS";
-            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpleados.UseVisualStyleBackColor = false;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnCotizaciones
             // 
@@ -359,9 +380,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Button btnDocumentos;
-        private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnCotizaciones;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnVentas;
@@ -373,5 +391,9 @@ namespace Capa_Diseño
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnDocumentos;
+        private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnPromociones;
     }
 }
