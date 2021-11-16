@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Clientes.cs" />
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="Empleados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

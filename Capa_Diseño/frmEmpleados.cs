@@ -16,12 +16,14 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
-
+        Capa_Datos.Empleados em = new Capa_Datos.Empleados();
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             this.dtgLista.RowHeadersVisible = false;
             this.dtgEditar.RowHeadersVisible = false;
-            
+
+            dtgLista.DataSource = em.VerEmpleados("", "TODOS");
+
             cmbFiltro.SelectedIndex = 0;
             cmbEditar.SelectedIndex = 0;
 
