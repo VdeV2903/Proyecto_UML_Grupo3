@@ -72,6 +72,13 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +182,12 @@ namespace Capa_Diseño
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.txtApellidos);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.btnLogin);
@@ -195,7 +208,7 @@ namespace Capa_Diseño
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(381, 218);
+            this.txtApellidos.Location = new System.Drawing.Point(264, 211);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(234, 24);
             this.txtApellidos.TabIndex = 39;
@@ -203,7 +216,7 @@ namespace Capa_Diseño
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(378, 197);
+            this.label12.Location = new System.Drawing.Point(261, 190);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(156, 18);
             this.label12.TabIndex = 38;
@@ -211,7 +224,7 @@ namespace Capa_Diseño
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,21 +247,21 @@ namespace Capa_Diseño
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(381, 323);
+            this.txtEmail.Location = new System.Drawing.Point(264, 316);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 24);
             this.txtEmail.TabIndex = 32;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(381, 268);
+            this.txtTelefono.Location = new System.Drawing.Point(264, 261);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(234, 24);
             this.txtTelefono.TabIndex = 31;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(381, 168);
+            this.txtNombre.Location = new System.Drawing.Point(264, 161);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(234, 24);
             this.txtNombre.TabIndex = 30;
@@ -256,7 +269,7 @@ namespace Capa_Diseño
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(378, 302);
+            this.label5.Location = new System.Drawing.Point(261, 295);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 18);
             this.label5.TabIndex = 28;
@@ -265,7 +278,7 @@ namespace Capa_Diseño
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(378, 247);
+            this.label3.Location = new System.Drawing.Point(261, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 18);
             this.label3.TabIndex = 27;
@@ -274,7 +287,7 @@ namespace Capa_Diseño
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(378, 147);
+            this.label2.Location = new System.Drawing.Point(261, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 18);
             this.label2.TabIndex = 26;
@@ -282,6 +295,7 @@ namespace Capa_Diseño
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.cmbEditar);
             this.tabPage3.Controls.Add(this.pictureBox5);
@@ -505,7 +519,7 @@ namespace Capa_Diseño
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(510, 453);
+            this.btnEliminar.Location = new System.Drawing.Point(508, 479);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(185, 48);
             this.btnEliminar.TabIndex = 40;
@@ -514,17 +528,80 @@ namespace Capa_Diseño
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizar.Location = new System.Drawing.Point(319, 453);
+            this.btnActualizar.Location = new System.Drawing.Point(317, 479);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(185, 48);
             this.btnActualizar.TabIndex = 39;
             this.btnActualizar.Text = "GUARDAR";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(542, 261);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(234, 24);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(539, 240);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 18);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Contraseña:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(542, 211);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(234, 24);
+            this.textBox2.TabIndex = 41;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(539, 190);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 18);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Usuario:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(542, 316);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(234, 24);
+            this.textBox3.TabIndex = 45;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(539, 295);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(159, 18);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "Repetir Contraseña:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(94, 410);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 34);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "RECUPERAR CONTRASEÑA";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmEmpleados
             // 
@@ -599,5 +676,12 @@ namespace Capa_Diseño
         private System.Windows.Forms.CheckBox ckApellidos;
         private System.Windows.Forms.CheckBox ckNombre;
         private System.Windows.Forms.CheckBox ckTodo;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button1;
     }
 }

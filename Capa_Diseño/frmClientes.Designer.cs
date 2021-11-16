@@ -210,7 +210,7 @@ namespace Capa_Diseño
             // 
             // btnGuardarCliente
             // 
-            this.btnGuardarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.btnGuardarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnGuardarCliente.FlatAppearance.BorderSize = 0;
             this.btnGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
