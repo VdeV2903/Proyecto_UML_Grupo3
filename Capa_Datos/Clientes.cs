@@ -8,10 +8,8 @@ using System.Data.SqlClient;
 
 namespace Capa_Datos
 {
-    
     public class Clientes
     {
-
         ConexionBD conn = new ConexionBD();
         public DataTable ListaClientes(string word,string estado)
         {
@@ -39,11 +37,9 @@ namespace Capa_Datos
             finally
             {
                 conn.CloseConnection();
-            }
-            
+            }  
         }
         private string ID = "";
-        
         public string traerID(string cliente, string correop)
         {
             try
@@ -66,30 +62,29 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        private int OKInsert = 0;
-        public int verificarCliente(string nombre,string correo)
+        private string ID_V = "";
+        public string verificarCliente(string nombre,string correo)
         {
             try
             {
-                SqlCommand vericli = new SqlCommand("AnadirCliente", conn.Connection);
-                vericli.CommandType = CommandType.StoredProcedure;
-                    vericli.Parameters.AddWithValue("@nombre", nombre);
-                    vericli.Parameters.AddWithValue("@correo", correo);
-
+                SqlCommand idcl = new SqlCommand("VerificarCliente", conn.Connection);
+                idcl.CommandType = CommandType.StoredProcedure;
+                idcl.Parameters.AddWithValue("@nombre", nombre);
+                idcl.Parameters.AddWithValue("@correo", correo);
                 conn.OpenConnection();
-                         
-                OKInsert = Convert.ToInt32(vericli.ExecuteScalar());
+
+                ID_V = Convert.ToString(idcl.ExecuteScalar());
+                Console.WriteLine(ID_V);
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
-
             }
             finally
             {
                 conn.CloseConnection();
             }
-            return OKInsert;
+            return ID_V;
         }
         public void insertarCliente(string nombre,string telefono, string correo)
         {
@@ -116,8 +111,7 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
             
-        }
-        
+        }    
         public void ActualizarCliente(int IDc,string nombre, string tel, string correo,string estado)
         {
             try

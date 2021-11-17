@@ -39,11 +39,11 @@ namespace Capa_Diseño
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgLista = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPass2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -182,11 +182,11 @@ namespace Capa_Diseño
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.txtPass2);
             this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtPass);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.txtUser);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.txtApellidos);
             this.tabPage2.Controls.Add(this.label12);
@@ -206,12 +206,12 @@ namespace Capa_Diseño
             this.tabPage2.Text = "Agregar Empleado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtPass2
             // 
-            this.textBox3.Location = new System.Drawing.Point(542, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 24);
-            this.textBox3.TabIndex = 45;
+            this.txtPass2.Location = new System.Drawing.Point(542, 316);
+            this.txtPass2.Name = "txtPass2";
+            this.txtPass2.Size = new System.Drawing.Size(234, 24);
+            this.txtPass2.TabIndex = 45;
             // 
             // label16
             // 
@@ -222,12 +222,12 @@ namespace Capa_Diseño
             this.label16.TabIndex = 44;
             this.label16.Text = "Repetir Contraseña:";
             // 
-            // textBox1
+            // txtPass
             // 
-            this.textBox1.Location = new System.Drawing.Point(542, 261);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 24);
-            this.textBox1.TabIndex = 43;
+            this.txtPass.Location = new System.Drawing.Point(542, 261);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(234, 24);
+            this.txtPass.TabIndex = 43;
             // 
             // label14
             // 
@@ -238,13 +238,13 @@ namespace Capa_Diseño
             this.label14.TabIndex = 42;
             this.label14.Text = "Contraseña:";
             // 
-            // textBox2
+            // txtUser
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(542, 211);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 24);
-            this.textBox2.TabIndex = 41;
+            this.txtUser.Enabled = false;
+            this.txtUser.Location = new System.Drawing.Point(542, 211);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(234, 24);
+            this.txtUser.TabIndex = 41;
             // 
             // label15
             // 
@@ -288,7 +288,7 @@ namespace Capa_Diseño
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(446, 95);
+            this.label4.Location = new System.Drawing.Point(448, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 18);
             this.label4.TabIndex = 36;
@@ -454,7 +454,7 @@ namespace Capa_Diseño
             this.groupBox1.Size = new System.Drawing.Size(353, 260);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Cliente";
+            this.groupBox1.Text = "Datos Empleado";
             // 
             // ckTodo
             // 
@@ -676,11 +676,11 @@ namespace Capa_Diseño
         private System.Windows.Forms.CheckBox ckApellidos;
         private System.Windows.Forms.CheckBox ckNombre;
         private System.Windows.Forms.CheckBox ckTodo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPass2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
     }

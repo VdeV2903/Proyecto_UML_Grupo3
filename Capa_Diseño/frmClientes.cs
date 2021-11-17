@@ -156,7 +156,7 @@ namespace Capa_Diseño
 
 
         }
-        int cmp = 0;
+        string cmp = "";
         public void anadircliente()
         {
             
@@ -200,16 +200,19 @@ namespace Capa_Diseño
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             nombre = txtNombre.Text;
-            telefono = txtTelefono.Text;
             correo = txtEmail.Text;
 
             cmp = cl.verificarCliente(nombre,correo);
 
-            MessageBox.Show(cmp.ToString());
-            if (cmp == 0)
+            if (cmp != "")
             {
-                anadircliente();
+                lblOK.Text = "Al Parecer Existe este Cliente";
+                lblOK.ForeColor = Color.Red;
+                lblOK.Visible = true;
                 
+            }else{
+                anadircliente();
+
                 lblOK.Text = "Cliente Añadido con Exito";
                 lblOK.ForeColor = Color.Green;
                 lblOK.Visible = true;
@@ -217,14 +220,8 @@ namespace Capa_Diseño
                 limpiaranadir();
                 llenarLista();
             }
-            else if(cmp > 0)
-            {
-                lblOK.Text = "Al Parecer Existe este Cliente";
-                lblOK.ForeColor = Color.Red;
-                lblOK.Visible = true;
-            }
             
-            
+           
         }
 
         private void txtNombre_Click(object sender, EventArgs e)
@@ -258,7 +255,7 @@ namespace Capa_Diseño
             cmbEstadoEdit.SelectedItem = dtgEditar.Rows[row].Cells[3].Value.ToString();
 
             IDCliente = Convert.ToInt32(cl.traerID(nombrecliente,correop));
-            MessageBox.Show(IDCliente.ToString() + correop);
+            
         }
         public void llenareditar()
         {
