@@ -62,8 +62,8 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        private int OKInsert = 0;
-        public int verificarEmpleado(string nombre, string correo)
+        private string OKInsert = "";
+        public string verificarEmpleado(string nombre, string correo,string fecha)
         {
             try
             {
@@ -71,10 +71,11 @@ namespace Capa_Datos
                 vericli.CommandType = CommandType.StoredProcedure;
                 vericli.Parameters.AddWithValue("@nombre", nombre);
                 vericli.Parameters.AddWithValue("@correo", correo);
+                vericli.Parameters.AddWithValue("@fecha", fecha);
 
                 conn.OpenConnection();
 
-                OKInsert = Convert.ToInt32(vericli.ExecuteScalar());
+                OKInsert = Convert.ToString(vericli.ExecuteScalar());
             }
             catch (SqlException ex)
             {
@@ -87,7 +88,7 @@ namespace Capa_Datos
             }
             return OKInsert;
         }
-        public void insertarEmpleado(string user, string pass,string carnet,string nombre, string apellido,string telefono, string correo,string roll)
+        public void insertarEmpleado(string user, string pass,string carnet,string nombre, string apellido,string telefono, string correo,string roll,string fecha)
         {
             try
             {
@@ -101,6 +102,7 @@ namespace Capa_Datos
                     idinse.Parameters.AddWithValue("@telefono", telefono);
                     idinse.Parameters.AddWithValue("@correo", correo);
                     idinse.Parameters.AddWithValue("@roll", roll);
+                    idinse.Parameters.AddWithValue("@fecha", fecha);
                 conn.OpenConnection();
 
                 idinse.ExecuteNonQuery();

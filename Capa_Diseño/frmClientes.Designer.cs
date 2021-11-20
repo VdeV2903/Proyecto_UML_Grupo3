@@ -50,6 +50,7 @@ namespace Capa_Diseño
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblErrorEditar = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbEditar = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,6 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.lblErrorEditar = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,10 +91,10 @@ namespace Capa_Diseño
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(74, 25);
-            this.tabControl1.Location = new System.Drawing.Point(0, -3);
+            this.tabControl1.Location = new System.Drawing.Point(-3, -3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1070, 622);
+            this.tabControl1.Size = new System.Drawing.Size(1073, 635);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -302,10 +302,20 @@ namespace Capa_Diseño
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1062, 589);
+            this.tabPage3.Size = new System.Drawing.Size(1065, 602);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modificar Cliente";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lblErrorEditar
+            // 
+            this.lblErrorEditar.AutoSize = true;
+            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorEditar.Location = new System.Drawing.Point(417, 389);
+            this.lblErrorEditar.Name = "lblErrorEditar";
+            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorEditar.TabIndex = 49;
+            this.lblErrorEditar.Text = "---";
             // 
             // label11
             // 
@@ -558,16 +568,6 @@ namespace Capa_Diseño
             this.btnActualizar.Text = "GUARDAR CAMBIOS";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // lblErrorEditar
-            // 
-            this.lblErrorEditar.AutoSize = true;
-            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblErrorEditar.Location = new System.Drawing.Point(417, 389);
-            this.lblErrorEditar.Name = "lblErrorEditar";
-            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
-            this.lblErrorEditar.TabIndex = 49;
-            this.lblErrorEditar.Text = "---";
             // 
             // frmClientes
             // 

@@ -30,8 +30,8 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@ namespace Capa_Diseño
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblErrorEditar = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbEditar = new System.Windows.Forms.ComboBox();
@@ -93,7 +94,7 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.lblErrorEditar = new System.Windows.Forms.Label();
+            this.lblErrorRegistro = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -194,14 +195,14 @@ namespace Capa_Diseño
             this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgLista.Location = new System.Drawing.Point(56, 120);
             this.dtgLista.MultiSelect = false;
             this.dtgLista.Name = "dtgLista";
@@ -212,6 +213,7 @@ namespace Capa_Diseño
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblErrorRegistro);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.cmbRoll);
             this.tabPage2.Controls.Add(this.lblRoll);
@@ -458,6 +460,16 @@ namespace Capa_Diseño
             this.tabPage3.Text = "Modificar Empleado";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // lblErrorEditar
+            // 
+            this.lblErrorEditar.AutoSize = true;
+            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorEditar.Location = new System.Drawing.Point(447, 446);
+            this.lblErrorEditar.Name = "lblErrorEditar";
+            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorEditar.TabIndex = 50;
+            this.lblErrorEditar.Text = "---";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
@@ -520,14 +532,14 @@ namespace Capa_Diseño
             this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgEditar.Location = new System.Drawing.Point(371, 153);
             this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";
@@ -785,15 +797,15 @@ namespace Capa_Diseño
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // lblErrorEditar
+            // lblErrorRegistro
             // 
-            this.lblErrorEditar.AutoSize = true;
-            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblErrorEditar.Location = new System.Drawing.Point(447, 446);
-            this.lblErrorEditar.Name = "lblErrorEditar";
-            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
-            this.lblErrorEditar.TabIndex = 50;
-            this.lblErrorEditar.Text = "---";
+            this.lblErrorRegistro.AutoSize = true;
+            this.lblErrorRegistro.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorRegistro.Location = new System.Drawing.Point(448, 419);
+            this.lblErrorRegistro.Name = "lblErrorRegistro";
+            this.lblErrorRegistro.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorRegistro.TabIndex = 52;
+            this.lblErrorRegistro.Text = "---";
             // 
             // frmEmpleados
             // 
@@ -888,5 +900,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.ComboBox cmbEstadoEditar;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblErrorEditar;
+        private System.Windows.Forms.Label lblErrorRegistro;
     }
 }

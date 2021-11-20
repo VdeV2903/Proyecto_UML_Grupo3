@@ -312,7 +312,7 @@ namespace Capa_Diseño
                 
         }
 
-        private string pass = "", passc = "",roll="";
+        private string pass = "", passc = "",roll="",fecha = "";
 
         private string sub1 = "",sub2 = "",sub3="";
         public void generarUser()
@@ -324,25 +324,64 @@ namespace Capa_Diseño
             txtUser.Text = sub1 + sub2 + sub3;
             txtCarnet.Text = sub1 + sub3 + sub2;
         }
+        private string comprobarEmpleado = "";
         public void insertEmpleado()
         {
-            if (ValidarEntrada())
+            lblErrorRegistro.Visible = false;
+
+            comprobarEmpleado = "";
+            if (txtPass.Text != txtPass2.Text)
             {
-                this.nombres = txtNombre.Text;
-                this.apellidos = txtApellidos.Text;
-                this.telefono = txtTelefono.Text;
-                this.email = txtEmail.Text;
-                this.pass = txtPass.Text;
-                this.passc = txtPass2.Text;
-                this.roll = Convert.ToString(cmbRoll.SelectedItem);
-                generarUser();
-                this.usuario = txtUser.Text;
-                this.carnet = txtCarnet.Text;
-
-                em.insertarEmpleado(this.usuario, this.pass, this.carnet, this.nombres, this.apellidos, this.telefono, this.email, this.roll);
-
-                
+                lblErrorRegistro.Text = "Las contraseñas no coinciden";
+                lblErrorRegistro.ForeColor = Color.Red;
+                lblErrorRegistro.Visible = true;
+                return;
             }
+            else
+            {
+                if (ValidarEntrada())
+                {
+                    this.nombres = txtNombre.Text;
+                    this.apellidos = txtApellidos.Text;
+                    this.telefono = txtTelefono.Text;
+                    this.email = txtEmail.Text;
+                    this.pass = txtPass.Text;
+                    this.passc = txtPass2.Text;
+                    this.fecha = dtmFecha.Value.ToString("yyyy-MM-dd");
+                    this.roll = Convert.ToString(cmbRoll.SelectedItem);
+
+                    comprobarEmpleado = em.verificarEmpleado(nombres,email,fecha);
+                    if (comprobarEmpleado == "")
+                    {
+                        
+                        generarUser();
+                        this.usuario = txtUser.Text;
+                        this.carnet = txtCarnet.Text;
+
+                        em.insertarEmpleado(this.usuario, this.pass, this.carnet, this.nombres, this.apellidos, this.telefono, this.email, this.roll,this.fecha);
+                        renovarinsercion();
+                        fil = cmbFiltro.SelectedItem.ToString();
+                        dtgLista.DataSource = em.VerEmpleados(txtBuscar.Text, fil);
+
+                        fil = cmbEditar.SelectedItem.ToString();
+                        dtgEditar.DataSource = em.VerEmpleados(txtBuscarEditar.Text, fil);
+                        MessageBox.Show("Empleado Registrado con Exito");
+                    }
+                    else
+                    {
+                        lblErrorRegistro.Text = "Al parecer el empleado ya existe";
+                        lblErrorRegistro.ForeColor = Color.Red;
+                        lblErrorRegistro.Visible = true;
+                    }
+                }
+                else
+                {
+                    lblErrorRegistro.Text = "Revise los datos";
+                    lblErrorRegistro.ForeColor = Color.Red;
+                    lblErrorRegistro.Visible = true;
+                }
+            }
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
