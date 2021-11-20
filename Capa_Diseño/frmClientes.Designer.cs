@@ -30,6 +30,7 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblErrorEditar = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,6 +246,7 @@ namespace Capa_Diseño
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(415, 191);
+            this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(234, 24);
             this.txtTelefono.TabIndex = 31;
@@ -286,6 +289,7 @@ namespace Capa_Diseño
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblErrorEditar);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.cmbEditar);
             this.tabPage3.Controls.Add(this.pictureBox5);
@@ -351,6 +355,14 @@ namespace Capa_Diseño
             this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgEditar.Location = new System.Drawing.Point(436, 104);
             this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";
@@ -478,6 +490,7 @@ namespace Capa_Diseño
             // txtTelefonoEdit
             // 
             this.txtTelefonoEdit.Location = new System.Drawing.Point(19, 115);
+            this.txtTelefonoEdit.MaxLength = 8;
             this.txtTelefonoEdit.Name = "txtTelefonoEdit";
             this.txtTelefonoEdit.Size = new System.Drawing.Size(234, 24);
             this.txtTelefonoEdit.TabIndex = 40;
@@ -529,6 +542,7 @@ namespace Capa_Diseño
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -544,6 +558,16 @@ namespace Capa_Diseño
             this.btnActualizar.Text = "GUARDAR CAMBIOS";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblErrorEditar
+            // 
+            this.lblErrorEditar.AutoSize = true;
+            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorEditar.Location = new System.Drawing.Point(417, 389);
+            this.lblErrorEditar.Name = "lblErrorEditar";
+            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorEditar.TabIndex = 49;
+            this.lblErrorEditar.Text = "---";
             // 
             // frmClientes
             // 
@@ -617,5 +641,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.CheckBox ckEstado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cmbEstadoEdit;
+        private System.Windows.Forms.Label lblErrorEditar;
     }
 }

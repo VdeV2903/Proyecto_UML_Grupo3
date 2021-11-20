@@ -87,19 +87,23 @@ namespace Capa_Datos
             }
             return OKInsert;
         }
-        public void insertarEmpleado(string nombre, string telefono, string correo)
+        public void insertarEmpleado(string user, string pass,string carnet,string nombre, string apellido,string telefono, string correo,string roll)
         {
             try
             {
                 SqlCommand idinse = new SqlCommand("AnadirUsuarioEmpleado", conn.Connection);
                 idinse.CommandType = CommandType.StoredProcedure;
-                idinse.Parameters.AddWithValue("@nombre", nombre);
-                idinse.Parameters.AddWithValue("@telefono", telefono);
-                idinse.Parameters.AddWithValue("@correo", correo);
-
+                    idinse.Parameters.AddWithValue("@user", user);
+                    idinse.Parameters.AddWithValue("@contrasenia", pass);
+                    idinse.Parameters.AddWithValue("@carnet", carnet);
+                    idinse.Parameters.AddWithValue("@nombre", nombre);
+                    idinse.Parameters.AddWithValue("@apellido", apellido);
+                    idinse.Parameters.AddWithValue("@telefono", telefono);
+                    idinse.Parameters.AddWithValue("@correo", correo);
+                    idinse.Parameters.AddWithValue("@roll", roll);
                 conn.OpenConnection();
 
-                idinse.ExecuteScalar();
+                idinse.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -112,22 +116,46 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        public void actualizarEmpleado(int IDe, string nombre, string tel, string correo, string estado)
+        public void actualizarEmpleado(string carnet, string nombre, string apellido, string telefono, string correo, string roll,string estado)
         {
             try
             {
-                SqlCommand idact = new SqlCommand("ActualizarEmpleado", conn.Connection);
+                SqlCommand idact = new SqlCommand("EditarEmpleado", conn.Connection);
                 idact.CommandType = CommandType.StoredProcedure;
-                idact.Parameters.AddWithValue("@ID", IDe);
-                idact.Parameters.AddWithValue("@nombre", nombre);
-                idact.Parameters.AddWithValue("@telefono", tel);
-                idact.Parameters.AddWithValue("@correo", correo);
-                idact.Parameters.AddWithValue("@estado", estado);
+                    idact.Parameters.AddWithValue("@carnet", carnet);
+                    idact.Parameters.AddWithValue("@nombre", nombre);
+                    idact.Parameters.AddWithValue("@apellido", apellido);
+                    idact.Parameters.AddWithValue("@telefono", telefono);
+                    idact.Parameters.AddWithValue("@correo", correo);
+                    idact.Parameters.AddWithValue("@roll", roll);
+                    idact.Parameters.AddWithValue("@estado", estado);
 
 
                 conn.OpenConnection();
 
                 idact.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+        public void eliminarEmpleado(string carnet)
+        {
+            try
+            {
+                SqlCommand ideli = new SqlCommand("EliminarEmpleado", conn.Connection);
+                ideli.CommandType = CommandType.StoredProcedure;
+                ideli.Parameters.AddWithValue("@carnet", carnet);
+                
+                conn.OpenConnection();
+
+                ideli.ExecuteNonQuery();
 
             }
             catch (SqlException ex)

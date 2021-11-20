@@ -38,6 +38,7 @@ namespace Capa_Diseño
             dtgLista.DataSource = cl.ListaClientes("", "TODOS");
             dtgEditar.DataSource = cl.ListaClientes("", "TODOS");
             lblOK.Visible = false;
+            lblErrorEditar.Visible = false;
             cmbEstadoEdit.Enabled = false;
             cmbEstado.SelectedIndex = 0;
             cmbEditar.SelectedIndex = 0;
@@ -197,6 +198,28 @@ namespace Capa_Diseño
                 llenarLista();
             }
         }
+        public bool ValidarEntrada()
+        {
+            bool ok = true;
+
+            if (String.IsNullOrEmpty(txtNombre.Text))
+            {
+                ok = false;
+
+            }
+            if (String.IsNullOrEmpty(txtTelefono.Text))
+            {
+                ok = false;
+
+            }
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                ok = false;
+
+            }
+         
+            return ok;
+        }
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             nombre = txtNombre.Text;
@@ -204,21 +227,32 @@ namespace Capa_Diseño
 
             cmp = cl.verificarCliente(nombre,correo);
 
-            if (cmp != "")
+            if (ValidarEntrada())
             {
-                lblOK.Text = "Al Parecer Existe este Cliente";
-                lblOK.ForeColor = Color.Red;
-                lblOK.Visible = true;
-                
-            }else{
-                anadircliente();
+                if (cmp != "")
+                {
+                    lblOK.Text = "Al Parecer Existe este Cliente";
+                    lblOK.ForeColor = Color.Red;
+                    lblOK.Visible = true;
 
-                lblOK.Text = "Cliente Añadido con Exito";
-                lblOK.ForeColor = Color.Green;
-                lblOK.Visible = true;
+                }
+                else
+                {
+                    anadircliente();
 
-                limpiaranadir();
-                llenarLista();
+                    lblOK.Text = "Cliente Añadido con Exito";
+                    lblOK.ForeColor = Color.Green;
+                    lblOK.Visible = true;
+
+                    limpiaranadir();
+                    llenarLista();
+                    llenareditar();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Datos faltantes");
             }
             
            
@@ -244,7 +278,7 @@ namespace Capa_Diseño
         string correop = "";
         private void dtgEditar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            lblErrorEditar.Visible = false;
             row = dtgEditar.CurrentRow.Index;
             nombrecliente = dtgEditar.Rows[row].Cells[0].Value.ToString();
 
@@ -269,7 +303,26 @@ namespace Capa_Diseño
             
         }
 
-        
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            lblErrorEditar.Visible = false;
+            if (IDCliente != 0)
+            {
+                cl.eliminarCliente(IDCliente);
+                IDCliente = 0;
+                llenareditar();
+                limpiarEdit();
+                llenarLista();
+                MessageBox.Show("Cliente Deshabilitado con Éxito");
+                dtgEditar.CurrentCell = null;
+            }
+            else
+            {
+                lblErrorEditar.Text = "Seleccione un registro";
+                lblErrorEditar.ForeColor = Color.Red;
+                lblErrorEditar.Visible = true;
+            }
+        }
 
         private void txtBuscarEdit_TextChanged(object sender, EventArgs e)
         {
@@ -283,18 +336,38 @@ namespace Capa_Diseño
                 llenareditar();
             }
         }
-        
+        public void limpiarEdit()
+        {
+            txtNombreEdit.Clear();
+            txtTelefonoEdit.Clear();
+            txtEmailEdit.Clear();
+         
+        }
         
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            nombreEdit = txtNombreEdit.Text;
-            teleEdit = txtTelefonoEdit.Text;
-            correoEdit = txtEmailEdit.Text;
-            estadoEdit = cmbEstadoEdit.SelectedItem.ToString();
+            lblErrorEditar.Visible = false;
+            if (IDCliente != 0)
+            {
+                nombreEdit = txtNombreEdit.Text;
+                teleEdit = txtTelefonoEdit.Text;
+                correoEdit = txtEmailEdit.Text;
+                estadoEdit = cmbEstadoEdit.SelectedItem.ToString();
 
-            cl.ActualizarCliente(IDCliente, nombreEdit, teleEdit, correoEdit,estadoEdit);
+                cl.ActualizarCliente(IDCliente, nombreEdit, teleEdit, correoEdit, estadoEdit);
 
-            llenareditar();
+                llenareditar();
+                IDCliente = 0;
+                limpiarEdit();
+                MessageBox.Show("Cliente Actualizado con Éxito");
+                dtgEditar.CurrentCell = null;
+            }
+            else
+            {
+                lblErrorEditar.Text = "Seleccione un registro";
+                lblErrorEditar.ForeColor = Color.Red;
+                lblErrorEditar.Visible = true;
+            }
         }
     }
 }

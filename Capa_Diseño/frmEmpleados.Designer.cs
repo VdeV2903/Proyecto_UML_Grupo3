@@ -30,6 +30,8 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +41,12 @@ namespace Capa_Diseño
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgLista = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cmbRoll = new System.Windows.Forms.ComboBox();
+            this.lblRoll = new System.Windows.Forms.Label();
+            this.txtCarnet = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPass2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -47,7 +55,7 @@ namespace Capa_Diseño
             this.label15 = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -60,10 +68,16 @@ namespace Capa_Diseño
             this.label11 = new System.Windows.Forms.Label();
             this.cmbEditar = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBuscarEditar = new System.Windows.Forms.TextBox();
             this.dtgEditar = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckEstadoEdit = new System.Windows.Forms.CheckBox();
+            this.cmbEstadoEditar = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ckRoll = new System.Windows.Forms.CheckBox();
+            this.cmbRollEditar = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.ckTodo = new System.Windows.Forms.CheckBox();
             this.ckEmail = new System.Windows.Forms.CheckBox();
             this.ckTelefono = new System.Windows.Forms.CheckBox();
@@ -79,6 +93,7 @@ namespace Capa_Diseño
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblErrorEditar = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,7 +116,7 @@ namespace Capa_Diseño
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1072, 630);
-            this.tabControl1.TabIndex = 2;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -145,12 +160,14 @@ namespace Capa_Diseño
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
+            "TODOS",
             "JEFE/GERENTE",
             "EMPLEADO"});
             this.cmbFiltro.Location = new System.Drawing.Point(833, 88);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(152, 26);
             this.cmbFiltro.TabIndex = 30;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -168,20 +185,39 @@ namespace Capa_Diseño
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(307, 24);
             this.txtBuscar.TabIndex = 28;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dtgLista
             // 
+            this.dtgLista.AllowUserToAddRows = false;
+            this.dtgLista.AllowUserToResizeRows = false;
             this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgLista.Location = new System.Drawing.Point(56, 120);
+            this.dtgLista.MultiSelect = false;
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
+            this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgLista.Size = new System.Drawing.Size(929, 307);
             this.dtgLista.TabIndex = 26;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.cmbRoll);
+            this.tabPage2.Controls.Add(this.lblRoll);
+            this.tabPage2.Controls.Add(this.txtCarnet);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.dtmFecha);
             this.tabPage2.Controls.Add(this.txtPass2);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.txtPass);
@@ -190,7 +226,7 @@ namespace Capa_Diseño
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.txtApellidos);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.btnLogin);
+            this.tabPage2.Controls.Add(this.btnGuardar);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtEmail);
             this.tabPage2.Controls.Add(this.txtTelefono);
@@ -206,9 +242,67 @@ namespace Capa_Diseño
             this.tabPage2.Text = "Agregar Empleado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(539, 294);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 18);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "Carnet:";
+            // 
+            // cmbRoll
+            // 
+            this.cmbRoll.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRoll.FormattingEnabled = true;
+            this.cmbRoll.Items.AddRange(new object[] {
+            "JEFE/GERENTE",
+            "EMPLEADO"});
+            this.cmbRoll.Location = new System.Drawing.Point(542, 259);
+            this.cmbRoll.Name = "cmbRoll";
+            this.cmbRoll.Size = new System.Drawing.Size(234, 26);
+            this.cmbRoll.TabIndex = 50;
+            // 
+            // lblRoll
+            // 
+            this.lblRoll.AutoSize = true;
+            this.lblRoll.Location = new System.Drawing.Point(539, 240);
+            this.lblRoll.Name = "lblRoll";
+            this.lblRoll.Size = new System.Drawing.Size(43, 18);
+            this.lblRoll.TabIndex = 49;
+            this.lblRoll.Text = "Roll:";
+            // 
+            // txtCarnet
+            // 
+            this.txtCarnet.Enabled = false;
+            this.txtCarnet.Location = new System.Drawing.Point(542, 315);
+            this.txtCarnet.Name = "txtCarnet";
+            this.txtCarnet.Size = new System.Drawing.Size(234, 24);
+            this.txtCarnet.TabIndex = 48;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(260, 240);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(172, 18);
+            this.label17.TabIndex = 47;
+            this.label17.Text = "Fecha de Nacimiento:";
+            // 
+            // dtmFecha
+            // 
+            this.dtmFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmFecha.Location = new System.Drawing.Point(264, 261);
+            this.dtmFecha.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtmFecha.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
+            this.dtmFecha.Name = "dtmFecha";
+            this.dtmFecha.Size = new System.Drawing.Size(234, 24);
+            this.dtmFecha.TabIndex = 46;
+            this.dtmFecha.Value = new System.DateTime(2021, 11, 19, 0, 0, 0, 0);
+            // 
             // txtPass2
             // 
-            this.txtPass2.Location = new System.Drawing.Point(542, 316);
+            this.txtPass2.Location = new System.Drawing.Point(542, 363);
             this.txtPass2.Name = "txtPass2";
             this.txtPass2.Size = new System.Drawing.Size(234, 24);
             this.txtPass2.TabIndex = 45;
@@ -216,7 +310,7 @@ namespace Capa_Diseño
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(539, 295);
+            this.label16.Location = new System.Drawing.Point(539, 342);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(159, 18);
             this.label16.TabIndex = 44;
@@ -224,7 +318,7 @@ namespace Capa_Diseño
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(542, 261);
+            this.txtPass.Location = new System.Drawing.Point(263, 363);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(234, 24);
             this.txtPass.TabIndex = 43;
@@ -232,7 +326,7 @@ namespace Capa_Diseño
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(539, 240);
+            this.label14.Location = new System.Drawing.Point(260, 342);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 18);
             this.label14.TabIndex = 42;
@@ -241,7 +335,7 @@ namespace Capa_Diseño
             // txtUser
             // 
             this.txtUser.Enabled = false;
-            this.txtUser.Location = new System.Drawing.Point(542, 211);
+            this.txtUser.Location = new System.Drawing.Point(264, 315);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(234, 24);
             this.txtUser.TabIndex = 41;
@@ -249,7 +343,7 @@ namespace Capa_Diseño
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(539, 190);
+            this.label15.Location = new System.Drawing.Point(261, 294);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(72, 18);
             this.label15.TabIndex = 40;
@@ -257,7 +351,7 @@ namespace Capa_Diseño
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(264, 211);
+            this.txtApellidos.Location = new System.Drawing.Point(542, 161);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(234, 24);
             this.txtApellidos.TabIndex = 39;
@@ -265,25 +359,26 @@ namespace Capa_Diseño
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(261, 190);
+            this.label12.Location = new System.Drawing.Point(539, 140);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(156, 18);
             this.label12.TabIndex = 38;
             this.label12.Text = "Apellidos Empleado";
             // 
-            // btnLogin
+            // btnGuardar
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(356, 373);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(309, 45);
-            this.btnLogin.TabIndex = 37;
-            this.btnLogin.Text = "GUARDAR";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardar.Location = new System.Drawing.Point(355, 440);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(309, 45);
+            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label4
             // 
@@ -296,14 +391,14 @@ namespace Capa_Diseño
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(264, 316);
+            this.txtEmail.Location = new System.Drawing.Point(542, 210);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 24);
             this.txtEmail.TabIndex = 32;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(264, 261);
+            this.txtTelefono.Location = new System.Drawing.Point(264, 211);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(234, 24);
             this.txtTelefono.TabIndex = 31;
@@ -318,7 +413,7 @@ namespace Capa_Diseño
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(261, 295);
+            this.label5.Location = new System.Drawing.Point(539, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 18);
             this.label5.TabIndex = 28;
@@ -327,7 +422,7 @@ namespace Capa_Diseño
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 240);
+            this.label3.Location = new System.Drawing.Point(261, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 18);
             this.label3.TabIndex = 27;
@@ -344,11 +439,12 @@ namespace Capa_Diseño
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblErrorEditar);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.cmbEditar);
             this.tabPage3.Controls.Add(this.pictureBox5);
-            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.txtBuscarEditar);
             this.tabPage3.Controls.Add(this.dtgEditar);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.groupBox1);
@@ -369,7 +465,7 @@ namespace Capa_Diseño
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(94, 410);
+            this.button1.Location = new System.Drawing.Point(92, 430);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 34);
             this.button1.TabIndex = 49;
@@ -379,7 +475,7 @@ namespace Capa_Diseño
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(876, 102);
+            this.label11.Location = new System.Drawing.Point(920, 102);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 18);
             this.label11.TabIndex = 48;
@@ -390,40 +486,56 @@ namespace Capa_Diseño
             this.cmbEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEditar.FormattingEnabled = true;
             this.cmbEditar.Items.AddRange(new object[] {
-            "Nombre",
-            "Teléfono",
-            "Correo"});
-            this.cmbEditar.Location = new System.Drawing.Point(879, 123);
+            "TODOS",
+            "JEFE/GERENTE",
+            "EMPLEADO"});
+            this.cmbEditar.Location = new System.Drawing.Point(923, 123);
             this.cmbEditar.Name = "cmbEditar";
             this.cmbEditar.Size = new System.Drawing.Size(120, 26);
             this.cmbEditar.TabIndex = 47;
+            this.cmbEditar.SelectedIndexChanged += new System.EventHandler(this.cmbEditar_SelectedIndexChanged);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(541, 123);
+            this.pictureBox5.Location = new System.Drawing.Point(585, 123);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 20);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 46;
             this.pictureBox5.TabStop = false;
             // 
-            // textBox7
+            // txtBuscarEditar
             // 
-            this.textBox7.Location = new System.Drawing.Point(566, 123);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(307, 24);
-            this.textBox7.TabIndex = 45;
+            this.txtBuscarEditar.Location = new System.Drawing.Point(610, 123);
+            this.txtBuscarEditar.Name = "txtBuscarEditar";
+            this.txtBuscarEditar.Size = new System.Drawing.Size(307, 24);
+            this.txtBuscarEditar.TabIndex = 45;
+            this.txtBuscarEditar.TextChanged += new System.EventHandler(this.txtBuscarEditar_TextChanged);
             // 
             // dtgEditar
             // 
+            this.dtgEditar.AllowUserToAddRows = false;
+            this.dtgEditar.AllowUserToResizeRows = false;
+            this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEditar.Location = new System.Drawing.Point(418, 153);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgEditar.Location = new System.Drawing.Point(371, 153);
+            this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";
             this.dtgEditar.ReadOnly = true;
-            this.dtgEditar.Size = new System.Drawing.Size(581, 251);
+            this.dtgEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgEditar.Size = new System.Drawing.Size(673, 260);
             this.dtgEditar.TabIndex = 44;
+            this.dtgEditar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEditar_CellClick);
             // 
             // label7
             // 
@@ -436,6 +548,12 @@ namespace Capa_Diseño
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ckEstadoEdit);
+            this.groupBox1.Controls.Add(this.cmbEstadoEditar);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.ckRoll);
+            this.groupBox1.Controls.Add(this.cmbRollEditar);
+            this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.ckTodo);
             this.groupBox1.Controls.Add(this.ckEmail);
             this.groupBox1.Controls.Add(this.ckTelefono);
@@ -449,12 +567,74 @@ namespace Capa_Diseño
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(43, 144);
+            this.groupBox1.Location = new System.Drawing.Point(12, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 260);
+            this.groupBox1.Size = new System.Drawing.Size(353, 322);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
+            // 
+            // ckEstadoEdit
+            // 
+            this.ckEstadoEdit.AutoSize = true;
+            this.ckEstadoEdit.Location = new System.Drawing.Point(274, 282);
+            this.ckEstadoEdit.Name = "ckEstadoEdit";
+            this.ckEstadoEdit.Size = new System.Drawing.Size(71, 22);
+            this.ckEstadoEdit.TabIndex = 68;
+            this.ckEstadoEdit.Text = "Editar";
+            this.ckEstadoEdit.UseVisualStyleBackColor = true;
+            // 
+            // cmbEstadoEditar
+            // 
+            this.cmbEstadoEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoEditar.FormattingEnabled = true;
+            this.cmbEstadoEditar.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cmbEstadoEditar.Location = new System.Drawing.Point(15, 279);
+            this.cmbEstadoEditar.Name = "cmbEstadoEditar";
+            this.cmbEstadoEditar.Size = new System.Drawing.Size(255, 26);
+            this.cmbEstadoEditar.TabIndex = 67;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(12, 260);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 18);
+            this.label20.TabIndex = 66;
+            this.label20.Text = "Estado:";
+            // 
+            // ckRoll
+            // 
+            this.ckRoll.AutoSize = true;
+            this.ckRoll.Location = new System.Drawing.Point(274, 236);
+            this.ckRoll.Name = "ckRoll";
+            this.ckRoll.Size = new System.Drawing.Size(71, 22);
+            this.ckRoll.TabIndex = 65;
+            this.ckRoll.Text = "Editar";
+            this.ckRoll.UseVisualStyleBackColor = true;
+            // 
+            // cmbRollEditar
+            // 
+            this.cmbRollEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRollEditar.FormattingEnabled = true;
+            this.cmbRollEditar.Items.AddRange(new object[] {
+            "JEFE/GERENTE",
+            "EMPLEADO"});
+            this.cmbRollEditar.Location = new System.Drawing.Point(15, 233);
+            this.cmbRollEditar.Name = "cmbRollEditar";
+            this.cmbRollEditar.Size = new System.Drawing.Size(255, 26);
+            this.cmbRollEditar.TabIndex = 64;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 214);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(43, 18);
+            this.label19.TabIndex = 63;
+            this.label19.Text = "Roll:";
             // 
             // ckTodo
             // 
@@ -470,7 +650,7 @@ namespace Capa_Diseño
             // ckEmail
             // 
             this.ckEmail.AutoSize = true;
-            this.ckEmail.Location = new System.Drawing.Point(276, 211);
+            this.ckEmail.Location = new System.Drawing.Point(276, 188);
             this.ckEmail.Name = "ckEmail";
             this.ckEmail.Size = new System.Drawing.Size(71, 22);
             this.ckEmail.TabIndex = 54;
@@ -481,7 +661,7 @@ namespace Capa_Diseño
             // ckTelefono
             // 
             this.ckTelefono.AutoSize = true;
-            this.ckTelefono.Location = new System.Drawing.Point(276, 163);
+            this.ckTelefono.Location = new System.Drawing.Point(276, 143);
             this.ckTelefono.Name = "ckTelefono";
             this.ckTelefono.Size = new System.Drawing.Size(71, 22);
             this.ckTelefono.TabIndex = 53;
@@ -492,7 +672,7 @@ namespace Capa_Diseño
             // ckApellidos
             // 
             this.ckApellidos.AutoSize = true;
-            this.ckApellidos.Location = new System.Drawing.Point(276, 115);
+            this.ckApellidos.Location = new System.Drawing.Point(276, 98);
             this.ckApellidos.Name = "ckApellidos";
             this.ckApellidos.Size = new System.Drawing.Size(71, 22);
             this.ckApellidos.TabIndex = 52;
@@ -503,7 +683,7 @@ namespace Capa_Diseño
             // ckNombre
             // 
             this.ckNombre.AutoSize = true;
-            this.ckNombre.Location = new System.Drawing.Point(276, 68);
+            this.ckNombre.Location = new System.Drawing.Point(276, 52);
             this.ckNombre.Name = "ckNombre";
             this.ckNombre.Size = new System.Drawing.Size(71, 22);
             this.ckNombre.TabIndex = 51;
@@ -513,21 +693,21 @@ namespace Capa_Diseño
             // 
             // txtApellidosEdit
             // 
-            this.txtApellidosEdit.Location = new System.Drawing.Point(15, 113);
+            this.txtApellidosEdit.Location = new System.Drawing.Point(15, 96);
             this.txtApellidosEdit.Name = "txtApellidosEdit";
             this.txtApellidosEdit.Size = new System.Drawing.Size(255, 24);
             this.txtApellidosEdit.TabIndex = 50;
             // 
             // txtEmailEdit
             // 
-            this.txtEmailEdit.Location = new System.Drawing.Point(15, 209);
+            this.txtEmailEdit.Location = new System.Drawing.Point(15, 186);
             this.txtEmailEdit.Name = "txtEmailEdit";
             this.txtEmailEdit.Size = new System.Drawing.Size(255, 24);
             this.txtEmailEdit.TabIndex = 41;
             // 
             // txtTelefonoEdit
             // 
-            this.txtTelefonoEdit.Location = new System.Drawing.Point(15, 161);
+            this.txtTelefonoEdit.Location = new System.Drawing.Point(15, 141);
             this.txtTelefonoEdit.Name = "txtTelefonoEdit";
             this.txtTelefonoEdit.Size = new System.Drawing.Size(255, 24);
             this.txtTelefonoEdit.TabIndex = 40;
@@ -535,7 +715,7 @@ namespace Capa_Diseño
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 94);
+            this.label13.Location = new System.Drawing.Point(12, 77);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(156, 18);
             this.label13.TabIndex = 49;
@@ -543,7 +723,7 @@ namespace Capa_Diseño
             // 
             // txtNombreEdit
             // 
-            this.txtNombreEdit.Location = new System.Drawing.Point(15, 67);
+            this.txtNombreEdit.Location = new System.Drawing.Point(15, 51);
             this.txtNombreEdit.Name = "txtNombreEdit";
             this.txtNombreEdit.Size = new System.Drawing.Size(255, 24);
             this.txtNombreEdit.TabIndex = 39;
@@ -551,7 +731,7 @@ namespace Capa_Diseño
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 188);
+            this.label8.Location = new System.Drawing.Point(12, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 18);
             this.label8.TabIndex = 38;
@@ -560,7 +740,7 @@ namespace Capa_Diseño
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 140);
+            this.label9.Location = new System.Drawing.Point(12, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 18);
             this.label9.TabIndex = 37;
@@ -569,7 +749,7 @@ namespace Capa_Diseño
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 46);
+            this.label10.Location = new System.Drawing.Point(12, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 18);
             this.label10.TabIndex = 36;
@@ -588,6 +768,7 @@ namespace Capa_Diseño
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -602,6 +783,17 @@ namespace Capa_Diseño
             this.btnActualizar.TabIndex = 39;
             this.btnActualizar.Text = "GUARDAR";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblErrorEditar
+            // 
+            this.lblErrorEditar.AutoSize = true;
+            this.lblErrorEditar.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorEditar.Location = new System.Drawing.Point(447, 446);
+            this.lblErrorEditar.Name = "lblErrorEditar";
+            this.lblErrorEditar.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorEditar.TabIndex = 50;
+            this.lblErrorEditar.Text = "---";
             // 
             // frmEmpleados
             // 
@@ -643,7 +835,7 @@ namespace Capa_Diseño
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dtgLista;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -655,7 +847,7 @@ namespace Capa_Diseño
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbEditar;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBuscarEditar;
         private System.Windows.Forms.DataGridView dtgEditar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -683,5 +875,18 @@ namespace Capa_Diseño
         private System.Windows.Forms.TextBox txtPass2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker dtmFecha;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cmbRoll;
+        private System.Windows.Forms.Label lblRoll;
+        private System.Windows.Forms.TextBox txtCarnet;
+        private System.Windows.Forms.ComboBox cmbRollEditar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox ckRoll;
+        private System.Windows.Forms.CheckBox ckEstadoEdit;
+        private System.Windows.Forms.ComboBox cmbEstadoEditar;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblErrorEditar;
     }
 }

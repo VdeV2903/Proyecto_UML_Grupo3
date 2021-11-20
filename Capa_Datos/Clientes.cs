@@ -139,6 +139,28 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        
+        public void eliminarCliente(int id)
+        {
+            try
+            {
+                SqlCommand ideli = new SqlCommand("EliminarCliente", conn.Connection);
+                ideli.CommandType = CommandType.StoredProcedure;
+                ideli.Parameters.AddWithValue("@id", id);
+
+                conn.OpenConnection();
+
+                ideli.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+
     }
 }
