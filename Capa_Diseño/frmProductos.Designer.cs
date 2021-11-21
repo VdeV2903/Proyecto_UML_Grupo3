@@ -32,12 +32,13 @@ namespace Capa_Diseño
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.dtgLista = new System.Windows.Forms.DataGridView();
+            this.dtgListaProds = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@ namespace Capa_Diseño
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnGuardarProd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDistribuidorProd = new System.Windows.Forms.TextBox();
             this.txtMarcaProd = new System.Windows.Forms.TextBox();
@@ -81,31 +82,36 @@ namespace Capa_Diseño
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgCats = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtNombreCat = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblEditarCat = new System.Windows.Forms.Label();
+            this.cmbCatEditar = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnEliminarCat = new System.Windows.Forms.Button();
             this.btnActualizarCat = new System.Windows.Forms.Button();
             this.txtNombreCatEdit = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnEliminarCat = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblOKingresarcat = new System.Windows.Forms.Label();
+            this.btnGuardarCategoria = new System.Windows.Forms.Button();
+            this.txtNombreCat = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtgCats = new System.Windows.Forms.DataGridView();
+            this.lblErrorProd = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaProds)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEditar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCats)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -128,11 +134,11 @@ namespace Capa_Diseño
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.dtgLista);
+            this.tabPage1.Controls.Add(this.dtgListaProds);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1061, 601);
+            this.tabPage1.Size = new System.Drawing.Size(1064, 601);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista General";
             // 
@@ -165,13 +171,13 @@ namespace Capa_Diseño
             this.txtBuscar.Size = new System.Drawing.Size(307, 24);
             this.txtBuscar.TabIndex = 28;
             // 
-            // dtgLista
+            // dtgListaProds
             // 
-            this.dtgLista.AllowUserToAddRows = false;
-            this.dtgLista.AllowUserToResizeRows = false;
-            this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgListaProds.AllowUserToAddRows = false;
+            this.dtgListaProds.AllowUserToResizeRows = false;
+            this.dtgListaProds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgListaProds.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgListaProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,24 +185,25 @@ namespace Capa_Diseño
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgLista.Location = new System.Drawing.Point(75, 99);
-            this.dtgLista.MultiSelect = false;
-            this.dtgLista.Name = "dtgLista";
-            this.dtgLista.ReadOnly = true;
-            this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgLista.Size = new System.Drawing.Size(929, 406);
-            this.dtgLista.TabIndex = 26;
+            this.dtgListaProds.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgListaProds.Location = new System.Drawing.Point(75, 99);
+            this.dtgListaProds.MultiSelect = false;
+            this.dtgListaProds.Name = "dtgListaProds";
+            this.dtgListaProds.ReadOnly = true;
+            this.dtgListaProds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgListaProds.Size = new System.Drawing.Size(929, 406);
+            this.dtgListaProds.TabIndex = 26;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblErrorProd);
             this.tabPage2.Controls.Add(this.cmbCategoria);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.txtPrecioVenta);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.txtPrecioCompra);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.btnLogin);
+            this.tabPage2.Controls.Add(this.btnGuardarProd);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtDistribuidorProd);
             this.tabPage2.Controls.Add(this.txtMarcaProd);
@@ -214,6 +221,7 @@ namespace Capa_Diseño
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.White;
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(104, 213);
@@ -262,19 +270,20 @@ namespace Capa_Diseño
             this.label1.TabIndex = 38;
             this.label1.Text = "Precio Compra:";
             // 
-            // btnLogin
+            // btnGuardarProd
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(380, 309);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(309, 45);
-            this.btnLogin.TabIndex = 37;
-            this.btnLogin.Text = "GUARDAR";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnGuardarProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGuardarProd.FlatAppearance.BorderSize = 0;
+            this.btnGuardarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarProd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardarProd.Location = new System.Drawing.Point(380, 309);
+            this.btnGuardarProd.Name = "btnGuardarProd";
+            this.btnGuardarProd.Size = new System.Drawing.Size(309, 45);
+            this.btnGuardarProd.TabIndex = 37;
+            this.btnGuardarProd.Text = "GUARDAR";
+            this.btnGuardarProd.UseVisualStyleBackColor = false;
+            this.btnGuardarProd.Click += new System.EventHandler(this.btnGuardarProd_Click);
             // 
             // label4
             // 
@@ -638,39 +647,11 @@ namespace Capa_Diseño
             this.tabPage4.Text = "Categorias";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dtgCats);
-            this.groupBox2.Location = new System.Drawing.Point(50, 36);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(421, 514);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Categorias";
-            // 
-            // dtgCats
-            // 
-            this.dtgCats.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgCats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCats.Location = new System.Drawing.Point(15, 33);
-            this.dtgCats.Name = "dtgCats";
-            this.dtgCats.Size = new System.Drawing.Size(381, 464);
-            this.dtgCats.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.txtNombreCat);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(516, 36);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(454, 233);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Agregar Categoria";
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblEditarCat);
+            this.groupBox4.Controls.Add(this.cmbCatEditar);
+            this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Controls.Add(this.btnEliminarCat);
             this.groupBox4.Controls.Add(this.btnActualizarCat);
             this.groupBox4.Controls.Add(this.txtNombreCatEdit);
@@ -682,35 +663,50 @@ namespace Capa_Diseño
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Editar Categoria";
             // 
-            // label16
+            // lblEditarCat
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 18);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Nombre:";
+            this.lblEditarCat.AutoSize = true;
+            this.lblEditarCat.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblEditarCat.Location = new System.Drawing.Point(140, 149);
+            this.lblEditarCat.Name = "lblEditarCat";
+            this.lblEditarCat.Size = new System.Drawing.Size(26, 18);
+            this.lblEditarCat.TabIndex = 65;
+            this.lblEditarCat.Text = "---";
             // 
-            // txtNombreCat
+            // cmbCatEditar
             // 
-            this.txtNombreCat.Location = new System.Drawing.Point(128, 70);
-            this.txtNombreCat.Name = "txtNombreCat";
-            this.txtNombreCat.Size = new System.Drawing.Size(263, 24);
-            this.txtNombreCat.TabIndex = 1;
+            this.cmbCatEditar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCatEditar.FormattingEnabled = true;
+            this.cmbCatEditar.Items.AddRange(new object[] {
+            "ACTIVA",
+            "INACTIVA"});
+            this.cmbCatEditar.Location = new System.Drawing.Point(128, 111);
+            this.cmbCatEditar.Name = "cmbCatEditar";
+            this.cmbCatEditar.Size = new System.Drawing.Size(298, 26);
+            this.cmbCatEditar.TabIndex = 64;
             // 
-            // button1
+            // label18
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(128, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(263, 40);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "GUARDAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(29, 114);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 18);
+            this.label18.TabIndex = 52;
+            this.label18.Text = "Estado:";
+            // 
+            // btnEliminarCat
+            // 
+            this.btnEliminarCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(88)))));
+            this.btnEliminarCat.FlatAppearance.BorderSize = 0;
+            this.btnEliminarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarCat.Location = new System.Drawing.Point(232, 170);
+            this.btnEliminarCat.Name = "btnEliminarCat";
+            this.btnEliminarCat.Size = new System.Drawing.Size(194, 46);
+            this.btnEliminarCat.TabIndex = 51;
+            this.btnEliminarCat.Text = "DESHABILITAR";
+            this.btnEliminarCat.UseVisualStyleBackColor = false;
             // 
             // btnActualizarCat
             // 
@@ -719,12 +715,13 @@ namespace Capa_Diseño
             this.btnActualizarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizarCat.Location = new System.Drawing.Point(32, 119);
+            this.btnActualizarCat.Location = new System.Drawing.Point(32, 170);
             this.btnActualizarCat.Name = "btnActualizarCat";
             this.btnActualizarCat.Size = new System.Drawing.Size(194, 46);
             this.btnActualizarCat.TabIndex = 41;
-            this.btnActualizarCat.Text = "GUARDAR";
+            this.btnActualizarCat.Text = "ACTUALIZAR";
             this.btnActualizarCat.UseVisualStyleBackColor = false;
+            this.btnActualizarCat.Click += new System.EventHandler(this.btnActualizarCat_Click);
             // 
             // txtNombreCatEdit
             // 
@@ -742,19 +739,102 @@ namespace Capa_Diseño
             this.label17.TabIndex = 39;
             this.label17.Text = "Nombre:";
             // 
-            // btnEliminarCat
+            // groupBox3
             // 
-            this.btnEliminarCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(88)))));
-            this.btnEliminarCat.FlatAppearance.BorderSize = 0;
-            this.btnEliminarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarCat.Location = new System.Drawing.Point(232, 119);
-            this.btnEliminarCat.Name = "btnEliminarCat";
-            this.btnEliminarCat.Size = new System.Drawing.Size(194, 46);
-            this.btnEliminarCat.TabIndex = 51;
-            this.btnEliminarCat.Text = "ELIMINAR";
-            this.btnEliminarCat.UseVisualStyleBackColor = false;
+            this.groupBox3.Controls.Add(this.lblOKingresarcat);
+            this.groupBox3.Controls.Add(this.btnGuardarCategoria);
+            this.groupBox3.Controls.Add(this.txtNombreCat);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Location = new System.Drawing.Point(516, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(454, 233);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Agregar Categoria";
+            // 
+            // lblOKingresarcat
+            // 
+            this.lblOKingresarcat.AutoSize = true;
+            this.lblOKingresarcat.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblOKingresarcat.Location = new System.Drawing.Point(140, 118);
+            this.lblOKingresarcat.Name = "lblOKingresarcat";
+            this.lblOKingresarcat.Size = new System.Drawing.Size(26, 18);
+            this.lblOKingresarcat.TabIndex = 39;
+            this.lblOKingresarcat.Text = "---";
+            // 
+            // btnGuardarCategoria
+            // 
+            this.btnGuardarCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGuardarCategoria.FlatAppearance.BorderSize = 0;
+            this.btnGuardarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardarCategoria.Location = new System.Drawing.Point(128, 139);
+            this.btnGuardarCategoria.Name = "btnGuardarCategoria";
+            this.btnGuardarCategoria.Size = new System.Drawing.Size(263, 40);
+            this.btnGuardarCategoria.TabIndex = 38;
+            this.btnGuardarCategoria.Text = "GUARDAR";
+            this.btnGuardarCategoria.UseVisualStyleBackColor = false;
+            this.btnGuardarCategoria.Click += new System.EventHandler(this.btnGuardarCategoria_Click);
+            // 
+            // txtNombreCat
+            // 
+            this.txtNombreCat.Location = new System.Drawing.Point(128, 70);
+            this.txtNombreCat.Name = "txtNombreCat";
+            this.txtNombreCat.Size = new System.Drawing.Size(263, 24);
+            this.txtNombreCat.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(29, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(73, 18);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Nombre:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dtgCats);
+            this.groupBox2.Location = new System.Drawing.Point(50, 36);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(421, 514);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Categorias";
+            // 
+            // dtgCats
+            // 
+            this.dtgCats.AllowUserToAddRows = false;
+            this.dtgCats.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgCats.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgCats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgCats.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgCats.Location = new System.Drawing.Point(15, 33);
+            this.dtgCats.MultiSelect = false;
+            this.dtgCats.Name = "dtgCats";
+            this.dtgCats.ReadOnly = true;
+            this.dtgCats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCats.Size = new System.Drawing.Size(381, 464);
+            this.dtgCats.TabIndex = 0;
+            this.dtgCats.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCats_CellClick);
+            // 
+            // lblErrorProd
+            // 
+            this.lblErrorProd.AutoSize = true;
+            this.lblErrorProd.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorProd.Location = new System.Drawing.Point(435, 288);
+            this.lblErrorProd.Name = "lblErrorProd";
+            this.lblErrorProd.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorProd.TabIndex = 44;
+            this.lblErrorProd.Text = "---";
             // 
             // frmProductos
             // 
@@ -772,7 +852,7 @@ namespace Capa_Diseño
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaProds)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -782,12 +862,12 @@ namespace Capa_Diseño
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCats)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCats)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -799,9 +879,9 @@ namespace Capa_Diseño
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dtgLista;
+        private System.Windows.Forms.DataGridView dtgListaProds;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnGuardarProd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDistribuidorProd;
         private System.Windows.Forms.TextBox txtMarcaProd;
@@ -851,8 +931,13 @@ namespace Capa_Diseño
         private System.Windows.Forms.TextBox txtNombreCatEdit;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardarCategoria;
         private System.Windows.Forms.TextBox txtNombreCat;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblOKingresarcat;
+        private System.Windows.Forms.ComboBox cmbCatEditar;
+        private System.Windows.Forms.Label lblEditarCat;
+        private System.Windows.Forms.Label lblErrorProd;
     }
 }
