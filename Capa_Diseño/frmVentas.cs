@@ -18,11 +18,13 @@ namespace Capa_Diseño
             InitializeComponent();
         }
         Clientes cl = new Clientes();
-        Productos PD = new Productos();
+        Productos pd = new Productos();
+        Ventas vt = new Ventas();
+        Session ss = new Session();
         private void frmVentas_Load(object sender, EventArgs e)
         {
             dtgClientes.DataSource = cl.ventaClientes();
-            dtgProductos.DataSource = PD.ventaProductos();
+            dtgProductos.DataSource = pd.ventaProductos();
         }
         private int row = 0,row2 = 0;
         private void dtgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -38,20 +40,8 @@ namespace Capa_Diseño
             row2 = dtgProductos.CurrentRow.Index;
             lblProd.Text = dtgProductos.Rows[row2].Cells[0].Value.ToString();
         }
-        private double precio = 0,subtotal = 0;
-        private int cantidad = 0;
-        private string nombre = "",marcap = "";
-
-        private void button3_Click(object sender, EventArgs e)
+        private void limpiarDatosVenta()
         {
-            int r = dtgListaVentas.Rows.Add();
-            dtgListaVentas.Rows[r].Cells[0].Value = lblNombreC.Text;
-            dtgListaVentas.Rows[r].Cells[1].Value = "Marcos Medina";
-            dtgListaVentas.Rows[r].Cells[2].Value = "21/11/21";  //numericupdown
-            dtgListaVentas.Rows[r].Cells[3].Value = lblTotal.Text;
-
-
-
             lblNombreC.Text = "---";
             lblTelefono.Text = "---";
             lblCorreo.Text = "---";
@@ -59,6 +49,62 @@ namespace Capa_Diseño
             nudCantidad.Value = 1;
             dtgCarrito.Rows.Clear();
 
+        }
+        DateTime now = DateTime.Now;
+        private string fecha = "",hora = "",nombreg = "",nombregR = "",codigoventa = "";
+        private string correoRegVenta = "",fechapago = "",nombreVendedor = "";
+        private double pagadoactual = 0,adeudo = 0,subtotalV = 0,totalV = 0,totalA=0;
+        
+        private void crearVenta()
+        {
+            //codigoventa,fecha,subtotal,total,adeudo,fechapago,pagadoactual,id_cliente,vendedor
+            fecha = now.ToString("yyyyMMdd");
+            hora = now.ToString("HHmmss");
+            nombreg = lblNombreC.Text;
+            nombregR = nombreg.Substring(0,3);
+            correoRegVenta = lblCorreo.Text;
+            codigoventa = nombregR + fecha + "_" + hora;
+            subtotalV = Convert.ToDouble(lblTotal.Text);
+
+            if (nombreg == "---")
+            {
+                MessageBox.Show("Debe elegir un cliente");
+                return;
+            }
+            else
+            {
+                if (dtgCarrito.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se agregaron productos");
+                    return;
+                }
+                else
+                {
+                    nombreVendedor = ss.getNombre();
+                    pagadoactual = Convert.ToDouble(txtSaldar.Text);
+                    fechapago = dtpAdeudo.Value.ToString("yyyyMMdd");
+                    adeudo = subtotalV - pagadoactual;
+                    totalV = subtotalV - adeudo;
+                    MessageBox.Show(correoRegVenta);
+
+                    vt.trarIDCliente(nombreg, correoRegVenta);
+                    //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
+                    vt.insertarVenta(codigoventa,fecha,subtotal,totalV,adeudo,fechapago,pagadoactual,nombreg,nombreVendedor,totalA);
+                }  
+            }
+
+        }
+        private double precio = 0,subtotal = 0;
+        private string nombre = "",marcap = "";
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            crearVenta();
+            return;
+            enviarProductos();
+            limpiarDatosVenta();
+            
+              
             MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");
 
         }
@@ -80,6 +126,35 @@ namespace Capa_Diseño
 
             total = total + subtotal;
             lblTotal.Text = total.ToString();
+        }
+        //string nombre,string marca,int cantidad,double subtotal
+        private string nombreProdIns = "", marcaProdIns = "";
+        private int cantidadProdIns = 0;
+        private double subtotalProdIns = 0;
+        public void enviarProductos()
+        {
+            if(dtgCarrito.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dtgCarrito.Rows)
+                {
+                    nombreProdIns = row.Cells[0].Value.ToString();
+                    marcaProdIns = row.Cells[1].Value.ToString();
+                    //precioProdIns = Convert.ToDouble(row.Cells[2].Value);
+                    cantidadProdIns = Convert.ToInt32(row.Cells[3].Value);
+                    subtotalProdIns = Convert.ToDouble(row.Cells[4].Value);
+
+                    vt.insertarProductosVenta(nombreProdIns, marcaProdIns, cantidadProdIns, subtotalProdIns);
+
+
+                }
+                MessageBox.Show("Datos agregados");
+            }
+            else
+            {
+
+            }
+                
+            
         }
     }
 }
