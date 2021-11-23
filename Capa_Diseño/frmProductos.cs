@@ -25,9 +25,11 @@ namespace Capa_Diseño
             llenarDtgCat();
             dtgCats.RowHeadersVisible = false;
             dtgListaProds.RowHeadersVisible = false;
+            dtgEditar.RowHeadersVisible = false;
             cmbCatEditar.SelectedIndex = 0;
             lblOKingresarcat.Visible = false;
             lblEditarCat.Visible = false;
+            lblErrorProd.Visible = false;
             llenarProductos();
             cargarCats();
         }
@@ -339,9 +341,20 @@ namespace Capa_Diseño
         private void llenarProductos()
         {
             dtgListaProds.DataSource = pd.verProductos();
+            dtgEditar.DataSource = pd.verProductos();
         }
         private string nombreIns = "", marcaIns = "", proveedorIns = "", catIns = "", precioc_Ins = "", precioventaIns = "";
-       
+
+        private void dtgEditar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNombreEdit.Text = dtgEditar.Rows[row].Cells[0].Value.ToString();
+            txtMarcaEdit.Text = dtgEditar.Rows[row].Cells[1].Value.ToString();
+            txtDistriEdit.Text = dtgEditar.Rows[row].Cells[2].Value.ToString();
+            cmbCatEdit.SelectedItem = dtgEditar.Rows[row].Cells[3].Value.ToString();
+            txtCompraEdit.Text = dtgEditar.Rows[row].Cells[4].Value.ToString();
+            txtVentaEdit.Text = dtgEditar.Rows[row].Cells[5].Value.ToString();
+        }
+
         private void btnGuardarProd_Click(object sender, EventArgs e)
         {
             insertarProducto();
@@ -361,10 +374,10 @@ namespace Capa_Diseño
             if (verificarProdIns())
             {
                 veriProd = pd.verificarProducto(nombreIns,marcaIns);
-
+                
                 if(veriProd == "")
                 {
-                    pd.insertarProducto(nombreIns, marcaIns, proveedorIns, catIns, precioc_Ins, precioventaIns);
+                    pd.insertarProducto(nombreIns, marcaIns, proveedorIns, catIns, Convert.ToDouble(precioc_Ins), Convert.ToDouble(precioventaIns));
                     llenarProductos();
 
                     lblErrorProd.Text = "Producto Insertado con Exito";

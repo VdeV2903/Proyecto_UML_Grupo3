@@ -63,6 +63,32 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
+        public DataTable ventaProductos()
+        {
+            try
+            {
+                SqlCommand lstCliente = new SqlCommand("VerProductosVenta", conn.Connection);
+                lstCliente.CommandType = CommandType.StoredProcedure;
+
+                conn.OpenConnection();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(lstCliente);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                DataTable dtex = new DataTable();
+                dtex.Rows.Add(0, ex);
+                return dtex;
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
         private string ID_C = "";
         public string verificarProducto(string nombre,string marca)
         {
@@ -87,15 +113,15 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        public void insertarProducto(string nombreProd,string marcaProd,string proveedor,string categoria,string preciocom,string precioven)//faltan parametros
+        public void insertarProducto(string nombreProd,string marcaProd,string proveedor,string categoria,double preciocom,double precioven)//faltan parametros
         {
             try
             {
-                SqlCommand addProd = new SqlCommand("anadirProducto", conn.Connection);
+                SqlCommand addProd = new SqlCommand("insertarProducto", conn.Connection);
                 addProd.CommandType = CommandType.StoredProcedure;
                     addProd.Parameters.AddWithValue("@nombre", nombreProd);
                     addProd.Parameters.AddWithValue("@marca", marcaProd);
-                    addProd.Parameters.AddWithValue("@proveedor", proveedor);
+                    addProd.Parameters.AddWithValue("@distribuidor", proveedor);
                     addProd.Parameters.AddWithValue("@categoria", categoria);
                     addProd.Parameters.AddWithValue("@precioc", preciocom);
                     addProd.Parameters.AddWithValue("@preciov", precioven);

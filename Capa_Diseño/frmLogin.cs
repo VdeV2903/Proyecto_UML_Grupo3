@@ -25,13 +25,10 @@ namespace Capa_Diseño
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            Login log = new Login();
-            log.Usuario = Convert.ToString(txtUsuario.Text);
-            log.Password = Convert.ToString(txtPassword.Text);
+            this.Hide();
+            frmPrincipalAdmin pa = new frmPrincipalAdmin();
+            pa.Show();
 
-            MessageBox.Show(log.Logear());
-            */
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)

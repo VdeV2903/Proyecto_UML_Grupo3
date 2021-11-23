@@ -44,7 +44,7 @@ namespace Capa_Diseño
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
@@ -67,7 +67,7 @@ namespace Capa_Diseño
             this.panelMenu.Controls.Add(this.btnProductos);
             this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.btnInicio);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -94,6 +94,7 @@ namespace Capa_Diseño
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click_1);
             // 
             // btnDocumentos
             // 
@@ -156,6 +157,7 @@ namespace Capa_Diseño
             this.btnPromociones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPromociones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPromociones.UseVisualStyleBackColor = false;
+            this.btnPromociones.Click += new System.EventHandler(this.btnPromociones_Click);
             // 
             // panel2
             // 
@@ -304,25 +306,26 @@ namespace Capa_Diseño
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // button1
+            // btnInicio
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 56);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(176, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "    INICIO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(3)))));
+            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
+            this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInicio.Location = new System.Drawing.Point(0, 56);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInicio.Size = new System.Drawing.Size(176, 45);
+            this.btnInicio.TabIndex = 1;
+            this.btnInicio.Text = "    INICIO";
+            this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // panel1
             // 
@@ -360,6 +363,7 @@ namespace Capa_Diseño
             this.ClientSize = new System.Drawing.Size(1242, 626);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1258, 665);
             this.MinimumSize = new System.Drawing.Size(1258, 665);
             this.Name = "frmPrincipalAdmin";
@@ -379,7 +383,7 @@ namespace Capa_Diseño
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnCotizaciones;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnVentas;

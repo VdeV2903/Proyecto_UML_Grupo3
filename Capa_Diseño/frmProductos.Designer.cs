@@ -40,6 +40,7 @@ namespace Capa_Diseño
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgListaProds = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblErrorProd = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
@@ -97,7 +98,6 @@ namespace Capa_Diseño
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgCats = new System.Windows.Forms.DataGridView();
-            this.lblErrorProd = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -218,6 +218,16 @@ namespace Capa_Diseño
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Producto";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblErrorProd
+            // 
+            this.lblErrorProd.AutoSize = true;
+            this.lblErrorProd.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblErrorProd.Location = new System.Drawing.Point(435, 288);
+            this.lblErrorProd.Name = "lblErrorProd";
+            this.lblErrorProd.Size = new System.Drawing.Size(26, 18);
+            this.lblErrorProd.TabIndex = 44;
+            this.lblErrorProd.Text = "---";
             // 
             // cmbCategoria
             // 
@@ -378,21 +388,26 @@ namespace Capa_Diseño
             // 
             // dtgEditar
             // 
+            this.dtgEditar.AllowUserToAddRows = false;
+            this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgEditar.Location = new System.Drawing.Point(425, 88);
+            this.dtgEditar.Location = new System.Drawing.Point(362, 88);
+            this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";
             this.dtgEditar.ReadOnly = true;
-            this.dtgEditar.Size = new System.Drawing.Size(605, 309);
+            this.dtgEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgEditar.Size = new System.Drawing.Size(668, 309);
             this.dtgEditar.TabIndex = 54;
+            this.dtgEditar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEditar_CellClick);
             // 
             // label9
             // 
@@ -426,7 +441,7 @@ namespace Capa_Diseño
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Location = new System.Drawing.Point(22, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(381, 318);
+            this.groupBox1.Size = new System.Drawing.Size(334, 318);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Producto";
@@ -434,7 +449,7 @@ namespace Capa_Diseño
             // ckTodo
             // 
             this.ckTodo.AutoSize = true;
-            this.ckTodo.Location = new System.Drawing.Point(260, 12);
+            this.ckTodo.Location = new System.Drawing.Point(213, 16);
             this.ckTodo.Name = "ckTodo";
             this.ckTodo.Size = new System.Drawing.Size(115, 22);
             this.ckTodo.TabIndex = 61;
@@ -445,7 +460,7 @@ namespace Capa_Diseño
             // ckCategoria
             // 
             this.ckCategoria.AutoSize = true;
-            this.ckCategoria.Location = new System.Drawing.Point(278, 92);
+            this.ckCategoria.Location = new System.Drawing.Point(257, 92);
             this.ckCategoria.Name = "ckCategoria";
             this.ckCategoria.Size = new System.Drawing.Size(71, 22);
             this.ckCategoria.TabIndex = 60;
@@ -474,7 +489,7 @@ namespace Capa_Diseño
             // ckVenta
             // 
             this.ckVenta.AutoSize = true;
-            this.ckVenta.Location = new System.Drawing.Point(278, 283);
+            this.ckVenta.Location = new System.Drawing.Point(257, 283);
             this.ckVenta.Name = "ckVenta";
             this.ckVenta.Size = new System.Drawing.Size(71, 22);
             this.ckVenta.TabIndex = 57;
@@ -501,7 +516,7 @@ namespace Capa_Diseño
             // ckCompra
             // 
             this.ckCompra.AutoSize = true;
-            this.ckCompra.Location = new System.Drawing.Point(278, 237);
+            this.ckCompra.Location = new System.Drawing.Point(257, 237);
             this.ckCompra.Name = "ckCompra";
             this.ckCompra.Size = new System.Drawing.Size(71, 22);
             this.ckCompra.TabIndex = 54;
@@ -512,7 +527,7 @@ namespace Capa_Diseño
             // ckDistribuidor
             // 
             this.ckDistribuidor.AutoSize = true;
-            this.ckDistribuidor.Location = new System.Drawing.Point(278, 189);
+            this.ckDistribuidor.Location = new System.Drawing.Point(257, 189);
             this.ckDistribuidor.Name = "ckDistribuidor";
             this.ckDistribuidor.Size = new System.Drawing.Size(71, 22);
             this.ckDistribuidor.TabIndex = 53;
@@ -523,7 +538,7 @@ namespace Capa_Diseño
             // ckMarca
             // 
             this.ckMarca.AutoSize = true;
-            this.ckMarca.Location = new System.Drawing.Point(278, 143);
+            this.ckMarca.Location = new System.Drawing.Point(257, 143);
             this.ckMarca.Name = "ckMarca";
             this.ckMarca.Size = new System.Drawing.Size(71, 22);
             this.ckMarca.TabIndex = 52;
@@ -534,7 +549,7 @@ namespace Capa_Diseño
             // ckNombre
             // 
             this.ckNombre.AutoSize = true;
-            this.ckNombre.Location = new System.Drawing.Point(278, 45);
+            this.ckNombre.Location = new System.Drawing.Point(257, 45);
             this.ckNombre.Name = "ckNombre";
             this.ckNombre.Size = new System.Drawing.Size(71, 22);
             this.ckNombre.TabIndex = 51;
@@ -825,16 +840,6 @@ namespace Capa_Diseño
             this.dtgCats.Size = new System.Drawing.Size(381, 464);
             this.dtgCats.TabIndex = 0;
             this.dtgCats.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCats_CellClick);
-            // 
-            // lblErrorProd
-            // 
-            this.lblErrorProd.AutoSize = true;
-            this.lblErrorProd.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblErrorProd.Location = new System.Drawing.Point(435, 288);
-            this.lblErrorProd.Name = "lblErrorProd";
-            this.lblErrorProd.Size = new System.Drawing.Size(26, 18);
-            this.lblErrorProd.TabIndex = 44;
-            this.lblErrorProd.Text = "---";
             // 
             // frmProductos
             // 

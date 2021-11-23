@@ -32,7 +32,7 @@ namespace Capa_Diseño
         */
         private void frmPrincipalAdmin_Load(object sender, EventArgs e)
         {
-
+            AbrirFormulario<frmInicio>();
         }
         private void AbrirFormulario<T>() where T : Form, new()
         {
@@ -83,6 +83,21 @@ namespace Capa_Diseño
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmEmpleados>();
+        }
+
+        private void btnPromociones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmPromociones>();
+        }
+
+        private void btnReportes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmReportes>();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmInicio>();
         }
     }
 }

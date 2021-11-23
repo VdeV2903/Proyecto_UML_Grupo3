@@ -39,6 +39,32 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }  
         }
+        public DataTable ventaClientes()
+        {
+            try
+            {
+                SqlCommand lstCliente = new SqlCommand("ventaClientes", conn.Connection);
+                lstCliente.CommandType = CommandType.StoredProcedure;               
+
+                conn.OpenConnection();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(lstCliente);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                DataTable dtex = new DataTable();
+                dtex.Rows.Add(0, ex);
+                return dtex;
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
         private string ID = "";
         public string traerID(string cliente, string correop)
         {
