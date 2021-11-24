@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Capa_Datos;
 
 namespace Capa_Diseño
 {
     public partial class frmLogin : Form
     {
+        Session ss = new Session();
         public frmLogin()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Capa_Diseño
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             frmPrincipalAdmin pa = new frmPrincipalAdmin();
             pa.Show();

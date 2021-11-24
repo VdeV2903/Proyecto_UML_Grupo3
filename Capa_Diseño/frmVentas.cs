@@ -25,6 +25,7 @@ namespace Capa_Diseño
         {
             dtgClientes.DataSource = cl.ventaClientes();
             dtgProductos.DataSource = pd.ventaProductos();
+            cargarListaVentas();
         }
         private int row = 0,row2 = 0;
         private void dtgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -50,13 +51,29 @@ namespace Capa_Diseño
             dtgCarrito.Rows.Clear();
 
         }
+        private void cargarListaVentas()
+        {
+            dtgListaVentas.DataSource = vt.verVentas();
+        }
         DateTime now = DateTime.Now;
         private string fecha = "",hora = "",nombreg = "",nombregR = "",codigoventa = "";
         private string correoRegVenta = "",fechapago = "",nombreVendedor = "";
         private double pagadoactual = 0,adeudo = 0,subtotalV = 0,totalV = 0,totalA=0;
-        
-        private void crearVenta()
+        private int row3 = 0;
+        private double remove;
+        private void button2_Click(object sender, EventArgs e)
         {
+            row3 = dtgCarrito.CurrentRow.Index;
+
+            remove = Convert.ToDouble(lblTotal.Text);
+            lblTotal.Text = Convert.ToString( remove - Convert.ToDouble(dtgCarrito.Rows[row].Cells[4].Value));
+            total = total - Convert.ToDouble(dtgCarrito.Rows[row].Cells[4].Value);
+            dtgCarrito.Rows.RemoveAt(dtgCarrito.CurrentRow.Index);
+        }
+
+        private bool crearVenta()
+        {
+            bool okv = true;
             //codigoventa,fecha,subtotal,total,adeudo,fechapago,pagadoactual,id_cliente,vendedor
             fecha = now.ToString("yyyyMMdd");
             hora = now.ToString("HHmmss");
@@ -69,52 +86,66 @@ namespace Capa_Diseño
             if (nombreg == "---")
             {
                 MessageBox.Show("Debe elegir un cliente");
-                return;
+                okv = false;
             }
             else
             {
                 if (dtgCarrito.Rows.Count == 0)
                 {
                     MessageBox.Show("No se agregaron productos");
-                    return;
+                    okv = false;
                 }
                 else
                 {
                     nombreVendedor = ss.getNombre();
-                    pagadoactual = Convert.ToDouble(txtSaldar.Text);
+                    if(ckAdeudara.Checked == true)
+                    {
+                        pagadoactual = Convert.ToDouble(txtSaldar.Text);
+                    }
+                    else
+                    {
+                        pagadoactual = subtotalV;
+                    }
                     fechapago = dtpAdeudo.Value.ToString("yyyyMMdd");
                     adeudo = subtotalV - pagadoactual;
-                    totalV = subtotalV - adeudo;
-                    MessageBox.Show(correoRegVenta);
+                    totalA = subtotalV - adeudo; //solo para generar factura
+                    
 
-                    vt.trarIDCliente(nombreg, correoRegVenta);
+                    
                     //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
-                    vt.insertarVenta(codigoventa,fecha,subtotal,totalV,adeudo,fechapago,pagadoactual,nombreg,nombreVendedor,totalA);
+                    vt.insertarVenta(codigoventa,fecha,subtotalV, subtotalV, fechapago,pagadoactual,nombreg,correoRegVenta,nombreVendedor);
+
+
                 }  
             }
-
+            return okv;
         }
         private double precio = 0,subtotal = 0;
         private string nombre = "",marcap = "";
-
+        private bool reg = true;
         private void button3_Click(object sender, EventArgs e)
         {
-            crearVenta();
-            return;
-            enviarProductos();
-            limpiarDatosVenta();
+            codigoventa = "";
+            reg = crearVenta(); 
+            if(reg == true)
+            {
+                //enviarProductos();
+                cargarListaVentas();
+                limpiarDatosVenta();
+                MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");
+            }
             
-              
-            MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");
-
+            
+                    
         }
 
         private double total = 0;
         private void btnAnadir_Click(object sender, EventArgs e)
         {
+            subtotal = 0;
             nombre = dtgProductos.Rows[row2].Cells[0].Value.ToString();
             precio = Convert.ToDouble(dtgProductos.Rows[row2].Cells[2].Value);
-            subtotal = (Convert.ToDouble(nudCantidad.Value)) * (Convert.ToDouble(precio));
+            subtotal = (Convert.ToInt32(nudCantidad.Value)) * (Convert.ToDouble(precio));
             marcap = dtgProductos.Rows[row2].Cells[1].Value.ToString();
 
             int n = dtgCarrito.Rows.Add();
@@ -143,7 +174,7 @@ namespace Capa_Diseño
                     cantidadProdIns = Convert.ToInt32(row.Cells[3].Value);
                     subtotalProdIns = Convert.ToDouble(row.Cells[4].Value);
 
-                    vt.insertarProductosVenta(nombreProdIns, marcaProdIns, cantidadProdIns, subtotalProdIns);
+                    vt.insertarProductosVenta(nombreProdIns, marcaProdIns,codigoventa, cantidadProdIns, subtotalProdIns);
 
 
                 }

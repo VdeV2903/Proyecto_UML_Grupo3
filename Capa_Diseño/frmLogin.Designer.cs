@@ -80,7 +80,7 @@ namespace Capa_Diseño
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(56, 92);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(141, 144);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -185,6 +185,9 @@ namespace Capa_Diseño
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(780, 330);
+            this.MinimumSize = new System.Drawing.Size(780, 330);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";

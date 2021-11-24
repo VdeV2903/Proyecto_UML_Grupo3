@@ -37,6 +37,11 @@ namespace Capa_Diseño
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpAdeudo = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtSaldar = new System.Windows.Forms.TextBox();
+            this.ckAdeudara = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -74,17 +79,6 @@ namespace Capa_Diseño
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtgListaVentas = new System.Windows.Forms.DataGridView();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckAdeudara = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtSaldar = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpAdeudo = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -119,8 +113,6 @@ namespace Capa_Diseño
             this.tabPage2.Controls.Add(this.dtpAdeudo);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.txtSaldar);
-            this.tabPage2.Controls.Add(this.checkBox1);
-            this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.ckAdeudara);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.btnAnadir);
@@ -135,6 +127,51 @@ namespace Capa_Diseño
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nueva Venta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(613, 524);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 15);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Fecha Pago:";
+            // 
+            // dtpAdeudo
+            // 
+            this.dtpAdeudo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAdeudo.Location = new System.Drawing.Point(610, 542);
+            this.dtpAdeudo.Name = "dtpAdeudo";
+            this.dtpAdeudo.Size = new System.Drawing.Size(125, 24);
+            this.dtpAdeudo.TabIndex = 69;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(427, 525);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(171, 15);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "Cantidad que pagará hoy:";
+            // 
+            // txtSaldar
+            // 
+            this.txtSaldar.Location = new System.Drawing.Point(452, 542);
+            this.txtSaldar.Name = "txtSaldar";
+            this.txtSaldar.Size = new System.Drawing.Size(128, 24);
+            this.txtSaldar.TabIndex = 68;
+            // 
+            // ckAdeudara
+            // 
+            this.ckAdeudara.AutoSize = true;
+            this.ckAdeudara.Location = new System.Drawing.Point(340, 542);
+            this.ckAdeudara.Name = "ckAdeudara";
+            this.ckAdeudara.Size = new System.Drawing.Size(106, 22);
+            this.ckAdeudara.TabIndex = 67;
+            this.ckAdeudara.Text = "Adeudará?";
+            this.ckAdeudara.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -311,6 +348,7 @@ namespace Capa_Diseño
             this.button2.TabIndex = 58;
             this.button2.Text = "ELIMINAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dtgCarrito
             // 
@@ -568,11 +606,6 @@ namespace Capa_Diseño
             this.dtgListaVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgListaVentas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgListaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgListaVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cliente,
-            this.Vendedor,
-            this.Column2,
-            this.Totals});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -589,92 +622,6 @@ namespace Capa_Diseño
             this.dtgListaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgListaVentas.Size = new System.Drawing.Size(1020, 361);
             this.dtgListaVentas.TabIndex = 26;
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
-            // 
-            // Vendedor
-            // 
-            this.Vendedor.HeaderText = "Vendedor";
-            this.Vendedor.Name = "Vendedor";
-            this.Vendedor.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Fecha";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Totals
-            // 
-            this.Totals.HeaderText = "Total";
-            this.Totals.Name = "Totals";
-            this.Totals.ReadOnly = true;
-            // 
-            // ckAdeudara
-            // 
-            this.ckAdeudara.AutoSize = true;
-            this.ckAdeudara.Location = new System.Drawing.Point(340, 542);
-            this.ckAdeudara.Name = "ckAdeudara";
-            this.ckAdeudara.Size = new System.Drawing.Size(106, 22);
-            this.ckAdeudara.TabIndex = 67;
-            this.ckAdeudara.Text = "Adeudará?";
-            this.ckAdeudara.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(452, 541);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 24);
-            this.textBox2.TabIndex = 68;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(340, 542);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 22);
-            this.checkBox1.TabIndex = 67;
-            this.checkBox1.Text = "Adeudará?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // txtSaldar
-            // 
-            this.txtSaldar.Location = new System.Drawing.Point(452, 542);
-            this.txtSaldar.Name = "txtSaldar";
-            this.txtSaldar.Size = new System.Drawing.Size(128, 24);
-            this.txtSaldar.TabIndex = 68;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(446, 524);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 15);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "Cantidad que pagará:";
-            // 
-            // dtpAdeudo
-            // 
-            this.dtpAdeudo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAdeudo.Location = new System.Drawing.Point(600, 542);
-            this.dtpAdeudo.Name = "dtpAdeudo";
-            this.dtpAdeudo.Size = new System.Drawing.Size(125, 24);
-            this.dtpAdeudo.TabIndex = 69;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(597, 524);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 15);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "Fecha Pago:";
             // 
             // frmVentas
             // 
@@ -746,10 +693,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.DataGridView dtgCarrito;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totals;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnidad;
@@ -759,8 +702,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.DateTimePicker dtpAdeudo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSaldar;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox ckAdeudara;
     }
 }
