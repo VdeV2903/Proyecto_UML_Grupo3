@@ -35,6 +35,8 @@ namespace Capa_Diseño
             cmbEstadoEditar.Enabled = false;
             lblErrorEditar.Visible = false;
             control = 1;
+            txtPass.UseSystemPasswordChar = true;
+            txtPass2.UseSystemPasswordChar = true;
             renovaredit();  
         }
         public void renovarinsercion()
@@ -347,7 +349,7 @@ namespace Capa_Diseño
                     this.email = txtEmail.Text;
                     this.pass = txtPass.Text;
                     this.passc = txtPass2.Text;
-                    this.fecha = dtmFecha.Value.ToString("yyyy-MM-dd");
+                    this.fecha = dtmFecha.Value.ToString("yyyyMMdd");
                     this.roll = Convert.ToString(cmbRoll.SelectedItem);
 
                     comprobarEmpleado = em.verificarEmpleado(nombres,email,fecha);

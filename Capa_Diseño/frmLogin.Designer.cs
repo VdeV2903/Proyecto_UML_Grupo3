@@ -41,6 +41,7 @@ namespace Capa_Diseño
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.lblOK = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
@@ -170,12 +171,23 @@ namespace Capa_Diseño
             this.pbMinimizar.TabStop = false;
             this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
+            // lblOK
+            // 
+            this.lblOK.AutoSize = true;
+            this.lblOK.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblOK.Location = new System.Drawing.Point(436, 220);
+            this.lblOK.Name = "lblOK";
+            this.lblOK.Size = new System.Drawing.Size(16, 13);
+            this.lblOK.TabIndex = 39;
+            this.lblOK.Text = "---";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblOK);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.label1);
@@ -214,5 +226,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblOK;
     }
 }

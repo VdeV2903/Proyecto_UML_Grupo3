@@ -30,8 +30,8 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -195,14 +195,14 @@ namespace Capa_Diseño
             this.dtgLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgLista.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgLista.Location = new System.Drawing.Point(56, 120);
             this.dtgLista.MultiSelect = false;
             this.dtgLista.Name = "dtgLista";
@@ -239,7 +239,7 @@ namespace Capa_Diseño
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1061, 597);
+            this.tabPage2.Size = new System.Drawing.Size(1064, 597);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Agregar Empleado";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -309,7 +309,7 @@ namespace Capa_Diseño
             this.dtmFecha.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dtmFecha.Name = "dtmFecha";
             this.dtmFecha.Size = new System.Drawing.Size(234, 24);
-            this.dtmFecha.TabIndex = 46;
+            this.dtmFecha.TabIndex = 34;
             this.dtmFecha.Value = new System.DateTime(2021, 11, 19, 0, 0, 0, 0);
             // 
             // txtPass2
@@ -317,7 +317,7 @@ namespace Capa_Diseño
             this.txtPass2.Location = new System.Drawing.Point(542, 363);
             this.txtPass2.Name = "txtPass2";
             this.txtPass2.Size = new System.Drawing.Size(234, 24);
-            this.txtPass2.TabIndex = 45;
+            this.txtPass2.TabIndex = 36;
             // 
             // label16
             // 
@@ -333,7 +333,7 @@ namespace Capa_Diseño
             this.txtPass.Location = new System.Drawing.Point(263, 363);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(234, 24);
-            this.txtPass.TabIndex = 43;
+            this.txtPass.TabIndex = 35;
             // 
             // label14
             // 
@@ -366,7 +366,7 @@ namespace Capa_Diseño
             this.txtApellidos.Location = new System.Drawing.Point(542, 161);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(234, 24);
-            this.txtApellidos.TabIndex = 39;
+            this.txtApellidos.TabIndex = 31;
             // 
             // label12
             // 
@@ -406,14 +406,15 @@ namespace Capa_Diseño
             this.txtEmail.Location = new System.Drawing.Point(542, 210);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 24);
-            this.txtEmail.TabIndex = 32;
+            this.txtEmail.TabIndex = 33;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(264, 211);
+            this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(234, 24);
-            this.txtTelefono.TabIndex = 31;
+            this.txtTelefono.TabIndex = 32;
             // 
             // txtNombre
             // 
@@ -465,7 +466,7 @@ namespace Capa_Diseño
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1061, 597);
+            this.tabPage3.Size = new System.Drawing.Size(1064, 597);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modificar Empleado";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -542,14 +543,14 @@ namespace Capa_Diseño
             this.dtgEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgEditar.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgEditar.Location = new System.Drawing.Point(371, 153);
             this.dtgEditar.MultiSelect = false;
             this.dtgEditar.Name = "dtgEditar";

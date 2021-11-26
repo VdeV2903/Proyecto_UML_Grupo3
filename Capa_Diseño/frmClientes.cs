@@ -223,6 +223,7 @@ namespace Capa_Diseño
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             nombre = txtNombre.Text;
+            telefono = txtTelefono.Text;
             correo = txtEmail.Text;
 
             cmp = cl.verificarCliente(nombre,correo);

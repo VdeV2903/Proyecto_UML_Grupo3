@@ -49,16 +49,17 @@ namespace Capa_Diseño
             lblTotal.Text = "0";
             nudCantidad.Value = 1;
             dtgCarrito.Rows.Clear();
+            total = 0;
 
         }
         private void cargarListaVentas()
         {
             dtgListaVentas.DataSource = vt.verVentas();
         }
-        DateTime now = DateTime.Now;
+        
         private string fecha = "",hora = "",nombreg = "",nombregR = "",codigoventa = "";
-        private string correoRegVenta = "",fechapago = "",nombreVendedor = "";
-        private double pagadoactual = 0,adeudo = 0,subtotalV = 0,totalV = 0,totalA=0;
+        private string correoRegVenta = "",nombreVendedor = "",fechaconcat = "";
+        private double pagadoactual = 0,adeudo = 0.00,subtotalV = 0,totalV = 0,totalA=0;
         private int row3 = 0;
         private double remove;
         private void button2_Click(object sender, EventArgs e)
@@ -70,18 +71,27 @@ namespace Capa_Diseño
             total = total - Convert.ToDouble(dtgCarrito.Rows[row].Cells[4].Value);
             dtgCarrito.Rows.RemoveAt(dtgCarrito.CurrentRow.Index);
         }
-
+        DateTime now = DateTime.Now;
+        private void setFecha()
+        {
+            fecha = now.ToString("yyyyMMdd");    //fecha
+            hora = now.ToString("HHmmss");
+            fechaconcat = fecha + "_" + hora;
+        }
         private bool crearVenta()
         {
             bool okv = true;
-            //codigoventa,fecha,subtotal,total,adeudo,fechapago,pagadoactual,id_cliente,vendedor
-            fecha = now.ToString("yyyyMMdd");
-            hora = now.ToString("HHmmss");
-            nombreg = lblNombreC.Text;
+            //codigoventa,fecha,subtotal,total,adeudo,fechapago,pagadoactual,id_cliente,correo,vendedor
+            setFecha();
+            nombreg = lblNombreC.Text; //cliente
             nombregR = nombreg.Substring(0,3);
-            correoRegVenta = lblCorreo.Text;
-            codigoventa = nombregR + fecha + "_" + hora;
-            subtotalV = Convert.ToDouble(lblTotal.Text);
+            correoRegVenta = lblCorreo.Text;    //correo
+            codigoventa = nombregR + fechaconcat;  //codigoventa
+            subtotalV = Math.Round(Convert.ToDouble(lblTotal.Text), 2); //subtotal //total
+            nombreVendedor = ss.getNombre(); //vendedor
+
+            MessageBox.Show(codigoventa);
+            totalA = subtotalV - adeudo; //solo para generar factura
 
             if (nombreg == "---")
             {
@@ -97,24 +107,31 @@ namespace Capa_Diseño
                 }
                 else
                 {
-                    nombreVendedor = ss.getNombre();
-                    if(ckAdeudara.Checked == true)
+                    MessageBox.Show("_"+subtotalV + "_");
+                    //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
+                    vt.insertarVenta(codigoventa,fecha,subtotalV, subtotalV,nombreg,correoRegVenta,nombreVendedor);
+
+                    if (dtgCarrito.Rows.Count > 0)
                     {
-                        pagadoactual = Convert.ToDouble(txtSaldar.Text);
+                        foreach (DataGridViewRow row in dtgCarrito.Rows)
+                        {
+                            nombreProdIns = row.Cells[0].Value.ToString();
+                            marcaProdIns = row.Cells[1].Value.ToString();
+                            //precioProdIns = Convert.ToDouble(row.Cells[2].Value);
+                            cantidadProdIns = Convert.ToInt32(row.Cells[3].Value);
+                            subtotalProdIns = Convert.ToDouble(row.Cells[4].Value);
+
+                            vt.insertarProductosVenta(nombreProdIns, marcaProdIns, codigoventa, cantidadProdIns, subtotalProdIns);
+
+
+                        }
+                        MessageBox.Show("Datos agregados");
                     }
                     else
                     {
-                        pagadoactual = subtotalV;
+
                     }
-                    fechapago = dtpAdeudo.Value.ToString("yyyyMMdd");
-                    adeudo = subtotalV - pagadoactual;
-                    totalA = subtotalV - adeudo; //solo para generar factura
-                    
-
-                    
-                    //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
-                    vt.insertarVenta(codigoventa,fecha,subtotalV, subtotalV, fechapago,pagadoactual,nombreg,correoRegVenta,nombreVendedor);
-
+                    okv = true;
 
                 }  
             }
@@ -129,7 +146,6 @@ namespace Capa_Diseño
             reg = crearVenta(); 
             if(reg == true)
             {
-                //enviarProductos();
                 cargarListaVentas();
                 limpiarDatosVenta();
                 MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");

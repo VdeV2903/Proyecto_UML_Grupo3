@@ -22,7 +22,7 @@ namespace Capa_Datos
                     addProd.Parameters.AddWithValue("@marca", marca);
                     addProd.Parameters.AddWithValue("@venta", codigoventa);
                     addProd.Parameters.Add("@cantidad", SqlDbType.Int).Value = cantidad;
-                    addProd.Parameters.Add("@subtotal", SqlDbType.Decimal).Value = subtotal;
+                    addProd.Parameters.Add("@subtotal", SqlDbType.Float).Value = subtotal;
                 
                 conn.OpenConnection();
 
@@ -47,24 +47,23 @@ namespace Capa_Datos
             agregar.ExecuteNonQuery();
             */
         }
-        private double adeudoCal = 0; 
-        public void insertarVenta(string codigo,string fecha,double subtotal,double total,string fechap,double pagado,string cliente,string correo,string vendedor)
+
+        public void insertarVenta(string codigo,string fecha,double subtotal,double total,string cliente,string correo,string vendedor)
         {
             try
             {
-                adeudoCal = subtotal - pagado;
+                
                 SqlCommand addProd = new SqlCommand("GenerarVenta", conn.Connection);
                 addProd.CommandType = CommandType.StoredProcedure;
-                    addProd.Parameters.AddWithValue("@codigo", codigo);
-                    addProd.Parameters.AddWithValue("@fecha", fecha);
-                    addProd.Parameters.Add("@subtotal", SqlDbType.Decimal).Value = subtotal;
-                    addProd.Parameters.Add("@adeudo", SqlDbType.Decimal).Value = adeudoCal;
-                    addProd.Parameters.Add("@pagadoactual", SqlDbType.Decimal).Value = pagado;
-                    addProd.Parameters.AddWithValue("@fechaadeudo", fechap);
-                    addProd.Parameters.AddWithValue("@cliente", cliente);
-                    addProd.Parameters.AddWithValue("@correo", correo);
-                    addProd.Parameters.AddWithValue("@vendedor", vendedor);
-                    addProd.Parameters.Add("@totalv", SqlDbType.Decimal).Value = total;
+                addProd.Parameters.Clear();
+                    addProd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                    addProd.Parameters.Add("@fecha", SqlDbType.VarChar).Value = fecha;
+                    addProd.Parameters.Add("@subtotal", SqlDbType.Float).Value = subtotal;
+                
+                    addProd.Parameters.Add("@cliente", SqlDbType.VarChar).Value = cliente;
+                    addProd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                    addProd.Parameters.Add("@vendedor", SqlDbType.VarChar).Value = vendedor;
+                    addProd.Parameters.Add("@totalv", SqlDbType.Float).Value = total;
 
                 conn.OpenConnection();
 
@@ -98,7 +97,7 @@ namespace Capa_Datos
             catch (SqlException ex)
             {
                 DataTable dtex = new DataTable();
-                dtex.Rows.Add(0, ex);
+                Console.WriteLine(ex.Message);
                 return dtex;
             }
             finally

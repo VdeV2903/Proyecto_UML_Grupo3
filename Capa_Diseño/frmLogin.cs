@@ -14,6 +14,9 @@ namespace Capa_Diseño
     public partial class frmLogin : Form
     {
         Session ss = new Session();
+        private string user = "",pass = "";
+        private bool auth = false;
+        public string roll = "";
         public frmLogin()
         {
             InitializeComponent();
@@ -21,15 +24,40 @@ namespace Capa_Diseño
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            
+            lblOK.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            user = txtUsuario.Text;
+            pass = txtPassword.Text;
+
+            auth = ss.authUser(user,pass);
+            if (auth == true)
+            {
+                ss.getSession(user);
+                roll = ss.getRoll();
+                if(roll == "JEFE/GERENTE")
+                {
+                    this.Hide();
+                    frmPrincipalAdmin pa = new frmPrincipalAdmin();
+                    pa.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    frmPrincipalVendedor pa = new frmPrincipalVendedor();
+                    pa.Show();
+                }
+                
+            }
+            else
+            {
+                lblOK.Text = "Credenciales incorrectas";
+                lblOK.ForeColor = Color.Red;
+                lblOK.Visible = true;
+            }
             
-            this.Hide();
-            frmPrincipalAdmin pa = new frmPrincipalAdmin();
-            pa.Show();
 
         }
 

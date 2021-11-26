@@ -94,7 +94,7 @@ namespace Capa_Diseño
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = false;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click_1);
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnDocumentos
             // 

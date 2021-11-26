@@ -72,10 +72,7 @@ namespace Capa_Diseño
         {
             AbrirFormulario<frmCotizaciones>();
         }     
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmReportes>();
-        }
+        
         private void btnDocumentos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmDocumentosFiscales>();
@@ -90,14 +87,15 @@ namespace Capa_Diseño
             AbrirFormulario<frmPromociones>();
         }
 
-        private void btnReportes_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmReportes>();
-        }
-
+        
         private void btnInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmInicio>();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmReportes>();
         }
     }
 }
