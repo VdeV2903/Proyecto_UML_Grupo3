@@ -342,12 +342,17 @@ namespace Capa_Diseño
             }
             return ok;
         }
-        private void llenarProductos()
+        public void llenarProductos()
         {
             dtgListaProds.DataSource = pd.verProductos();
             dtgEditar.DataSource = pd.verProductos();
         }
         private string nombreIns = "", marcaIns = "", proveedorIns = "", catIns = "", precioc_Ins = "", precioventaIns = "";
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            llenarProductos();
+        }
 
         private void dtgEditar_CellClick(object sender, DataGridViewCellEventArgs e)
         {

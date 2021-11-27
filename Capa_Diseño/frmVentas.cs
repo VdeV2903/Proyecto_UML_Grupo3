@@ -21,6 +21,7 @@ namespace Capa_Diseño
         Productos pd = new Productos();
         Ventas vt = new Ventas();
         Session ss = new Session();
+        frmFactura fc = new frmFactura();
         private void frmVentas_Load(object sender, EventArgs e)
         {
             load();
@@ -28,7 +29,7 @@ namespace Capa_Diseño
         public void load()
         {
             dtgClientes.DataSource = cl.ventaClientes("");
-            dtgProductos.DataSource = pd.ventaProductos("");
+            dtgProductos.DataSource = pd.ventaProductos(textBox1.Text);
             cargarListaVentas();
         }
         private int row = 0,row2 = 0;
@@ -103,7 +104,7 @@ namespace Capa_Diseño
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dtgProductos.DataSource = pd.ventaProductos(textBox1.Text);
+            load();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -140,7 +141,7 @@ namespace Capa_Diseño
                 }
                 else
                 {
-                    
+                    fc.setCodigo(codigoventa);
                     //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
                     vt.insertarVenta(codigoventa,fecha,subtotalV, subtotalV,nombreg,correoRegVenta,nombreVendedor);
 
@@ -170,6 +171,7 @@ namespace Capa_Diseño
             }
             return okv;
         }
+
         private double precio = 0,subtotal = 0;
         private string nombre = "",marcap = "";
         private bool reg = true;
@@ -181,7 +183,8 @@ namespace Capa_Diseño
             {
                 cargarListaVentas();
                 limpiarDatosVenta();
-                MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");
+         
+                fc.Show();
             }
             
             

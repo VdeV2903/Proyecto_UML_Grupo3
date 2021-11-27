@@ -67,6 +67,27 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
+        public void eliminarPromo(string ID)
+        {
+            try
+            {
+                SqlCommand idact = new SqlCommand("eliminarPromo", conn.Connection);
+                idact.CommandType = CommandType.StoredProcedure;               
+                idact.Parameters.AddWithValue("@ID", ID);
 
+                conn.OpenConnection();
+
+                idact.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
     }
 }

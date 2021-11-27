@@ -15,6 +15,9 @@ namespace Capa_Diseño
     {
         Productos pd = new Productos();
         Promociones pr = new Promociones();
+        frmVentas frv = new frmVentas();
+        frmProductos frpd = new frmProductos();
+        frmCotizaciones frcots = new frmCotizaciones();
         public frmPromociones()
         {
             InitializeComponent();
@@ -22,10 +25,13 @@ namespace Capa_Diseño
 
         private void frmPromociones_Load(object sender, EventArgs e)
         {
+            load();
+        }
+        public void load()
+        {
             listarProductos();
             listarPromos();
         }
-
         private void listarProductos()
         {
             dtgCrear.DataSource = pd.promocionProductos(txtProdsV.Text);
@@ -85,6 +91,25 @@ namespace Capa_Diseño
         private int ID;
         private string nombre, fechafin;
         private double precioa, precionn,porce;
+        
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Desea eliminar esta promoción?", "CONFIRMAR", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pr.eliminarPromo(dtgPromosA.CurrentRow.Cells[0].Value.ToString());
+                load();
+
+                frv.load();
+                frcots.load();
+                frpd.load();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             lblOK.Visible = false;
@@ -118,6 +143,10 @@ namespace Capa_Diseño
                     sentinela = 1;
                     limpiarDatos();
                     sentinela = 0;
+
+                    frv.load();
+                    frcots.load();
+                    frpd.load();
                 }
 
             }

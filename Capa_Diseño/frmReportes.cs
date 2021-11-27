@@ -16,5 +16,20 @@ namespace Capa_Diseño
         {
             InitializeComponent();
         }
+
+        private void frmReportes_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'ProductosSistema.Productos' Puede moverla o quitarla según sea necesario.
+            this.ProductosTableAdapter.Fill(this.ProductosSistema.Productos);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.ProductosTableAdapter.Fill(this.ProductosSistema.Productos);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

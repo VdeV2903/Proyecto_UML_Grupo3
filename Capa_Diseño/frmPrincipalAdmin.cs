@@ -73,6 +73,7 @@ namespace Capa_Diseño
         {
             AbrirFormulario<frmProductos>();
             frpd.load();
+            frpd.llenarProductos();
         }
         frmCotizaciones frcot = new frmCotizaciones();
         private void btnCotizaciones_Click(object sender, EventArgs e)
