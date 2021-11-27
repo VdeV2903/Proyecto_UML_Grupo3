@@ -41,13 +41,14 @@ namespace Capa_Datos
         {
             try
             {
-                SqlCommand lstCliente = new SqlCommand("cargarProductos", conn.Connection);
-                lstCliente.CommandType = CommandType.StoredProcedure;
+                SqlCommand lstprods = new SqlCommand("cargarProductos", conn.Connection);
+                lstprods.CommandType = CommandType.StoredProcedure;
+                
 
                 conn.OpenConnection();
 
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(lstCliente);
+                SqlDataAdapter da = new SqlDataAdapter(lstprods);
                 da.Fill(dt);
 
                 return dt;
@@ -63,17 +64,18 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        public DataTable ventaProductos()
+        public DataTable ventaProductos(string word)
         {
             try
             {
-                SqlCommand lstCliente = new SqlCommand("VerProductosVenta", conn.Connection);
-                lstCliente.CommandType = CommandType.StoredProcedure;
+                SqlCommand lstprods = new SqlCommand("VerProductosVenta", conn.Connection);
+                lstprods.CommandType = CommandType.StoredProcedure;
+                lstprods.Parameters.AddWithValue("@word", word);
 
                 conn.OpenConnection();
 
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(lstCliente);
+                SqlDataAdapter da = new SqlDataAdapter(lstprods);
                 da.Fill(dt);
 
                 return dt;
@@ -184,6 +186,33 @@ namespace Capa_Datos
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+        public DataTable promocionProductos(string word)
+        {
+            try
+            {
+                SqlCommand lstprods = new SqlCommand("VerProductosPromo", conn.Connection);
+                lstprods.CommandType = CommandType.StoredProcedure;
+                lstprods.Parameters.AddWithValue("@word", word);
+
+                conn.OpenConnection();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(lstprods);
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                DataTable dtex = new DataTable();
+                dtex.Rows.Add(0, ex);
+                return dtex;
             }
             finally
             {

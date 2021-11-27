@@ -12,7 +12,7 @@ namespace Capa_Datos
     public class Ventas
     {
         ConexionBD conn = new ConexionBD();
-        public void insertarProductosVenta(string nombre,string marca,string codigoventa,int cantidad,double subtotal)
+        public void insertarProductosVenta(string nombre,string marca,string codigoventa,double precio,int cantidad,double subtotal)
         {
             try
             {
@@ -21,6 +21,7 @@ namespace Capa_Datos
                     addProd.Parameters.AddWithValue("@producto", nombre);
                     addProd.Parameters.AddWithValue("@marca", marca);
                     addProd.Parameters.AddWithValue("@venta", codigoventa);
+                    addProd.Parameters.Add("@precio", SqlDbType.Float).Value = precio;
                     addProd.Parameters.Add("@cantidad", SqlDbType.Int).Value = cantidad;
                     addProd.Parameters.Add("@subtotal", SqlDbType.Float).Value = subtotal;
                 
@@ -37,15 +38,7 @@ namespace Capa_Datos
             {
                 conn.CloseConnection();
             }
-            /*
-            agregar.Parameters.Clear();
-
-            agregar.Parameters.AddWithValue("@clave", Convert.ToString(row.Cells["Column1"].Value));
-            agregar.Parameters.AddWithValue("@nombre", Convert.ToString(row.Cells["Column2"].Value));
-            agregar.Parameters.AddWithValue("@apellido", Convert.ToString(row.Cells["Column3"].Value));
-
-            agregar.ExecuteNonQuery();
-            */
+            
         }
 
         public void insertarVenta(string codigo,string fecha,double subtotal,double total,string cliente,string correo,string vendedor)
@@ -79,17 +72,17 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }
         }
-        public DataTable verVentas()
+        public DataTable verVentas(string word)
         {
             try
             {
-                SqlCommand lstCliente = new SqlCommand("verVentas", conn.Connection);
-                lstCliente.CommandType = CommandType.StoredProcedure;
-
+                SqlCommand lstventas = new SqlCommand("verVentas", conn.Connection);
+                lstventas.CommandType = CommandType.StoredProcedure;
+                    lstventas.Parameters.AddWithValue("@word", word);
                 conn.OpenConnection();
 
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(lstCliente);
+                SqlDataAdapter da = new SqlDataAdapter(lstventas);
                 da.Fill(dt);
 
                 return dt;

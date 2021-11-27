@@ -39,12 +39,13 @@ namespace Capa_Datos
                 conn.CloseConnection();
             }  
         }
-        public DataTable ventaClientes()
+        public DataTable ventaClientes(string word)
         {
             try
             {
                 SqlCommand lstCliente = new SqlCommand("ventaClientes", conn.Connection);
-                lstCliente.CommandType = CommandType.StoredProcedure;               
+                lstCliente.CommandType = CommandType.StoredProcedure;
+                lstCliente.Parameters.AddWithValue("@word", word);
 
                 conn.OpenConnection();
 

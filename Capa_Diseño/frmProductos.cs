@@ -21,6 +21,10 @@ namespace Capa_Diseño
         Productos pd = new Productos();
         private void frmProductos_Load(object sender, EventArgs e)
         {
+            load();
+        }
+        public void load()
+        {
             renovaredit();
             llenarDtgCat();
             dtgCats.RowHeadersVisible = false;

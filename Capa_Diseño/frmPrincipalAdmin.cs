@@ -60,17 +60,25 @@ namespace Capa_Diseño
         {
             AbrirFormulario<frmClientes>();
         }
+        frmVentas fv = new frmVentas();
+
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmVentas>();
+            fv.load();
         }
+
+        frmProductos frpd = new frmProductos();
         private void btnProductos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmProductos>();
+            frpd.load();
         }
+        frmCotizaciones frcot = new frmCotizaciones();
         private void btnCotizaciones_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmCotizaciones>();
+            frcot.load(); 
         }     
         
         private void btnDocumentos_Click(object sender, EventArgs e)

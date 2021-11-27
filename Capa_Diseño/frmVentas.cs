@@ -23,8 +23,12 @@ namespace Capa_Diseño
         Session ss = new Session();
         private void frmVentas_Load(object sender, EventArgs e)
         {
-            dtgClientes.DataSource = cl.ventaClientes();
-            dtgProductos.DataSource = pd.ventaProductos();
+            load();
+        }
+        public void load()
+        {
+            dtgClientes.DataSource = cl.ventaClientes("");
+            dtgProductos.DataSource = pd.ventaProductos("");
             cargarListaVentas();
         }
         private int row = 0,row2 = 0;
@@ -50,11 +54,12 @@ namespace Capa_Diseño
             nudCantidad.Value = 1;
             dtgCarrito.Rows.Clear();
             total = 0;
+            codigoventa = "";
 
         }
         private void cargarListaVentas()
         {
-            dtgListaVentas.DataSource = vt.verVentas();
+            dtgListaVentas.DataSource = vt.verVentas(txtBuscar.Text);
         }
         
         private string fecha = "",hora = "",nombreg = "",nombregR = "",codigoventa = "";
@@ -64,12 +69,24 @@ namespace Capa_Diseño
         private double remove;
         private void button2_Click(object sender, EventArgs e)
         {
-            row3 = dtgCarrito.CurrentRow.Index;
+            if (dtgCarrito.Rows.Count == 0)
+            {
+                return;
+            }
+            if(dtgCarrito.Rows.Count == 0)
+            {
+                lblTotal.Text = "0";
+            }
+            
+                row3 = dtgCarrito.CurrentRow.Index;
 
-            remove = Convert.ToDouble(lblTotal.Text);
-            lblTotal.Text = Convert.ToString( remove - Convert.ToDouble(dtgCarrito.Rows[row].Cells[4].Value));
-            total = total - Convert.ToDouble(dtgCarrito.Rows[row].Cells[4].Value);
-            dtgCarrito.Rows.RemoveAt(dtgCarrito.CurrentRow.Index);
+            
+                remove = Convert.ToDouble(lblTotal.Text);
+                lblTotal.Text = Convert.ToString(remove - Convert.ToDouble(dtgCarrito.Rows[row3].Cells[4].Value));
+                total = total - Convert.ToDouble(dtgCarrito.Rows[row3].Cells[4].Value);
+                dtgCarrito.Rows.RemoveAt(dtgCarrito.CurrentRow.Index);
+            
+            
         }
         DateTime now = DateTime.Now;
         private void setFecha()
@@ -78,6 +95,22 @@ namespace Capa_Diseño
             hora = now.ToString("HHmmss");
             fechaconcat = fecha + "_" + hora;
         }
+
+        private void txtNombreProd_TextChanged(object sender, EventArgs e)
+        {
+            dtgClientes.DataSource = cl.ventaClientes(txtNombreProd.Text);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dtgProductos.DataSource = pd.ventaProductos(textBox1.Text);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            cargarListaVentas();
+        }
+        private double precioIns = 0;
         private bool crearVenta()
         {
             bool okv = true;
@@ -90,7 +123,7 @@ namespace Capa_Diseño
             subtotalV = Math.Round(Convert.ToDouble(lblTotal.Text), 2); //subtotal //total
             nombreVendedor = ss.getNombre(); //vendedor
 
-            MessageBox.Show(codigoventa);
+            
             totalA = subtotalV - adeudo; //solo para generar factura
 
             if (nombreg == "---")
@@ -107,7 +140,7 @@ namespace Capa_Diseño
                 }
                 else
                 {
-                    MessageBox.Show("_"+subtotalV + "_");
+                    
                     //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
                     vt.insertarVenta(codigoventa,fecha,subtotalV, subtotalV,nombreg,correoRegVenta,nombreVendedor);
 
@@ -117,15 +150,15 @@ namespace Capa_Diseño
                         {
                             nombreProdIns = row.Cells[0].Value.ToString();
                             marcaProdIns = row.Cells[1].Value.ToString();
-                            //precioProdIns = Convert.ToDouble(row.Cells[2].Value);
+                            precioIns = Convert.ToDouble(row.Cells[2].Value);
                             cantidadProdIns = Convert.ToInt32(row.Cells[3].Value);
                             subtotalProdIns = Convert.ToDouble(row.Cells[4].Value);
 
-                            vt.insertarProductosVenta(nombreProdIns, marcaProdIns, codigoventa, cantidadProdIns, subtotalProdIns);
+                            vt.insertarProductosVenta(nombreProdIns, marcaProdIns, codigoventa,precioIns, cantidadProdIns, subtotalProdIns);
 
 
                         }
-                        MessageBox.Show("Datos agregados");
+                        
                     }
                     else
                     {
@@ -190,7 +223,7 @@ namespace Capa_Diseño
                     cantidadProdIns = Convert.ToInt32(row.Cells[3].Value);
                     subtotalProdIns = Convert.ToDouble(row.Cells[4].Value);
 
-                    vt.insertarProductosVenta(nombreProdIns, marcaProdIns,codigoventa, cantidadProdIns, subtotalProdIns);
+                    vt.insertarProductosVenta(nombreProdIns, marcaProdIns,codigoventa,precioIns, cantidadProdIns, subtotalProdIns);
 
 
                 }
