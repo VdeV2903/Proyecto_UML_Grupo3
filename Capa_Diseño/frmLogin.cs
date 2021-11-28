@@ -40,13 +40,13 @@ namespace Capa_Diseño
                 if(roll == "JEFE/GERENTE")
                 {
                     this.Hide();
-                    frmPrincipalAdmin pa = new frmPrincipalAdmin();
+                    frmPrincipalAdmin pa = new frmPrincipalAdmin(ss.getNombre(), ss.getCarnet());
                     pa.Show();
                 }
                 else
                 {
                     this.Hide();
-                    frmPrincipalVendedor pa = new frmPrincipalVendedor();
+                    frmPrincipalVendedor pa = new frmPrincipalVendedor(ss.getNombre(),ss.getCarnet());
                     pa.Show();
                 }
                 

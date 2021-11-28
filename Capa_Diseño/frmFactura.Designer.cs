@@ -30,7 +30,7 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label6 = new System.Windows.Forms.Label();
             this.Tec_Shop_UMLG3DataSet = new Capa_Diseño.Tec_Shop_UMLG3DataSet();
@@ -42,9 +42,9 @@ namespace Capa_Diseño
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "Factura";
-            reportDataSource1.Value = this.generarFacturaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "Factura";
+            reportDataSource2.Value = this.generarFacturaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa_Diseño.Factura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-1, 42);
             this.reportViewer1.Name = "reportViewer1";
@@ -85,6 +85,8 @@ namespace Capa_Diseño
             this.ClientSize = new System.Drawing.Size(973, 563);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.reportViewer1);
+            this.MaximumSize = new System.Drawing.Size(989, 602);
+            this.MinimumSize = new System.Drawing.Size(989, 602);
             this.Name = "frmFactura";
             this.Text = "frmFactura";
             this.Load += new System.EventHandler(this.frmFactura_Load);

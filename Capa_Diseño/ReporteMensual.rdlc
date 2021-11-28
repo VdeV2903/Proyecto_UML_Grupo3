@@ -6,58 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.60583cm</Width>
+              <Width>3.52658cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03799cm</Width>
+              <Width>3.52658cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03799cm</Width>
+              <Width>3.52658cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.84396cm</Width>
+              <Width>3.52658cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.84396cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.32959cm</Width>
+              <Width>3.52658cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.66615cm</Height>
+              <Height>0.61323cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>ID</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox5">
@@ -67,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre </Value>
+                              <Value>Codigo Venta</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -97,7 +64,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Marca Producto</Value>
+                              <Value>Fecha Venta</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -127,7 +94,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Distribuidor</Value>
+                              <Value>Nombre Cliente</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -157,7 +124,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio Compra</Value>
+                              <Value>Total</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -187,7 +154,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio Venta</Value>
+                              <Value>Vendedor</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -211,25 +178,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.66615cm</Height>
+              <Height>0.61323cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ID_Producto">
+                    <Textbox Name="Codigo_Venta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ID_Producto.Value</Value>
+                              <Value>=Fields!Codigo_Venta.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ID_Producto</rd:DefaultName>
+                      <rd:DefaultName>Codigo_Venta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -245,21 +212,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombre_Producto">
+                    <Textbox Name="Fecha_Venta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre_Producto.Value</Value>
+                              <Value>=Fields!Fecha_Venta.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre_Producto</rd:DefaultName>
+                      <rd:DefaultName>Fecha_Venta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -275,21 +242,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Marca_Producto">
+                    <Textbox Name="Nombre_Cliente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Marca_Producto.Value</Value>
+                              <Value>=Fields!Nombre_Cliente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Marca_Producto</rd:DefaultName>
+                      <rd:DefaultName>Nombre_Cliente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -305,21 +272,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Distribuidor">
+                    <Textbox Name="Total">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Distribuidor.Value</Value>
+                              <Value>=Fields!Total.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Distribuidor</rd:DefaultName>
+                      <rd:DefaultName>Total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -335,51 +302,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Precio_Compra">
+                    <Textbox Name="Vendedor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Precio_Compra.Value</Value>
+                              <Value>=Fields!Vendedor.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Precio_Compra</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Precio_Venta">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Precio_Venta.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Precio_Venta</rd:DefaultName>
+                      <rd:DefaultName>Vendedor</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -404,7 +341,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -417,107 +353,71 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Productos</DataSetName>
-        <Top>1.43688cm</Top>
-        <Left>0.68474cm</Left>
-        <Height>1.3323cm</Height>
-        <Width>15.69932cm</Width>
+        <DataSetName>reporteVentas</DataSetName>
+        <Top>1.63724cm</Top>
+        <Left>1.21295cm</Left>
+        <Height>1.22646cm</Height>
+        <Width>17.63291cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox4">
+      <Textbox Name="Textbox20">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Productos en el Sistema</Value>
+                <Value>=Sum(Fields!Total.Value, "reporteVentas")</Value>
                 <Style>
-                  <FontSize>20pt</FontSize>
-                  <Color>White</Color>
+                  <FontSize>15pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.10583cm</Top>
-        <Left>5.97175cm</Left>
-        <Height>0.97042cm</Height>
-        <Width>8.08271cm</Width>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.393cm</Top>
+        <Left>17.51967cm</Left>
+        <Height>0.77cm</Height>
+        <Width>2.71166cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>#33334c</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox16">
+      <Textbox Name="Textbox21">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total Productos:</Value>
+                <Value>Total: $</Value>
                 <Style>
-                  <FontSize>13pt</FontSize>
-                  <Color>White</Color>
+                  <FontSize>15pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>16.58027cm</Top>
-        <Left>14.05446cm</Left>
-        <Height>0.67938cm</Height>
-        <Width>3.335cm</Width>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.393cm</Top>
+        <Left>15.31928cm</Left>
+        <Height>0.77cm</Height>
+        <Width>2.02399cm</Width>
         <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>#33334c</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Count(Fields!ID_Producto.Value, "Productos")</Value>
-                <Style>
-                  <FontSize>13pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>16.58027cm</Top>
-        <Left>17.42474cm</Left>
-        <Height>0.67938cm</Height>
-        <Width>2.27667cm</Width>
-        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -529,20 +429,30 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.88542in</Height>
-    <Style>
-      <Border>
-        <Style>None</Style>
-      </Border>
-    </Style>
+    <Height>5.9375in</Height>
+    <Style />
   </Body>
-  <Width>7.96613in</Width>
+  <Width>8.60417in</Width>
   <Page>
     <PageHeader>
-      <Height>2.33467cm</Height>
+      <Height>3.59833cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
+        <Image Name="logo">
+          <Source>Embedded</Source>
+          <Value>logo2</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.58993cm</Top>
+          <Left>1.21295cm</Left>
+          <Height>1.5cm</Height>
+          <Width>1.60583cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
         <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -561,10 +471,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.79016cm</Top>
-          <Left>3.38349cm</Left>
+          <Top>0.93431cm</Top>
+          <Left>3.40899cm</Left>
           <Height>1.15562cm</Height>
           <Width>4.69604cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -575,21 +486,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="logo">
-          <Source>Embedded</Source>
-          <Value>logo2</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.44578cm</Top>
-          <Left>1.18745cm</Left>
-          <Height>1.5cm</Height>
-          <Width>1.60583cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox19">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -597,7 +493,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Now()</Value>
+                  <Value>=Today()</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -605,15 +501,51 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>1.09926cm</Top>
-          <Left>10.15682cm</Left>
+          <Top>1.24341cm</Top>
+          <Left>9.04461cm</Left>
           <Height>0.5916cm</Height>
-          <Width>3.21437cm</Width>
+          <Width>4.5902cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de Ventas</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>2.45152cm</Top>
+          <Left>7.00267cm</Left>
+          <Height>0.97042cm</Height>
+          <Width>8.08271cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>#33334c</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -628,40 +560,9 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.03729cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Propiedad de Tec Shop - ©2021</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.17639cm</Top>
-          <Left>7.24641cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.06646cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
@@ -679,53 +580,49 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ProductosSistema">
+    <DataSource Name="Tec_Shop_UMLG3DataSet2">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b5dc8b12-786f-4f1b-94e9-dbea68745539</rd:DataSourceID>
+      <rd:DataSourceID>d7b596ff-48c8-4335-a62d-1dccff810d85</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Productos">
+    <DataSet Name="reporteVentas">
       <Query>
-        <DataSourceName>ProductosSistema</DataSourceName>
+        <DataSourceName>Tec_Shop_UMLG3DataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID_Producto">
-          <DataField>ID_Producto</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Nombre_Producto">
-          <DataField>Nombre_Producto</DataField>
+        <Field Name="Codigo_Venta">
+          <DataField>Codigo_Venta</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Marca_Producto">
-          <DataField>Marca_Producto</DataField>
+        <Field Name="Fecha_Venta">
+          <DataField>Fecha_Venta</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Nombre_Cliente">
+          <DataField>Nombre_Cliente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Distribuidor">
-          <DataField>Distribuidor</DataField>
+        <Field Name="Vendedor">
+          <DataField>Vendedor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Precio_Compra">
-          <DataField>Precio_Compra</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Precio_Venta">
-          <DataField>Precio_Venta</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ProductosSistema</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\V de Venganza\source\repos\Proyecto_UML_Grupo3\Capa_Diseño\ProductosSistema.xsd</rd:SchemaPath>
-        <rd:TableName>Productos</rd:TableName>
+        <rd:DataSetName>Tec_Shop_UMLG3DataSet2</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\V de Venganza\source\repos\Proyecto_UML_Grupo3\Capa_Diseño\Tec_Shop_UMLG3DataSet2.xsd</rd:SchemaPath>
+        <rd:TableName>reporteVentas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ProductosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>reporteVentasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -816,5 +713,5 @@ Le3B/illPyoMep+mTgV+437Lf7Pum/s1/CHS/CNm8d1qHN1ql+i4+1Xbgb2HGdoACLnnai55zXq9vbQ2
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>9a90dafb-3909-4339-ac96-bb0fbc92dcba</rd:ReportID>
+  <rd:ReportID>88e05eef-ebd8-4cc7-a038-5efa169c33bb</rd:ReportID>
 </Report>

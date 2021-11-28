@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Capa_Datos;
 
 namespace Capa_Diseño
 {
     public partial class frmPrincipalAdmin : Form
     {
-        public frmPrincipalAdmin()
+        Session ss = new Session();
+        public frmPrincipalAdmin(string nombre, string carnet)
         {
             InitializeComponent();
+            lblNombre.Text = nombre;
+            lblCarnet.Text = carnet;
         }
         /*
         private void AbrirFormInPanel(object formHijo)
@@ -33,6 +38,8 @@ namespace Capa_Diseño
         private void frmPrincipalAdmin_Load(object sender, EventArgs e)
         {
             AbrirFormulario<frmInicio>();
+            
+
         }
         private void AbrirFormulario<T>() where T : Form, new()
         {
@@ -105,6 +112,18 @@ namespace Capa_Diseño
         private void btnReportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmReportes>();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+        }
+
+        private void frmPrincipalAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin lg = new frmLogin();
+            lg.Show();
         }
     }
 }

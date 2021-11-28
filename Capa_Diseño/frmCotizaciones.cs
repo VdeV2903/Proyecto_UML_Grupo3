@@ -17,6 +17,7 @@ namespace Capa_Diseño
         Productos pd = new Productos();
         Session ss = new Session();
         Cotizaciones ct = new Cotizaciones();
+        frmFacturaCotizacion fct = new frmFacturaCotizacion();
         public frmCotizaciones()
         {
             InitializeComponent();
@@ -125,7 +126,7 @@ namespace Capa_Diseño
             {
                 cargarListaCots();
                 limpiarDatosCots();
-                MessageBox.Show("VENTA COMPLETADA, GENERAR FACTURA");
+                fct.Show();
             }
         }
 
@@ -163,7 +164,7 @@ namespace Capa_Diseño
                 }
                 else
                 {
-                    
+                    fct.setCodigo(codigoventa);
                     //string codigo,string fecha,double subtotal,double total,double adeudo,string fechap,double pagado,string cliente,string vendedor
                     ct.insertarCotizacion(codigoventa, fecha, subtotalV, subtotalV, nombreg, correoRegVenta, nombreVendedor);
 

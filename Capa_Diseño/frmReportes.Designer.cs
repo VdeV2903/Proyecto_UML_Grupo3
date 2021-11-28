@@ -30,7 +30,9 @@ namespace Capa_Diseño
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reporteVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Tec_Shop_UMLG3DataSet2 = new Capa_Diseño.Tec_Shop_UMLG3DataSet2();
             this.label6 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ProductosSistema = new Capa_Diseño.ProductosSistema();
@@ -39,9 +41,22 @@ namespace Capa_Diseño
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.reporteVentasTableAdapter = new Capa_Diseño.Tec_Shop_UMLG3DataSet2TableAdapters.reporteVentasTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteVentasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tec_Shop_UMLG3DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosSistema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reporteVentasBindingSource
+            // 
+            this.reporteVentasBindingSource.DataMember = "reporteVentas";
+            this.reporteVentasBindingSource.DataSource = this.Tec_Shop_UMLG3DataSet2;
+            // 
+            // Tec_Shop_UMLG3DataSet2
+            // 
+            this.Tec_Shop_UMLG3DataSet2.DataSetName = "Tec_Shop_UMLG3DataSet2";
+            this.Tec_Shop_UMLG3DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -57,14 +72,14 @@ namespace Capa_Diseño
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "Productos";
-            reportDataSource2.Value = this.ProductosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa_Diseño.InformeProductos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 124);
+            reportDataSource1.Name = "reporteVentas";
+            reportDataSource1.Value = this.reporteVentasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa_Diseño.ReporteMensual.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 114);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1042, 475);
+            this.reportViewer1.Size = new System.Drawing.Size(1065, 511);
             this.reportViewer1.TabIndex = 29;
             // 
             // ProductosSistema
@@ -109,6 +124,7 @@ namespace Capa_Diseño
             this.button1.TabIndex = 58;
             this.button1.Text = "Ventas Mensuales";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -123,6 +139,11 @@ namespace Capa_Diseño
             this.button2.TabIndex = 59;
             this.button2.Text = "Ventas Semanales";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // reporteVentasTableAdapter
+            // 
+            this.reporteVentasTableAdapter.ClearBeforeFill = true;
             // 
             // frmReportes
             // 
@@ -141,6 +162,8 @@ namespace Capa_Diseño
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reporteVentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tec_Shop_UMLG3DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosSistema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -158,5 +181,8 @@ namespace Capa_Diseño
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource reporteVentasBindingSource;
+        private Tec_Shop_UMLG3DataSet2 Tec_Shop_UMLG3DataSet2;
+        private Tec_Shop_UMLG3DataSet2TableAdapters.reporteVentasTableAdapter reporteVentasTableAdapter;
     }
 }

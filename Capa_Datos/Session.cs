@@ -90,7 +90,10 @@ namespace Capa_Datos
         {
             return _roll;
         }
-
+        public string getCarnet()
+        {
+            return _carnet;
+        }
         public void clearSession()
         {
             _id = 0;
