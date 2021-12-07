@@ -163,7 +163,14 @@ namespace Capa_Diseño
         {
             desbloqueartxt();
         }
-
+        private void ckRoll_Click(object sender, EventArgs e)
+        {
+            desbloqueartxt();
+        }
+        private void ckEstadoEdit_Click(object sender, EventArgs e)
+        {
+            desbloqueartxt();
+        }
         public bool ValidarEntrada()
         {
             bool ok = true;
@@ -254,13 +261,18 @@ namespace Capa_Diseño
             carnete = dtgEditar.Rows[row].Cells[2].Value.ToString();
             txtTelefonoEdit.Text = dtgEditar.Rows[row].Cells[3].Value.ToString();
             txtEmailEdit.Text = dtgEditar.Rows[row].Cells[4].Value.ToString();
-
-
             cmbRollEditar.SelectedItem = dtgEditar.Rows[row].Cells[5].Value.ToString();
+            cmbEstadoEditar.Text = dtgEditar.Rows[row].Cells[6].Value.ToString();
+
+
+            
             
             
         }
         string nombreempleado = "", apellidosempleado = "", telefonoempleado = "", emailempleado = "", rollem = "", estado = "";
+
+        
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             lblErrorEditar.Visible = false;

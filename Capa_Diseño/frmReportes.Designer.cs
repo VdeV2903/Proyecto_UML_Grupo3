@@ -38,7 +38,6 @@ namespace Capa_Diseño
             this.ProductosSistema = new Capa_Diseño.ProductosSistema();
             this.ProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProductosTableAdapter = new Capa_Diseño.ProductosSistemaTableAdapters.ProductosTableAdapter();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.reporteVentasTableAdapter = new Capa_Diseño.Tec_Shop_UMLG3DataSet2TableAdapters.reporteVentasTableAdapter();
@@ -96,21 +95,6 @@ namespace Capa_Diseño
             // 
             this.ProductosTableAdapter.ClearBeforeFill = true;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 69);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(153, 39);
-            this.btnGuardar.TabIndex = 57;
-            this.btnGuardar.Text = "Lista Productos";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
@@ -118,7 +102,7 @@ namespace Capa_Diseño
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(183, 69);
+            this.button1.Location = new System.Drawing.Point(25, 69);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 39);
             this.button1.TabIndex = 58;
@@ -133,7 +117,7 @@ namespace Capa_Diseño
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(355, 69);
+            this.button2.Location = new System.Drawing.Point(197, 69);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 39);
             this.button2.TabIndex = 59;
@@ -153,7 +137,6 @@ namespace Capa_Diseño
             this.ClientSize = new System.Drawing.Size(1066, 626);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -178,7 +161,6 @@ namespace Capa_Diseño
         private System.Windows.Forms.BindingSource ProductosBindingSource;
         private ProductosSistema ProductosSistema;
         private ProductosSistemaTableAdapters.ProductosTableAdapter ProductosTableAdapter;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource reporteVentasBindingSource;

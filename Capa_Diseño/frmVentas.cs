@@ -30,7 +30,9 @@ namespace Capa_Diseño
         {
             dtgClientes.DataSource = cl.ventaClientes("");
             dtgProductos.DataSource = pd.ventaProductos(textBox1.Text);
+            
             cargarListaVentas();
+
         }
         private int row = 0,row2 = 0;
         private void dtgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +63,7 @@ namespace Capa_Diseño
         private void cargarListaVentas()
         {
             dtgListaVentas.DataSource = vt.verVentas(txtBuscar.Text);
+            dtgListaVentas.Columns[5].Visible = false;
         }
         
         private string fecha = "",hora = "",nombreg = "",nombregR = "",codigoventa = "";

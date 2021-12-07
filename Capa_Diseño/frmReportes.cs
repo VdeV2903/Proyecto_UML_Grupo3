@@ -31,6 +31,7 @@ namespace Capa_Diseño
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            this.reportViewer1.Clear();
             this.ProductosTableAdapter.Fill(this.ProductosSistema.Productos);
 
             this.reportViewer1.RefreshReport();
@@ -45,8 +46,7 @@ namespace Capa_Diseño
         }
         private void generar()
         {
-            
-      
+            this.reportViewer1.Clear();
             this.reporteVentasTableAdapter.Fill(this.Tec_Shop_UMLG3DataSet2.reporteVentas, ini, fin);
             this.reportViewer1.RefreshReport();
         }

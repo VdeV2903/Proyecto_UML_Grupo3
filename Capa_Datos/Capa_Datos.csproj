@@ -59,6 +59,7 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Cotizaciones.cs" />
+    <Compile Include="DatosDoc.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Promociones.cs" />

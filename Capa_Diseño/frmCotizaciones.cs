@@ -36,6 +36,7 @@ namespace Capa_Diseño
         private void cargarListaCots()
         {
             dtgLista.DataSource = ct.verCotizaciones(txtBuscar.Text);
+            dtgLista.Columns[5].Visible = false;
         }
         private void txtNombreProd_TextChanged(object sender, EventArgs e)
         {
